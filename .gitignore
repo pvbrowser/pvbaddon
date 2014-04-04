@@ -1,0 +1,18 @@
+####################
+# git ignore files #
+####################
+
+# ignore object files
+*.o
+*.a
+*.so
+*.so.1
+*.so.1.0
+*.so.1.0.0
+*.obj
+*.OBJ
+*.dll
+*.DLL
+*.lib
+*.LIB
+

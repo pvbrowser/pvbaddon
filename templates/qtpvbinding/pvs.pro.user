@@ -1,0 +1,339 @@
+<!DOCTYPE QtCreatorProject>
+<qtcreator>
+ <data>
+  <variable>RunConfiguration0-BaseEnvironmentBase</variable>
+  <value type="int">2</value>
+ </data>
+ <data>
+  <variable>RunConfiguration0-CommandLineArguments</variable>
+  <valuelist type="QVariantList"/>
+ </data>
+ <data>
+  <variable>RunConfiguration0-ProFile</variable>
+  <value type="QString">pvs.pro</value>
+ </data>
+ <data>
+  <variable>RunConfiguration0-RunConfiguration.name</variable>
+  <value type="QString">pvs</value>
+ </data>
+ <data>
+  <variable>RunConfiguration0-UseDyldImageSuffix</variable>
+  <value type="bool">false</value>
+ </data>
+ <data>
+  <variable>RunConfiguration0-UseTerminal</variable>
+  <value type="bool">false</value>
+ </data>
+ <data>
+  <variable>RunConfiguration0-UserEnvironmentChanges</variable>
+  <valuelist type="QVariantList"/>
+ </data>
+ <data>
+  <variable>RunConfiguration0-UserSetName</variable>
+  <value type="bool">false</value>
+ </data>
+ <data>
+  <variable>RunConfiguration0-UserSetWorkingDirectory</variable>
+  <value type="bool">false</value>
+ </data>
+ <data>
+  <variable>RunConfiguration0-UserWorkingDirectory</variable>
+  <value type="QString"></value>
+ </data>
+ <data>
+  <variable>RunConfiguration0-type</variable>
+  <value type="QString">Qt4ProjectManager.Qt4RunConfiguration</value>
+ </data>
+ <data>
+  <variable>activeRunConfiguration</variable>
+  <value type="int">0</value>
+ </data>
+ <data>
+  <variable>activebuildconfiguration</variable>
+  <value type="QString">Release</value>
+ </data>
+ <data>
+  <variable>buildConfiguration-Release</variable>
+  <valuemap type="QVariantMap">
+   <value key="ProjectExplorer.BuildConfiguration.DisplayName" type="QString">Release</value>
+   <value key="QtVersionId" type="int">2</value>
+   <value key="ToolChain" type="int">0</value>
+   <value key="buildConfiguration" type="int">0</value>
+  </valuemap>
+ </data>
+ <data>
+  <variable>buildconfiguration-Release-buildstep0</variable>
+  <valuemap type="QVariantMap">
+   <value key="ProjectExplorer.BuildConfiguration.DisplayName" type="QString">Release</value>
+   <valuelist key="abstractProcess.Environment" type="QVariantList">
+    <value type="QString">COLORTERM=1</value>
+    <value type="QString">CPU=x86_64</value>
+    <value type="QString">CSHEDIT=emacs</value>
+    <value type="QString">CVS_RSH=ssh</value>
+    <value type="QString">DBUS_SESSION_BUS_ADDRESS=unix:abstract=/tmp/dbus-88L0YdQB5t,guid=7990a3e794b05670e0007f9100000019</value>
+    <value type="QString">DESKTOP_SESSION=kde4</value>
+    <value type="QString">DISPLAY=:0.0</value>
+    <value type="QString">DM_CONTROL=/var/run/xdmctl</value>
+    <value type="QString">ENV=/etc/bash.bashrc</value>
+    <value type="QString">FROM_HEADER=</value>
+    <value type="QString">GPG_AGENT_INFO=/tmp/gpg-Y3x3UD/S.gpg-agent:2440:1</value>
+    <value type="QString">GS_LIB=/home/lehrig/.fonts</value>
+    <value type="QString">GTK2_RC_FILES=/etc/gtk-2.0/gtkrc:/home/lehrig/.gtkrc-2.0-kde4:/home/lehrig/.gtkrc-2.0-qtengine:/home/lehrig/.gtkrc-2.0:/home/lehrig/.kde4/share/config/gtkrc-2.0</value>
+    <value type="QString">GTK_IM_MODULE=cedilla</value>
+    <value type="QString">GTK_RC_FILES=/etc/gtk/gtkrc:/home/lehrig/.gtkrc::/home/lehrig/.kde4/share/config/gtkrc</value>
+    <value type="QString">G_BROKEN_FILENAMES=1</value>
+    <value type="QString">G_FILENAME_ENCODING=@locale,UTF-8,ISO-8859-15,CP1252</value>
+    <value type="QString">HISTSIZE=1000</value>
+    <value type="QString">HOME=/home/lehrig</value>
+    <value type="QString">HOST=nb4lehrig</value>
+    <value type="QString">HOSTNAME=nb4lehrig</value>
+    <value type="QString">HOSTTYPE=x86_64</value>
+    <value type="QString">INPUTRC=/etc/inputrc</value>
+    <value type="QString">JAVA_BINDIR=/usr/lib64/jvm/jre/bin</value>
+    <value type="QString">JAVA_HOME=/usr/lib64/jvm/jre</value>
+    <value type="QString">JAVA_ROOT=/usr/lib64/jvm/jre</value>
+    <value type="QString">JRE_HOME=/usr/lib64/jvm/jre</value>
+    <value type="QString">KDE_FULL_SESSION=true</value>
+    <value type="QString">KDE_MULTIHEAD=false</value>
+    <value type="QString">KDE_SESSION_UID=1000</value>
+    <value type="QString">KDE_SESSION_VERSION=4</value>
+    <value type="QString">LANG=de_DE.utf8</value>
+    <value type="QString">LANGUAGE=de_DE.utf8</value>
+    <value type="QString">LC_ALL=de_DE.utf8</value>
+    <value type="QString">LD_LIBRARY_PATH=/usr/lib/qtcreator:</value>
+    <value type="QString">LESS=-M -I -R</value>
+    <value type="QString">LESSCLOSE=lessclose.sh %s %s</value>
+    <value type="QString">LESSKEY=/etc/lesskey.bin</value>
+    <value type="QString">LESSOPEN=lessopen.sh %s</value>
+    <value type="QString">LESS_ADVANCED_PREPROCESSOR=no</value>
+    <value type="QString">LIBPTHREAD=/usr/lib64/libpthread.so</value>
+    <value type="QString">LOGNAME=lehrig</value>
+    <value type="QString">LS_COLORS=no=00:fi=00:di=01;34:ln=00;36:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=41;33;01:ex=00;32:*.cmd=00;32:*.exe=01;32:*.com=01;32:*.bat=01;32:*.btm=01;32:*.dll=01;32:*.tar=00;31:*.tbz=00;31:*.tgz=00;31:*.rpm=00;31:*.deb=00;31:*.arj=00;31:*.taz=00;31:*.lzh=00;31:*.lzma=00;31:*.zip=00;31:*.zoo=00;31:*.z=00;31:*.Z=00;31:*.gz=00;31:*.bz2=00;31:*.tb2=00;31:*.tz2=00;31:*.tbz2=00;31:*.xz=00;31:*.avi=01;35:*.bmp=01;35:*.fli=01;35:*.gif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mng=01;35:*.mov=01;35:*.mpg=01;35:*.pcx=01;35:*.pbm=01;35:*.pgm=01;35:*.png=01;35:*.ppm=01;35:*.tga=01;35:*.tif=01;35:*.xbm=01;35:*.xpm=01;35:*.dl=01;35:*.gl=01;35:*.wmv=01;35:*.aiff=00;32:*.au=00;32:*.mid=00;32:*.mp3=00;32:*.ogg=00;32:*.voc=00;32:*.wav=00;32:</value>
+    <value type="QString">LS_OPTIONS=-N --color=tty -T 0</value>
+    <value type="QString">MACHTYPE=x86_64-suse-linux</value>
+    <value type="QString">MAIL=/var/spool/mail/lehrig</value>
+    <value type="QString">MANPATH=/usr/local/man:/usr/share/man</value>
+    <value type="QString">MINICOM=-c on</value>
+    <value type="QString">MORE=-sl</value>
+    <value type="QString">NNTPSERVER=news</value>
+    <value type="QString">OSTYPE=linux</value>
+    <value type="QString">PAGER=less</value>
+    <value type="QString">PATH=/usr/bin:/home/lehrig/bin:/usr/local/bin:/usr/bin:/bin:/usr/bin/X11:/usr/X11R6/bin:/usr/games:/opt/kde3/bin:/usr/lib64/jvm/jre/bin</value>
+    <value type="QString">PROFILEREAD=true</value>
+    <value type="QString">PVBADDONDIR=/home/lehrig/cc/priv/pvbaddon</value>
+    <value type="QString">PVBDIR=/home/lehrig/cc/priv/cvs/pvb</value>
+    <value type="QString">PWD=/home/lehrig/cc/priv/pvbaddon/templates/qtpvbinding</value>
+    <value type="QString">PYTHONSTARTUP=/etc/pythonstart</value>
+    <value type="QString">QTDIR=/usr/share/qt4/</value>
+    <value type="QString">QT_IM_MODULE=xim</value>
+    <value type="QString">QT_IM_SWITCHER=imsw-multi</value>
+    <value type="QString">QT_PLUGIN_PATH=/home/lehrig/.kde4/lib64/kde4/plugins/:/usr/lib64/kde4/plugins/</value>
+    <value type="QString">QT_SYSTEM_DIR=/usr/share/desktop-data</value>
+    <value type="QString">SESSION_MANAGER=local/nb4lehrig:@/tmp/.ICE-unix/2731,unix/nb4lehrig:/tmp/.ICE-unix/2731</value>
+    <value type="QString">SHELL=/bin/bash</value>
+    <value type="QString">SHLVL=2</value>
+    <value type="QString">SSH_AGENT_PID=2441</value>
+    <value type="QString">SSH_ASKPASS=/usr/lib64/ssh/x11-ssh-askpass</value>
+    <value type="QString">SSH_AUTH_SOCK=/tmp/ssh-ftyaX2370/agent.2370</value>
+    <value type="QString">TERM=xterm</value>
+    <value type="QString">TMPDIR=/tmp</value>
+    <value type="QString">USER=lehrig</value>
+    <value type="QString">USE_FAM=</value>
+    <value type="QString">WINDOWID=44040206</value>
+    <value type="QString">WINDOWMANAGER=/usr/bin/startkde</value>
+    <value type="QString">WINDOWPATH=7</value>
+    <value type="QString">XAUTHLOCALHOSTNAME=nb4lehrig</value>
+    <value type="QString">XCURSOR_THEME=crystalwhite</value>
+    <value type="QString">XDG_CONFIG_DIRS=/etc/xdg</value>
+    <value type="QString">XDG_DATA_DIRS=/usr/share:/etc/opt/kde3/share:/opt/kde3/share</value>
+    <value type="QString">XDG_SESSION_COOKIE=b21180c5b535314d65ca9ad100000719-1299304220.639944-1616305808</value>
+    <value type="QString">XDM_MANAGED=method=classic,auto</value>
+    <value type="QString">XKEYSYMDB=/usr/share/X11/XKeysymDB</value>
+    <value type="QString">XMODIFIERS=@im=local</value>
+    <value type="QString">XNLSPATH=/usr/share/X11/nls</value>
+    <value type="QString">XSESSION_IS_UP=yes</value>
+    <value type="QString">XTERM_LOCALE=de_DE.utf8</value>
+    <value type="QString">XTERM_SHELL=/bin/bash</value>
+    <value type="QString">XTERM_VERSION=X.Org 6.8.99.903(255)</value>
+    <value type="QString">htpvb=lehrig@pvbrowser.de:public_html/htdocs/pvbrowser/</value>
+    <value type="QString">htsb=lehrig@pvbrowser.de:public_html/htdocs/home/saalhauser-bote/</value>
+    <value type="QString">mc=() {  . /usr/share/mc/bin/mc-wrapper.sh
+}</value>
+   </valuelist>
+   <valuelist key="abstractProcess.arguments" type="QVariantList">
+    <value type="QString">/home/lehrig/cc/priv/pvbaddon/templates/qtpvbinding/pvs.pro</value>
+    <value type="QString">-spec</value>
+    <value type="QString">linux-g++-64</value>
+    <value type="QString">-r</value>
+   </valuelist>
+   <value key="abstractProcess.command" type="QString">/usr/bin/qmake</value>
+   <value key="abstractProcess.enabled" type="bool">false</value>
+   <value key="abstractProcess.workingDirectory" type="QString">/home/lehrig/cc/priv/pvbaddon/templates/qtpvbinding</value>
+  </valuemap>
+ </data>
+ <data>
+  <variable>buildconfiguration-Release-buildstep1</variable>
+  <valuemap type="QVariantMap">
+   <value key="ProjectExplorer.BuildConfiguration.DisplayName" type="QString">Release</value>
+   <valuelist key="abstractProcess.Environment" type="QVariantList">
+    <value type="QString">COLORTERM=1</value>
+    <value type="QString">CPU=x86_64</value>
+    <value type="QString">CSHEDIT=emacs</value>
+    <value type="QString">CVS_RSH=ssh</value>
+    <value type="QString">DBUS_SESSION_BUS_ADDRESS=unix:abstract=/tmp/dbus-88L0YdQB5t,guid=7990a3e794b05670e0007f9100000019</value>
+    <value type="QString">DESKTOP_SESSION=kde4</value>
+    <value type="QString">DISPLAY=:0.0</value>
+    <value type="QString">DM_CONTROL=/var/run/xdmctl</value>
+    <value type="QString">ENV=/etc/bash.bashrc</value>
+    <value type="QString">FROM_HEADER=</value>
+    <value type="QString">GPG_AGENT_INFO=/tmp/gpg-Y3x3UD/S.gpg-agent:2440:1</value>
+    <value type="QString">GS_LIB=/home/lehrig/.fonts</value>
+    <value type="QString">GTK2_RC_FILES=/etc/gtk-2.0/gtkrc:/home/lehrig/.gtkrc-2.0-kde4:/home/lehrig/.gtkrc-2.0-qtengine:/home/lehrig/.gtkrc-2.0:/home/lehrig/.kde4/share/config/gtkrc-2.0</value>
+    <value type="QString">GTK_IM_MODULE=cedilla</value>
+    <value type="QString">GTK_RC_FILES=/etc/gtk/gtkrc:/home/lehrig/.gtkrc::/home/lehrig/.kde4/share/config/gtkrc</value>
+    <value type="QString">G_BROKEN_FILENAMES=1</value>
+    <value type="QString">G_FILENAME_ENCODING=@locale,UTF-8,ISO-8859-15,CP1252</value>
+    <value type="QString">HISTSIZE=1000</value>
+    <value type="QString">HOME=/home/lehrig</value>
+    <value type="QString">HOST=nb4lehrig</value>
+    <value type="QString">HOSTNAME=nb4lehrig</value>
+    <value type="QString">HOSTTYPE=x86_64</value>
+    <value type="QString">INPUTRC=/etc/inputrc</value>
+    <value type="QString">JAVA_BINDIR=/usr/lib64/jvm/jre/bin</value>
+    <value type="QString">JAVA_HOME=/usr/lib64/jvm/jre</value>
+    <value type="QString">JAVA_ROOT=/usr/lib64/jvm/jre</value>
+    <value type="QString">JRE_HOME=/usr/lib64/jvm/jre</value>
+    <value type="QString">KDE_FULL_SESSION=true</value>
+    <value type="QString">KDE_MULTIHEAD=false</value>
+    <value type="QString">KDE_SESSION_UID=1000</value>
+    <value type="QString">KDE_SESSION_VERSION=4</value>
+    <value type="QString">LANG=de_DE.utf8</value>
+    <value type="QString">LANGUAGE=de_DE.utf8</value>
+    <value type="QString">LC_ALL=de_DE.utf8</value>
+    <value type="QString">LD_LIBRARY_PATH=/usr/lib/qtcreator:</value>
+    <value type="QString">LESS=-M -I -R</value>
+    <value type="QString">LESSCLOSE=lessclose.sh %s %s</value>
+    <value type="QString">LESSKEY=/etc/lesskey.bin</value>
+    <value type="QString">LESSOPEN=lessopen.sh %s</value>
+    <value type="QString">LESS_ADVANCED_PREPROCESSOR=no</value>
+    <value type="QString">LIBPTHREAD=/usr/lib64/libpthread.so</value>
+    <value type="QString">LOGNAME=lehrig</value>
+    <value type="QString">LS_COLORS=no=00:fi=00:di=01;34:ln=00;36:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=41;33;01:ex=00;32:*.cmd=00;32:*.exe=01;32:*.com=01;32:*.bat=01;32:*.btm=01;32:*.dll=01;32:*.tar=00;31:*.tbz=00;31:*.tgz=00;31:*.rpm=00;31:*.deb=00;31:*.arj=00;31:*.taz=00;31:*.lzh=00;31:*.lzma=00;31:*.zip=00;31:*.zoo=00;31:*.z=00;31:*.Z=00;31:*.gz=00;31:*.bz2=00;31:*.tb2=00;31:*.tz2=00;31:*.tbz2=00;31:*.xz=00;31:*.avi=01;35:*.bmp=01;35:*.fli=01;35:*.gif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mng=01;35:*.mov=01;35:*.mpg=01;35:*.pcx=01;35:*.pbm=01;35:*.pgm=01;35:*.png=01;35:*.ppm=01;35:*.tga=01;35:*.tif=01;35:*.xbm=01;35:*.xpm=01;35:*.dl=01;35:*.gl=01;35:*.wmv=01;35:*.aiff=00;32:*.au=00;32:*.mid=00;32:*.mp3=00;32:*.ogg=00;32:*.voc=00;32:*.wav=00;32:</value>
+    <value type="QString">LS_OPTIONS=-N --color=tty -T 0</value>
+    <value type="QString">MACHTYPE=x86_64-suse-linux</value>
+    <value type="QString">MAIL=/var/spool/mail/lehrig</value>
+    <value type="QString">MANPATH=/usr/local/man:/usr/share/man</value>
+    <value type="QString">MINICOM=-c on</value>
+    <value type="QString">MORE=-sl</value>
+    <value type="QString">NNTPSERVER=news</value>
+    <value type="QString">OSTYPE=linux</value>
+    <value type="QString">PAGER=less</value>
+    <value type="QString">PATH=/usr/bin:/home/lehrig/bin:/usr/local/bin:/usr/bin:/bin:/usr/bin/X11:/usr/X11R6/bin:/usr/games:/opt/kde3/bin:/usr/lib64/jvm/jre/bin</value>
+    <value type="QString">PROFILEREAD=true</value>
+    <value type="QString">PVBADDONDIR=/home/lehrig/cc/priv/pvbaddon</value>
+    <value type="QString">PVBDIR=/home/lehrig/cc/priv/cvs/pvb</value>
+    <value type="QString">PWD=/home/lehrig/cc/priv/pvbaddon/templates/qtpvbinding</value>
+    <value type="QString">PYTHONSTARTUP=/etc/pythonstart</value>
+    <value type="QString">QTDIR=/usr/share/qt4/</value>
+    <value type="QString">QT_IM_MODULE=xim</value>
+    <value type="QString">QT_IM_SWITCHER=imsw-multi</value>
+    <value type="QString">QT_PLUGIN_PATH=/home/lehrig/.kde4/lib64/kde4/plugins/:/usr/lib64/kde4/plugins/</value>
+    <value type="QString">QT_SYSTEM_DIR=/usr/share/desktop-data</value>
+    <value type="QString">SESSION_MANAGER=local/nb4lehrig:@/tmp/.ICE-unix/2731,unix/nb4lehrig:/tmp/.ICE-unix/2731</value>
+    <value type="QString">SHELL=/bin/bash</value>
+    <value type="QString">SHLVL=2</value>
+    <value type="QString">SSH_AGENT_PID=2441</value>
+    <value type="QString">SSH_ASKPASS=/usr/lib64/ssh/x11-ssh-askpass</value>
+    <value type="QString">SSH_AUTH_SOCK=/tmp/ssh-ftyaX2370/agent.2370</value>
+    <value type="QString">TERM=xterm</value>
+    <value type="QString">TMPDIR=/tmp</value>
+    <value type="QString">USER=lehrig</value>
+    <value type="QString">USE_FAM=</value>
+    <value type="QString">WINDOWID=44040206</value>
+    <value type="QString">WINDOWMANAGER=/usr/bin/startkde</value>
+    <value type="QString">WINDOWPATH=7</value>
+    <value type="QString">XAUTHLOCALHOSTNAME=nb4lehrig</value>
+    <value type="QString">XCURSOR_THEME=crystalwhite</value>
+    <value type="QString">XDG_CONFIG_DIRS=/etc/xdg</value>
+    <value type="QString">XDG_DATA_DIRS=/usr/share:/etc/opt/kde3/share:/opt/kde3/share</value>
+    <value type="QString">XDG_SESSION_COOKIE=b21180c5b535314d65ca9ad100000719-1299304220.639944-1616305808</value>
+    <value type="QString">XDM_MANAGED=method=classic,auto</value>
+    <value type="QString">XKEYSYMDB=/usr/share/X11/XKeysymDB</value>
+    <value type="QString">XMODIFIERS=@im=local</value>
+    <value type="QString">XNLSPATH=/usr/share/X11/nls</value>
+    <value type="QString">XSESSION_IS_UP=yes</value>
+    <value type="QString">XTERM_LOCALE=de_DE.utf8</value>
+    <value type="QString">XTERM_SHELL=/bin/bash</value>
+    <value type="QString">XTERM_VERSION=X.Org 6.8.99.903(255)</value>
+    <value type="QString">htpvb=lehrig@pvbrowser.de:public_html/htdocs/pvbrowser/</value>
+    <value type="QString">htsb=lehrig@pvbrowser.de:public_html/htdocs/home/saalhauser-bote/</value>
+    <value type="QString">mc=() {  . /usr/share/mc/bin/mc-wrapper.sh
+}</value>
+   </valuelist>
+   <value key="abstractProcess.IgnoreReturnValue" type="bool">false</value>
+   <valuelist key="abstractProcess.arguments" type="QVariantList">
+    <value type="QString">-w</value>
+   </valuelist>
+   <value key="abstractProcess.command" type="QString">/usr/bin/make</value>
+   <value key="abstractProcess.enabled" type="bool">true</value>
+   <value key="abstractProcess.workingDirectory" type="QString">/home/lehrig/cc/priv/pvbaddon/templates/qtpvbinding</value>
+  </valuemap>
+ </data>
+ <data>
+  <variable>buildconfiguration-Release-cleanstep0</variable>
+  <valuemap type="QVariantMap">
+   <value key="ProjectExplorer.BuildConfiguration.DisplayName" type="QString">Release</value>
+   <value key="cleanConfig" type="bool">true</value>
+   <valuelist key="makeargs" type="QVariantList">
+    <value type="QString">clean</value>
+   </valuelist>
+  </valuemap>
+ </data>
+ <data>
+  <variable>buildconfigurations</variable>
+  <valuelist type="QVariantList">
+   <value type="QString">Release</value>
+  </valuelist>
+ </data>
+ <data>
+  <variable>buildstep0</variable>
+  <valuemap type="QVariantMap">
+   <value key="ProjectExplorer.BuildConfiguration.DisplayName" type="QString"></value>
+   <value key="mkspec" type="QString"></value>
+  </valuemap>
+ </data>
+ <data>
+  <variable>buildstep1</variable>
+  <valuemap type="QVariantMap">
+   <value key="ProjectExplorer.BuildConfiguration.DisplayName" type="QString"></value>
+  </valuemap>
+ </data>
+ <data>
+  <variable>buildsteps</variable>
+  <valuelist type="QVariantList">
+   <value type="QString">trolltech.qt4projectmanager.qmake</value>
+   <value type="QString">trolltech.qt4projectmanager.make</value>
+  </valuelist>
+ </data>
+ <data>
+  <variable>cleanstep0</variable>
+  <valuemap type="QVariantMap">
+   <value key="ProjectExplorer.BuildConfiguration.DisplayName" type="QString"></value>
+   <value key="clean" type="bool">true</value>
+  </valuemap>
+ </data>
+ <data>
+  <variable>cleansteps</variable>
+  <valuelist type="QVariantList">
+   <value type="QString">trolltech.qt4projectmanager.make</value>
+  </valuelist>
+ </data>
+ <data>
+  <variable>defaultFileEncoding</variable>
+  <value type="QByteArray">System</value>
+ </data>
+ <data>
+  <variable>project</variable>
+  <valuemap type="QVariantMap"/>
+ </data>
+</qtcreator>

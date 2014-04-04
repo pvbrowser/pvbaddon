@@ -1,0 +1,12 @@
+INPUT(
+./release\main.o
+./release\mask9.o
+./release\mask8.o
+./release\mask7.o
+./release\mask6.o
+./release\mask5.o
+./release\mask4.o
+./release\mask3.o
+./release\mask2.o
+./release\mask1.o
+);

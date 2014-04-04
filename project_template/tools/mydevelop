@@ -1,0 +1,3 @@
+#!/bin/bash
+export PRJ=$(ls *.pvproject)
+pvdevelop $PRJ

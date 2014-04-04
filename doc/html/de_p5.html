@@ -1,0 +1,84 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+
+<head>
+  <title>pvbaddon (c) pvbrowser 2008</title>
+  <link rel="stylesheet" type="text/css" href="format.css">
+  <meta name="GENERATOR" content="generator by R. Lehrig">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+</head>
+<body>
+pvbrowser addon
+<hr>
+<a href="de_p4.html">Zur&uuml;ck</a>
+<a href="de_index.html">Inhalt</a>
+<a href="de_p6.html">Vor</a>
+<hr>
+<!-- begin content -->
+<h2>modbus_client</h2>
+<p>
+config.ini
+</p>
+<div style='clear:left; background:#DEDEDE;'><pre>
+# ini file for modbus_client
+#
+# USE_SOCKET := 1 | 0  # if 0 then USE_TTY
+# DEBUG      := 1 | 0
+# BAUDRATE   := 300    |
+#               600    |
+#               1200   |
+#               1800   |
+#               2400   |
+#               4800   |
+#               9600   |
+#               19200  |
+#               38400  |
+#               57600  |
+#               115200
+# PARITY     := NONE | ODD | EVEN
+# CYCLE&#060;N&#062;   := &#060;count&#062;,&#060;name&#062;
+# name       := coilStatus(slave,adr)       | 
+#               inputStatus(slave,adr)      |
+#               holdingRegisters(slave,adr) |
+#               inputRegisters(slave,adr)
+# CYCLETIME in milliseconds
+# SHARED_MEMORY_SIZE must be equal to SHARED_MEMORY_SIZE of pvserver
+# MAX_NAME_LENGTH is maximum length of variable name in shared memory 
+#
+
+[GLOBAL]
+USE_SOCKET=0
+DEBUG=1
+CYCLETIME=1000
+
+[SOCKET]
+IP=192.168.1.110
+PORT=5050
+
+[TTY]
+DEVICENAME=/dev/ttyUSB0
+BAUDRATE=9600
+RTSCTS=1
+PARITY=NONE
+
+[RLLIB]
+MAX_NAME_LENGTH=30
+SHARED_MEMORY=/srv/automation/shm/modbus1.shm
+SHARED_MEMORY_SIZE=65536
+MAILBOX=/srv/automation/mbx/modbus1.mbx
+
+[CYCLES]
+NUM_CYCLES=4
+CYCLE1=10,inputStatus(1,0)
+CYCLE2=8,coilStatus(1,0)
+CYCLE3=2,holdingRegisters(1,0)
+CYCLE4=2,inputRegisters(1,0)
+</pre></div>
+
+<!-- end content -->
+<hr style='clear:left;'>
+<a href="de_p4.html">Zur&uuml;ck</a>
+<a href="de_index.html">Inhalt</a>
+<a href="de_p6.html">Vor</a>
+</body>
+</html>

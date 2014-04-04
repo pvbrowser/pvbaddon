@@ -1,0 +1,63 @@
+/*********************************************************************************************
+
+Definition
+CTM := CurrentTransformationMatrix
+t   := translate
+r   := rotate
+s   := scale
+
+Equotiation
+CTM = t(cx,cy)*r(a)*t(-cx,-cy)*t(x0,y0)*s(sx)
+
+      |1 0 cx| |cos(a) -sin(a) 0| |1 0 -cx| |1 0 x0| |sx 0  0|
+CTM = |0 1 cy|*|sin(a)  cos(a) 0|*|0 1 -cy|*|0 1 y0|*|0  sx 0|                            # OK
+      |0 0 1 | |  0       0    1| |0 0  1 | |0 0 1 | |0  0  1|
+
+      |1 0 cx| |cos(a) -sin(a) 0| |1 0 -cx| |sx 0  x0|
+CTM = |0 1 cy|*|sin(a)  cos(a) 0|*|0 1 -cy|*|0  sx y0|                                    # OK
+      |0 0 1 | |  0       0    1| |0 0  1 | |0  0  1 |
+
+      |1 0 cx| |cos(a) -sin(a) 0| |sx 0  x0-cx|
+CTM = |0 1 cy|*|sin(a)  cos(a) 0|*|0  sx y0-cy|                                           # OK
+      |0 0 1 | |  0       0    1| |0  0  1    |
+
+      |1 0 cx| |sx*cos(a) -sx*sin(a) (x0-cx)*cos(a)-(y0-cy)*sin(a)|
+CTM = |0 1 cy|*|sx*sin(a)  sx*cos(a) (x0-cx)*sin(a)+(y0-cy)*cos(a)|                       # OK
+      |0 0 1 | |  0          0                        1           |
+
+      |sx*cos(a) -sx*sin(a) (x0-cx)*cos(a)-(y0-cy)*sin(a)+cx|
+CTM = |sx*sin(a)  sx*cos(a) (x0-cx)*sin(a)+(y0-cy)*cos(a)+cy|                             # OK
+      |  0          0                     1                 |
+
+Check
+with sx = 1 and a,x0,y0,cx,cy = 0
+
+      |1 0 0|
+CTM = |0 1 0|                                                                             # OK
+      |0 0 1|
+
+|x'|         |x|   |sx*cos(a)*x-sx*sin(a)*y+(x0-cx)*cos(a)-(y0-cy)*sin(a)+cx|   |1*x-0*y|
+|y'| = CTM * |y| = |sx*sin(a)*x+sx*cos(a)*y+(x0-cx)*sin(a)+(y0-cy)*cos(a)+cy| = |0*x+1*y| # OK
+|0 |         |0|   |                       0                                |   |   0   |
+
+**********************************************************************************************/
+
+typedef struct
+{
+  rlSvgAnimator svgAnimator;
+  float sx, a, x0, y0, cx, cy;
+}DATA;
+
+
+static void setMatrix(DATA *d, const char *object, float sx, float alpha, float x0, float y0, float cx, float cy)
+{
+  float a,b,c,d,e,f;
+
+  a = sx*cos(alpha);
+  b = sx*sin(alpha);
+  c = (x0 - cx)*cos(alpha);
+  d = (x0 - cx)*sin(alpha);
+  e = (x0 - cx)*cos(alpha) + (y0 - cy)*sin(alpha) + cx;
+  f = (x0 - cx)*sin(alpha) + (y0 - cy)*cos(alpha) + cy;
+  d->svgAnimator.svgPrintf(object,"transform=","matrix(%f,%f,%f,%f,%f,%f)",a,b,c,d,e,f);
+}

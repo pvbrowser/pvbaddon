@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   version="1.0"
+   width="32"
+   height="320"
+   viewBox="0 0 32 320"
+   id="svg2443"
+   xml:space="preserve">
+<defs
+   id="defs2445"><linearGradient
+   id="linearGradient2509"><stop
+     id="stop2511"
+     style="stop-color:#ffffff;stop-opacity:1"
+     offset="0" /><stop
+     id="stop2513"
+     style="stop-color:#ffffff;stop-opacity:0"
+     offset="1" /></linearGradient>
+<linearGradient
+   x1="0.64257026"
+   y1="170.92369"
+   x2="18.634539"
+   y2="170.92369"
+   id="linearGradient2515"
+   xlink:href="#linearGradient2509"
+   gradientUnits="userSpaceOnUse" /></defs>
+<linearGradient
+   x1="-102.5"
+   y1="-902.70172"
+   x2="-70.5"
+   y2="-902.70172"
+   id="SVGID_1_"
+   gradientUnits="userSpaceOnUse"
+   gradientTransform="matrix(1,0,0,-13.4266,102.5,-11960.211)">
+	<stop
+   id="stop2448"
+   style="stop-color:#002b00;stop-opacity:1"
+   offset="0" />
+	<stop
+   id="stop2450"
+   style="stop-color:#193b00;stop-opacity:1"
+   offset="0.19220001" />
+	<stop
+   id="stop2452"
+   style="stop-color:#405500;stop-opacity:1"
+   offset="0.54650003" />
+	<stop
+   id="stop2454"
+   style="stop-color:#596500;stop-opacity:1"
+   offset="0.82810003" />
+	<stop
+   id="stop2456"
+   style="stop-color:#626b00;stop-opacity:1"
+   offset="1" />
+</linearGradient>
+<rect
+   width="32"
+   height="320"
+   x="0"
+   y="0"
+   id="rect2458"
+   style="fill:url(#SVGID_1_)" />
+<rect
+   width="15"
+   height="320"
+   x="0"
+   y="0"
+   id="rect2460"
+   style="opacity:0.8;fill:url(#linearGradient2515);fill-opacity:1" />
+<rect
+   width="32"
+   height="1"
+   x="0"
+   y="0"
+   id="rect2462" />
+<linearGradient
+   x1="-102.5"
+   y1="-121.5"
+   x2="-71.5"
+   y2="-121.5"
+   id="SVGID_2_"
+   gradientUnits="userSpaceOnUse"
+   gradientTransform="matrix(1,0,0,-1,102.5,198)">
+	<stop
+   id="stop2465"
+   style="stop-color:#000000;stop-opacity:1"
+   offset="0" />
+	<stop
+   id="stop2467"
+   style="stop-color:#4f4f4f;stop-opacity:1"
+   offset="0.3901" />
+</linearGradient>
+<rect
+   width="31"
+   height="1"
+   x="0"
+   y="319"
+   id="rect2469"
+   style="fill:url(#SVGID_2_)" />
+<linearGradient
+   x1="-38.776402"
+   y1="87.224602"
+   x2="281.2236"
+   y2="87.224602"
+   id="SVGID_3_"
+   gradientUnits="userSpaceOnUse"
+   gradientTransform="matrix(0,1,1,0,-55.7246,38.7764)">
+	<stop
+   id="stop2472"
+   style="stop-color:#000000;stop-opacity:1"
+   offset="0" />
+	<stop
+   id="stop2474"
+   style="stop-color:#4f4f4f;stop-opacity:1"
+   offset="0.3901" />
+</linearGradient>
+<rect
+   width="1"
+   height="320"
+   x="31"
+   y="0"
+   id="rect2476"
+   style="fill:url(#SVGID_3_)" />
+</svg>

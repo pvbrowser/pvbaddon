@@ -1,0 +1,4 @@
+#!/bin/bash
+export PRJ=$(ls *.pro)
+qmake $PRJ
+make $1

@@ -1,0 +1,18 @@
+digraph state_machine_klo {
+    
+  rankdir=TD;
+  size="8,5"
+  node [shape = circle, id="PV.Start",  style=filled, fillcolor=grey]; Start;
+  node [shape = circle, id="PV.Spülen", style=filled, fillcolor=grey]; Spülen;
+  node [shape = circle, id="PV.Leer",   style=filled, fillcolor=grey]; Leer;
+  node [shape = circle, id="PV.Füllen", style=filled, fillcolor=grey]; Füllen;
+  node [shape = circle, id="PV.Voll",   style=filled, fillcolor=grey]; Voll;
+  Start -> Spülen  [ label = "Spülung betätigt",       id="PV.Start2Spülen"  ];
+  Spülen -> Leer   [ label = "Schwimmer ist unten",    id="PV.Spülen2Leer"   ];
+  Leer -> Füllen   [ label = "Spülung nicht betätigt", id="PV.Leer2Füllen"   ];
+  Füllen -> Voll   [ label = "Schwimmer ist oben",     id="PV.Füllen2Voll"   ];
+  Voll -> Start    [ label = "immer",                  id="PV.Voll2Start"    ];
+  Füllen -> Spülen [ label = "Spülung betätigt",       id="PV.Füllen2Spülen" ];
+  
+}
+

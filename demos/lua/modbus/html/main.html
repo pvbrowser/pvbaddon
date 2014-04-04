@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="Generator" content="Kate, the KDE Advanced Text Editor" />
+<title>main.lua</title>
+</head>
+<body>
+<pre style='font-weight:bold;color:#bf0303;background-color:#ffffff;'>
+<i><span style='color:#888786;'>-------------------------------------------------------------------------------------</span></i>
+<i><span style='color:#888786;'>-- pvserver in lua     run: pvslua -port=5050 -cd=/your/directory/with/your/lua/code</span></i>
+<i><span style='color:#888786;'>-------------------------------------------------------------------------------------</span></i>
+<span style='color:#5555ff;'>trace</span><span style='color:#141312;'> </span><span style='color:#006e28;'>=</span><span style='color:#141312;'> </span><span style='color:#b08000;'>1</span><span style='color:#141312;'>              </span><i><span style='color:#888786;'>-- here you may put variables global for all your masks</span></i>
+<i><span style='color:#888786;'>-- declare the data acquisition class for connecting to modbus</span></i>
+<i><span style='color:#888786;'>-- this class communicates with the modus_daemon via a shared memeory and a mailbox</span></i>
+<i><span style='color:#888786;'>--                                                Mailbox                         Shared Memory  ShmSize  </span></i>
+<span style='color:#5555ff;'>mb</span><span style='color:#141312;'> </span><span style='color:#006e28;'>=</span><span style='color:#141312;'> </span><span style='color:#5555ff;'>rllib</span><span style='color:#006e28;'>.</span><span style='color:#141312;'>rlDataAcquisition</span><span style='color:#006e28;'>(</span>&quot;/srv/automation/mbx/modbus1.mbx&quot;<span style='color:#141312;'>,</span>&quot;/srv/automation/shm/modbus1.shm&quot;<span style='color:#141312;'>,</span><span style='color:#b08000;'>65536</span><span style='color:#006e28;'>)</span>
+
+<span style='color:#5555ff;'>qtdb</span><span style='color:#141312;'> </span><span style='color:#006e28;'>=</span><span style='color:#141312;'> </span><span style='color:#5555ff;'>pv</span><span style='color:#006e28;'>.</span><span style='color:#141312;'>qtDatabase</span><span style='color:#006e28;'>()</span><span style='color:#141312;'> </span><i><span style='color:#888786;'>-- declare a Qt Database</span></i>
+
+<span style='color:#644a9b;'>dofile</span><span style='color:#006e28;'>(</span>&quot;mask1.lua&quot;<span style='color:#006e28;'>)</span><span style='color:#141312;'>    </span><i><span style='color:#888786;'>-- include your masks here</span></i>
+
+<i><span style='color:#888786;'>-------------------------------------------------------------------------------------</span></i>
+<b><span style='color:#141312;'>function</span></b><span style='color:#141312;'> luaMain</span><span style='color:#006e28;'>(</span><span style='color:#5555ff;'>ptr</span><span style='color:#006e28;'>)</span><span style='color:#141312;'>  </span><i><span style='color:#888786;'>-- pvserver Lua Main Program</span></i>
+
+<span style='color:#141312;'>  </span><span style='color:#5555ff;'>p</span><span style='color:#141312;'> </span><span style='color:#006e28;'>=</span><span style='color:#141312;'> </span><span style='color:#5555ff;'>pv</span><span style='color:#006e28;'>.</span><span style='color:#141312;'>getParam</span><span style='color:#006e28;'>(</span><span style='color:#5555ff;'>ptr</span><span style='color:#006e28;'>)</span><span style='color:#141312;'> </span><i><span style='color:#888786;'>-- get the PARAM structure</span></i>
+
+<span style='color:#141312;'>  </span><span style='color:#5555ff;'>pv</span><span style='color:#006e28;'>.</span><span style='color:#141312;'>pvSetCaption</span><span style='color:#006e28;'>(</span><span style='color:#5555ff;'>p</span><span style='color:#141312;'>,</span><span style='color:#644a9b;'>string.format</span><span style='color:#006e28;'>(</span>&quot;Hello Modbus from Lua pvserver %3.1f&quot;<span style='color:#141312;'>,</span><span style='color:#b08000;'>0.1</span><span style='color:#006e28;'>))</span>
+<span style='color:#141312;'>  </span><span style='color:#5555ff;'>pv</span><span style='color:#006e28;'>.</span><span style='color:#141312;'>pvResize</span><span style='color:#006e28;'>(</span><span style='color:#5555ff;'>p</span><span style='color:#141312;'>,</span><span style='color:#b08000;'>0</span><span style='color:#141312;'>,</span><span style='color:#b08000;'>1280</span><span style='color:#141312;'>,</span><span style='color:#b08000;'>1024</span><span style='color:#006e28;'>)</span>
+<span style='color:#141312;'>  </span><span style='color:#5555ff;'>pv</span><span style='color:#006e28;'>.</span><span style='color:#141312;'>pvGetInitialMask</span><span style='color:#006e28;'>(</span><span style='color:#5555ff;'>p</span><span style='color:#006e28;'>)</span>
+<span style='color:#141312;'>  </span><span style='color:#644a9b;'>print</span><span style='color:#006e28;'>(</span>&quot;Inital mask = &quot;<span style='color:#141312;'>, </span><span style='color:#5555ff;'>p</span><span style='color:#006e28;'>.</span><span style='color:#5555ff;'>initial_mask</span><span style='color:#006e28;'>)</span>
+
+<span style='color:#141312;'>  </span><i><span style='color:#888786;'>-- open the database</span></i>
+<span style='color:#141312;'>  </span><span style='color:#5555ff;'>ret</span><span style='color:#141312;'> </span><span style='color:#006e28;'>=</span><span style='color:#141312;'> </span><span style='color:#5555ff;'>qtdb</span><span style='color:#006e28;'>.</span><span style='color:#141312;'>open</span><span style='color:#006e28;'>(</span><span style='color:#5555ff;'>qtdb</span><span style='color:#141312;'>,</span>&quot;QMYSQL&quot;<span style='color:#141312;'>,</span>&quot;localhost&quot;<span style='color:#141312;'>,</span>&quot;information_schema&quot;<span style='color:#141312;'>,</span>&quot;&quot;<span style='color:#141312;'>,</span>&quot;&quot;<span style='color:#006e28;'>)</span>
+<span style='color:#141312;'>  </span><span style='color:#644a9b;'>print</span><span style='color:#006e28;'>(</span>&quot;qtdb.open() ret=&quot;<span style='color:#141312;'>, </span><span style='color:#5555ff;'>ret</span><span style='color:#006e28;'>)</span>
+
+<span style='color:#141312;'>  </span><span style='color:#644a9b;'>print</span><span style='color:#006e28;'>(</span><span style='color:#644a9b;'>string.format</span><span style='color:#006e28;'>(</span>&quot;Shared Memory %s: key=%x (hex) id=%d (dec)&quot;<span style='color:#141312;'>,</span>&quot;/srv/automation/shm/modbus1.shm&quot;<span style='color:#141312;'>,</span>
+<span style='color:#141312;'>                      </span><span style='color:#5555ff;'>mb</span><span style='color:#006e28;'>.</span><span style='color:#141312;'>shmKey</span><span style='color:#006e28;'>(</span><span style='color:#5555ff;'>mb</span><span style='color:#006e28;'>)</span><span style='color:#141312;'>, </span><span style='color:#5555ff;'>mb</span><span style='color:#006e28;'>.</span><span style='color:#141312;'>shmId</span><span style='color:#006e28;'>(</span><span style='color:#5555ff;'>mb</span><span style='color:#006e28;'>)))</span>
+
+<span style='color:#141312;'>  </span><i><span style='color:#888786;'>-- show the masks</span></i>
+<span style='color:#141312;'>  </span><span style='color:#5555ff;'>ret</span><span style='color:#141312;'> </span><span style='color:#006e28;'>=</span><span style='color:#141312;'> </span><span style='color:#b08000;'>1</span>
+<span style='color:#141312;'>  </span><span style='color:#a1a100;'>while</span><span style='color:#141312;'> </span><span style='color:#b08000;'>1</span><span style='color:#141312;'> </span><span style='color:#a1a100;'>do</span><span style='color:#141312;'>           </span><i><span style='color:#888786;'>-- show your masks</span></i>
+<span style='color:#141312;'>    </span><span style='color:#a1a100;'>if</span><span style='color:#141312;'>     </span><span style='color:#006e28;'>(</span><span style='color:#5555ff;'>ret</span><span style='color:#006e28;'>==</span><span style='color:#b08000;'>1</span><span style='color:#006e28;'>)</span><span style='color:#141312;'> </span><span style='color:#a1a100;'>then</span>
+<span style='color:#141312;'>      </span><span style='color:#5555ff;'>ret</span><span style='color:#141312;'> </span><span style='color:#006e28;'>=</span><span style='color:#141312;'> showMask1</span><span style='color:#006e28;'>(</span><span style='color:#5555ff;'>p</span><span style='color:#006e28;'>)</span>
+<span style='color:#141312;'>    </span><span style='color:#a1a100;'>else</span>
+<span style='color:#141312;'>      </span><span style='color:#5555ff;'>ret</span><span style='color:#141312;'> </span><span style='color:#006e28;'>=</span><span style='color:#141312;'> </span><span style='color:#b08000;'>1</span>
+<span style='color:#141312;'>    </span><span style='color:#a1a100;'>end</span>
+<span style='color:#141312;'>  </span><span style='color:#a1a100;'>end</span>
+
+<span style='color:#141312;'>  </span><span style='color:#5555ff;'>pv</span><span style='color:#006e28;'>.</span><span style='color:#141312;'>pvThreadFatal</span><span style='color:#006e28;'>(</span><span style='color:#5555ff;'>p</span><span style='color:#141312;'>,</span>&quot;Lua calling ThreadFatal&quot;<span style='color:#006e28;'>)</span>
+<span style='color:#141312;'>  </span><span style='color:#a1a100;'>return</span><span style='color:#141312;'> </span><span style='color:#b08000;'>0</span>
+
+<span style='color:#a1a100;'>end</span>
+</pre>
+</body>
+</html>

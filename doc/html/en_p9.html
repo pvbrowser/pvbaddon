@@ -1,0 +1,54 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+
+<head>
+  <title>pvbaddon (c) pvbrowser 2008</title>
+  <link rel="stylesheet" type="text/css" href="format.css">
+  <meta name="GENERATOR" content="generator by R. Lehrig">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+</head>
+<body>
+pvbrowser addon
+<hr>
+<a href="en_p8.html">Back</a>
+<a href="en_index.html">Home</a>
+<a href="en_p10.html">Forward</a>
+<hr>
+<!-- begin content -->
+<h2>eibnet_client</h2>
+<p>
+config.ini
+</p>
+<div style='clear:left; background:#DEDEDE;'><pre>
+# ini file for eibnet_client (EIBnet/KNX)
+#
+# DEBUG     := 1 | 0
+# DEBUG_EIB := 1 | 0
+# WATCH_EIB := 1 | 0
+# SHARED_MEMORY_SIZE must be equal to SHARED_MEMORY_SIZE of pvserver
+# MAX_NAME_LENGTH is maximum length of variable name in shared memory 
+#
+
+[GLOBAL]
+DEBUG=0
+DEBUG_EIB=0
+WATCH_EIB=1
+
+[SOCKET]
+GATEWAY_IP=192.168.1.102
+CLIENT_IP=192.168.1.35
+
+[RLLIB]
+MAX_NAME_LENGTH=12
+SHARED_MEMORY=/srv/automation/shm/eibnet1.shm
+SHARED_MEMORY_SIZE=65536
+MAILBOX=/srv/automation/mbx/eibnet1.mbx
+</pre></div>
+
+<!-- end content -->
+<hr style='clear:left;'>
+<a href="en_p8.html">Back</a>
+<a href="en_index.html">Home</a>
+<a href="en_p10.html">Forward</a>
+</body>
+</html>

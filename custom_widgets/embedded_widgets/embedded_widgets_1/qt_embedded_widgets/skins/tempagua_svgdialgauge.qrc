@@ -1,0 +1,8 @@
+<!DOCTYPE RCC><RCC version="1.0">
+<qresource>
+    <file>svgdialgauge/TempAgua/background.svg</file>
+    <file>svgdialgauge/TempAgua/needle_shadow.svg</file>
+    <file>svgdialgauge/TempAgua/needle.svg</file>
+    <file>svgdialgauge/TempAgua/overlay.svg</file>
+</qresource>
+</RCC>

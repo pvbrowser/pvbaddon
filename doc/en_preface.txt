@@ -1,0 +1,16 @@
+
+h1=Additional programs for pvbrowser
+
+This software is intendet as addon to pvbrowser.
+
+It contains:
+
+pre=begin
+-daemons          - bindings for PLC and fieldbus systems
+-demos            - programming pvbrowser
+-pcontrol         - a pvserver for central Event Log and control of background processes
+-project_template - template for your own projects
+-foreign          - software from other projects used in here
+-doc              - this documentation
+pre=end
+

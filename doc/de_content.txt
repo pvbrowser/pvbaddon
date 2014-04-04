@@ -1,0 +1,389 @@
+
+h1=Compilieren und Installieren
+
+Die Verzeichnisse enthalten bereits die ausführbaren Programme.
+Falls Sie aber selbst Compilieren wollen, können Sie das tun.
+
+pre=begin
+Linux und Macintosh:
+
+./configure
+make clean
+make
+make install
+
+Windows:
+
+all_build.bat
+pre=end
+
+h1=Daemonen zur Anbindung von SPS und Feldbussystemen
+
+Die Daemonen (Hintergrundprogramme) ermöglichen es Ihnen SPS und Feldbussysteme an pvbrowser anzubinden.
+Jeder Daemon hat Zugriff auf ein Shared Memory und auf eine Mailbox.
+Die empfangenen Daten werden in dem Shared Memory gespeichert.
+Ihr pvserver kann dann einfach auf diese Daten zugreifen.
+Über die Mailbox können Daten an die Feldgeräte gesendet werden.
+
+Benutzung der Daemonen:
+
+pre=begin
+./protokoll_client config.ini
+pre=end
+
+In der ini Datei werden alle notwendigen Parameter für die Kommunikation angegeben.
+Ein pvs Beispiel für jeden Daemon ist ebenfalls verfügbar.
+
+h2=modbus_client
+
+config.ini
+
+pre=begin
+# ini file for modbus_client
+#
+# USE_SOCKET := 1 | 0  # if 0 then USE_TTY
+# DEBUG      := 1 | 0
+# BAUDRATE   := 300    |
+#               600    |
+#               1200   |
+#               1800   |
+#               2400   |
+#               4800   |
+#               9600   |
+#               19200  |
+#               38400  |
+#               57600  |
+#               115200
+# PARITY     := NONE | ODD | EVEN
+# CYCLE<N>   := <count>,<name>
+# name       := coilStatus(slave,adr)       | 
+#               inputStatus(slave,adr)      |
+#               holdingRegisters(slave,adr) |
+#               inputRegisters(slave,adr)
+# CYCLETIME in milliseconds
+# SHARED_MEMORY_SIZE must be equal to SHARED_MEMORY_SIZE of pvserver
+# MAX_NAME_LENGTH is maximum length of variable name in shared memory 
+#
+
+[GLOBAL]
+USE_SOCKET=0
+DEBUG=1
+CYCLETIME=1000
+
+[SOCKET]
+IP=192.168.1.110
+PORT=5050
+
+[TTY]
+DEVICENAME=/dev/ttyUSB0
+BAUDRATE=9600
+RTSCTS=1
+PARITY=NONE
+
+[RLLIB]
+MAX_NAME_LENGTH=30
+SHARED_MEMORY=/srv/automation/shm/modbus1.shm
+SHARED_MEMORY_SIZE=65536
+MAILBOX=/srv/automation/mbx/modbus1.mbx
+
+[CYCLES]
+NUM_CYCLES=4
+CYCLE1=10,inputStatus(1,0)
+CYCLE2=8,coilStatus(1,0)
+CYCLE3=2,holdingRegisters(1,0)
+CYCLE4=2,inputRegisters(1,0)
+pre=end
+
+h2=siemenstcp_client
+
+config.ini
+
+pre=begin
+# ini file for siemenstcp_client
+#
+# DEBUG       := 1 | 0
+# SLAVE<N>    := IP,PLC_TYPE,FETCH_WRITE
+# PLC_TYPE    := S7_200 | S7_300 | S7_400 | S5
+# FETCH_WRITE := 1 | 0 # default 1
+# CYCLE<N>    := <count>,<name>
+# name        := byte<ORG>(slave,dbnum,adr)   | 
+#                float<ORG>(slave,dbnum,adr)  |
+#                dword<ORG>(slave,dbnum,adr)  |
+#                short<ORG>(slave,dbnum,adr)  |
+#                udword<ORG>(slave,dbnum,adr) |
+#                ushort<ORG>(slave,dbnum,adr)
+# ORG         := ORG_DB | ORG_M | ORG_E | ORG_A | ORG_PEPA | ORG_Z | ORG_T
+# HAVETO_SWAP := 1 | 0 # must be 1 on intel machines
+# CYCLETIME in milliseconds
+# SHARED_MEMORY_SIZE must be equal to SHARED_MEMORY_SIZE of pvserver
+# MAX_NAME_LENGTH is maximum length of variable name in shared memory 
+#
+
+[GLOBAL]
+DEBUG=1
+CYCLETIME=1000
+HAVETO_SWAP=1
+
+[SOCKET]
+NUM_SLAVES=2
+SLAVE1=192.168.1.110,S7_200
+SLAVE2=192.168.1.35,S7_200,0
+
+[RLLIB]
+MAX_NAME_LENGTH=30
+SHARED_MEMORY=/srv/automation/shm/siemenstcp1.shm
+SHARED_MEMORY_SIZE=65536
+MAILBOX=/srv/automation/mbx/siemenstcp1.mbx
+
+[CYCLES]
+NUM_CYCLES=2
+CYCLE1=10,byteORG_M(1,0,0)
+CYCLE2=1,byteORG_M(2,2,3)
+pre=end
+
+h2=siemensppi_client
+
+config.ini
+
+pre=begin
+# ini file for siemensppi_client
+#
+# DEBUG      := 1 | 0
+# BAUDRATE   := 300    |
+#               600    |
+#               1200   |
+#               1800   |
+#               2400   |
+#               4800   |
+#               9600   |
+#               19200  |
+#               38400  |
+#               57600  |
+#               115200
+# CYCLE<N>   := <count>,<name>
+# name       := sd(slave,dbnum,start_adr)      |
+#               inputs(slave,dbnum,start_adr)  |
+#               outputs(slave,dbnum,start_adr) |
+#               flags(slave,dbnum,start_adr)   |
+#               db(slave,dbnum,start_adr)      |
+#               di(slave,dbnum,start_adr)      |
+#               local(slave,dbnum,start_adr)   |
+#               v(slave,dbnum,start_adr)       |
+#               counter(slave,dbnum,start_adr) |
+#               timer(slave,dbnum,start_adr)
+# CYCLETIME in milliseconds
+# SHARED_MEMORY_SIZE must be equal to SHARED_MEMORY_SIZE of pvserver
+# MAX_NAME_LENGTH is maximum length of variable name in shared memory 
+#
+
+[GLOBAL]
+DEBUG=1
+CYCLETIME=1000
+
+[TTY]
+DEVICENAME=/dev/ttyUSB0
+BAUDRATE=9600
+
+[RLLIB]
+MAX_NAME_LENGTH=30
+SHARED_MEMORY=/srv/automation/shm/siemensppi1.shm
+SHARED_MEMORY_SIZE=65536
+MAILBOX=/srv/automation/mbx/siemensppi1.mbx
+
+[CYCLES]
+NUM_CYCLES=2
+CYCLE1=10,db(2,1,0)
+CYCLE2=1,db(2,1,10)
+pre=end
+
+h2=ethernetip_client
+
+config.ini
+
+pre=begin
+# ini file for ethernetip_client
+#
+# PLC_TYPE := PLC5 | SLC500 | LGX
+# CHANNEL  := Channel_A | Channel_B
+# CYCLE<N> := <count>,<name>
+# CYCLETIME in milliseconds
+# SHARED_MEMORY_SIZE must be equal to SHARED_MEMORY_SIZE of pvserver
+# MAX_NAME_LENGTH is maximum length of variable name in shared memory 
+#
+
+[GLOBAL]
+USE_CONNECT_OVER_CNET=1
+TNS=1234
+DEBUG=1
+CYCLETIME=1000
+IP=192.168.1.115
+
+[ConnectPLCOverCNET]
+PLC_TYPE=SLC500
+CONNECTION_ID=0x12345678
+CONNECTION_SERIAL_NUMBER=0x6789
+REQUEST_PACKET_INTERVAL=5000
+PATH=1,0
+
+[ConnectPLCOverDHP]
+PLC_TYPE=PLC5
+TARGET_TO_ORIGINATOR_ID=0x12345678
+CONNECTION_SERIAL_NUMBER=0x6789
+CHANNEL=Channel_B
+PATH=1,1,2,2,1,3
+
+[RLLIB]
+MAX_NAME_LENGTH=8
+SHARED_MEMORY=/srv/automation/shm/ethernetip1.shm
+SHARED_MEMORY_SIZE=65536
+MAILBOX=/srv/automation/mbx/ethernetip1.mbx
+
+[CYCLES]
+NUM_CYCLES=2
+CYCLE1=8,H7:0
+CYCLE2=8,H7:2
+pre=end
+
+
+h2=eibnet_client
+
+config.ini
+
+pre=begin
+# ini file for eibnet_client (EIBnet/KNX)
+#
+# DEBUG     := 1 | 0
+# DEBUG_EIB := 1 | 0
+# WATCH_EIB := 1 | 0
+# SHARED_MEMORY_SIZE must be equal to SHARED_MEMORY_SIZE of pvserver
+# MAX_NAME_LENGTH is maximum length of variable name in shared memory 
+#
+
+[GLOBAL]
+DEBUG=0
+DEBUG_EIB=0
+WATCH_EIB=1
+
+[SOCKET]
+GATEWAY_IP=192.168.1.102
+CLIENT_IP=192.168.1.35
+
+[RLLIB]
+MAX_NAME_LENGTH=12
+SHARED_MEMORY=/srv/automation/shm/eibnet1.shm
+SHARED_MEMORY_SIZE=65536
+MAILBOX=/srv/automation/mbx/eibnet1.mbx
+pre=end
+
+
+h2=opcxmlda_client
+
+Der OPC XML-DA client wird mit einer config.itemlist parametriert.
+Zur Funktionsweise von opcxmlda_client geben Sie bitte
+
+./opcxmlda_client -help
+
+ein.
+
+config.itemlist
+
+pre=begin
+#
+Level1/DS_Devicename
+Level1/DS_DeviceID
+Level1/DeviceType
+Level1/DS_Vendorname
+Level1/ProfileID
+Level1/SW_Rev
+Level1/HW_Rev
+Level1/Ser_Num
+Level1/Descriptor
+Level1/Dev_Instal_Date
+Level1/Dev_Message
+Level1/Out
+Level1/Hi_Lim
+Level1/Lo_LIM
+#
+Level2/DS_Devicename
+Level2/DS_DeviceID
+Level2/DeviceType
+Level2/DS_Vendorname
+Level2/ProfileID
+Level2/SW_Rev
+Level2/HW_Rev
+Level2/Ser_Num
+Level2/Descriptor
+Level2/Dev_Instal_Date
+Level2/Dev_Message
+Level2/Out
+Level2/Target
+#
+Pump1/DS_Devicename
+Pump1/DS_DeviceID
+Pump1/DeviceType
+Pump1/DS_Vendorname
+Pump1/ProfileID
+Pump1/SW_Rev
+Pump1/HW_Rev
+Pump1/Ser_Num
+Pump1/Descriptor
+Pump1/Dev_Instal_Date
+Pump1/Dev_Message
+Pump1/ThroughPut
+Pump1/Revolutions
+Pump1/Capacity
+Pump1/Gain
+#
+Pump2/DS_Devicename
+Pump2/DS_DeviceID
+Pump2/DeviceType
+Pump2/DS_Vendorname
+Pump2/ProfileID
+Pump2/SW_Rev
+Pump2/HW_Rev
+Pump2/Ser_Num
+Pump2/Descriptor
+Pump2/Dev_Instal_Date
+Pump2/Dev_Message
+Pump2/ThroughPut
+Pump2/Revolutions
+Pump2/Capacity
+Pump2/Gain
+#
+test/Int16
+test/Int32
+test/float
+test/double
+test/string
+pre=end
+
+h1=project_template
+
+Dieses Verzeichnis enthält den Ausgangspunkt für Ihre eigenen Projekte.
+Kopieren Sie das Verzeichnis und legen darin Ihr neues Projekt an.
+
+In dem Projekt können Sie mit
+
+pre=begin
+./configure
+make clean
+make
+pre=end
+
+arbeiten.
+
+Sie können das Projekt dann ausliefern und vor Ort in project_template/tools
+mit "./update_pvbrowser.sh" die neusete Version von pvbrowser installieren.
+
+h1=pcontrol
+
+Dieses Verzeichnis enthält einen pvserver, der ein zentrales Event Log und eine Kontrolle Ihrer Hintergrundprozesse ermöglicht.
+
+Gehen Sie in das Verzeichnis und probieren den pvserver aus.
+Mit "./client" können Sie Event Log Botschaften erzeugen.
+Sehen Sie sich dazu auch client.cpp an.
+Sie sehen darin, wie Sie Event Logs in Ihren eigenen Programmen einbauen können.
+
+Lesen Sie auch README.txt in dem Verzeichnis.
+
+

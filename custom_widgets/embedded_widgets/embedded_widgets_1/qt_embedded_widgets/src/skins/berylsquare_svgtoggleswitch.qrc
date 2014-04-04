@@ -1,0 +1,6 @@
+<!DOCTYPE RCC><RCC version="1.0">
+<qresource>
+    <file>svgtoggleswitch/BerylSquare/on.svg</file>
+    <file>svgtoggleswitch/BerylSquare/off.svg</file>
+</qresource>
+</RCC>

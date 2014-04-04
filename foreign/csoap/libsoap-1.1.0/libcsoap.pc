@@ -1,0 +1,11 @@
+prefix=/usr/local
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+
+Name: csoap
+Description: C API for SOAP applications
+Version: @csoap_version_dotted@
+Libs: -L${libdir} -lcsoap-1.1 -lnanohttp-1.1 -lxml2 -lz -lm
+Cflags: -I/usr/include/libxml2 -I${includedir}/libcsoap-1.1 -I${includedir}/nanohttp-1.1
+

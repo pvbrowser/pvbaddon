@@ -1,0 +1,71 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+
+<head>
+  <title>pvbaddon (c) pvbrowser 2008</title>
+  <link rel="stylesheet" type="text/css" href="format.css">
+  <meta name="GENERATOR" content="generator by R. Lehrig">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+</head>
+<body>
+pvbrowser addon
+<hr>
+<a href="de_p5.html">Zur&uuml;ck</a>
+<a href="de_index.html">Inhalt</a>
+<a href="de_p7.html">Vor</a>
+<hr>
+<!-- begin content -->
+<h2>siemenstcp_client</h2>
+<p>
+config.ini
+</p>
+<div style='clear:left; background:#DEDEDE;'><pre>
+# ini file for siemenstcp_client
+#
+# DEBUG       := 1 | 0
+# SLAVE&#060;N&#062;    := IP,PLC_TYPE,FETCH_WRITE
+# PLC_TYPE    := S7_200 | S7_300 | S7_400 | S5
+# FETCH_WRITE := 1 | 0 # default 1
+# CYCLE&#060;N&#062;    := &#060;count&#062;,&#060;name&#062;
+# name        := byte&#060;ORG&#062;(slave,dbnum,adr)   | 
+#                float&#060;ORG&#062;(slave,dbnum,adr)  |
+#                dword&#060;ORG&#062;(slave,dbnum,adr)  |
+#                short&#060;ORG&#062;(slave,dbnum,adr)  |
+#                udword&#060;ORG&#062;(slave,dbnum,adr) |
+#                ushort&#060;ORG&#062;(slave,dbnum,adr)
+# ORG         := ORG_DB | ORG_M | ORG_E | ORG_A | ORG_PEPA | ORG_Z | ORG_T
+# HAVETO_SWAP := 1 | 0 # must be 1 on intel machines
+# CYCLETIME in milliseconds
+# SHARED_MEMORY_SIZE must be equal to SHARED_MEMORY_SIZE of pvserver
+# MAX_NAME_LENGTH is maximum length of variable name in shared memory 
+#
+
+[GLOBAL]
+DEBUG=1
+CYCLETIME=1000
+HAVETO_SWAP=1
+
+[SOCKET]
+NUM_SLAVES=2
+SLAVE1=192.168.1.110,S7_200
+SLAVE2=192.168.1.35,S7_200,0
+
+[RLLIB]
+MAX_NAME_LENGTH=30
+SHARED_MEMORY=/srv/automation/shm/siemenstcp1.shm
+SHARED_MEMORY_SIZE=65536
+MAILBOX=/srv/automation/mbx/siemenstcp1.mbx
+
+[CYCLES]
+NUM_CYCLES=2
+CYCLE1=10,byteORG_M(1,0,0)
+CYCLE2=1,byteORG_M(2,2,3)
+</pre></div>
+
+<!-- end content -->
+<hr style='clear:left;'>
+<a href="de_p5.html">Zur&uuml;ck</a>
+<a href="de_index.html">Inhalt</a>
+<a href="de_p7.html">Vor</a>
+</body>
+</html>

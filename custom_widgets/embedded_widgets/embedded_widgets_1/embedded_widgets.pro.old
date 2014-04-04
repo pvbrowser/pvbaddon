@@ -1,0 +1,66 @@
+#-------------------------------------------------
+#
+# Project created by QtCreator 2012-04-23T22:20:20
+#
+#-------------------------------------------------
+
+QT       += svg
+
+TARGET = embedded_widgets
+TEMPLATE = lib
+
+DEFINES += EMBEDDED_WIDGETS_LIBRARY
+
+SOURCES += mywidget.cpp
+
+HEADERS += mywidget.h\
+        embedded_widgets_global.h
+
+symbian {
+    MMP_RULES += EXPORTUNFROZEN
+    TARGET.UID3 = 0xE638212D
+    TARGET.CAPABILITY = 
+    TARGET.EPOCALLOWDLLDATA = 1
+    addFiles.sources = embedded_widgets.dll
+    addFiles.path = !:/sys/bin
+    DEPLOYMENT += addFiles
+}
+
+unix:!symbian {
+    maemo5 {
+        target.path = /opt/usr/lib
+    } else {
+        target.path = /usr/lib
+    }
+    INSTALLS += target
+}
+
+include(./qt_embedded_widgets/src/common/common.pri)
+include(./qt_embedded_widgets/src/5waybutton/5waybutton.pri)
+include(./qt_embedded_widgets/src/basicgraph/basicgraph.pri)
+include(./qt_embedded_widgets/src/multislider/multislider.pri)
+include(./qt_embedded_widgets/src/scrolldial/scrolldial.pri)
+# omit scrollwheel, it's already included in scrolldial.pri
+include(./qt_embedded_widgets/src/svgbutton/svgbutton.pri)
+include(./qt_embedded_widgets/src/svgdialgauge/svgdialgauge.pri)
+include(./qt_embedded_widgets/src/svgslideswitch/svgslideswitch.pri)
+include(./qt_embedded_widgets/src/svgtoggleswitch/svgtoggleswitch.pri)
+
+
+RESOURCES += \
+    ./qt_embedded_widgets/skins/thermometer_svgdialgauge.qrc \
+    ./qt_embedded_widgets/skins/tachometer_svgdialgauge.qrc \
+    ./qt_embedded_widgets/skins/amperemeter_svgdialgauge.qrc \
+    ./qt_embedded_widgets/skins/beryl_5waybutton.qrc \
+    ./qt_embedded_widgets/skins/beryl_multislider.qrc \
+    ./qt_embedded_widgets/skins/beryl_svgslideswitch.qrc \
+    ./qt_embedded_widgets/skins/beryl_svgbutton.qrc \
+    ./qt_embedded_widgets/skins/beryl_svgtoggleswitch.qrc \
+    ./qt_embedded_widgets/skins/berylsquare_svgtoggleswitch.qrc \
+    ./qt_embedded_widgets/skins/berylsquare_svgbutton.qrc \
+    ./qt_embedded_widgets/skins/beryl_scrollwheel.qrc \
+    ./qt_embedded_widgets/skins/beryl_scrolldial.qrc \
+    ./qt_embedded_widgets/skins/metallicbrush_svgbutton.qrc \
+    ./qt_embedded_widgets/skins/metallicbrush_svgslideswitch.qrc \
+    ./qt_embedded_widgets/skins/tempagua_svgdialgauge.qrc
+

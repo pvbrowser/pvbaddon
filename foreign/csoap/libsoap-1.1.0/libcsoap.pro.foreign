@@ -1,0 +1,38 @@
+TEMPLATE = lib
+CONFIG  += warn_on release staticlib
+
+SOURCES += libcsoap/soap-router.c \
+libcsoap/soap-ctx.c \
+libcsoap/soap-service.c \
+libcsoap/soap-server.c \
+libcsoap/soap-fault.c \
+libcsoap/soap-client.c \
+libcsoap/soap-admin.c \
+libcsoap/soap-env.c \
+libcsoap/soap-xml.c \
+nanohttp/nanohttp-mime.c \
+nanohttp/nanohttp-stream.c \
+nanohttp/nanohttp-client.c \
+nanohttp/nanohttp-base64.c \
+nanohttp/nanohttp-logging.c \
+nanohttp/nanohttp-response.c \
+nanohttp/nanohttp-socket.c \
+nanohttp/nanohttp-ssl.c \
+nanohttp/nanohttp-request.c \
+nanohttp/nanohttp-common.c \
+nanohttp/nanohttp-server.c
+#utils/hashtable.c \
+#utils/alloc.c \
+
+unix:DEFINES       += HAVE_CONFIG_H
+win32:DEFINES      += WIN32
+INCLUDEPATH        += .
+win32:INCLUDEPATH  += win32/MinGW
+INCLUDEPATH        += nanohttp
+INCLUDEPATH        += libcsoap
+win32:INCLUDEPATH  += win32/include
+win32:INCLUDEPATH  += ..\..\libxml2\include
+#unix:INCLUDEPATH   += /usr/include/libxml2/include
+
+TARGET = soap
+

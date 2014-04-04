@@ -1,0 +1,72 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+
+<head>
+  <title>pvbaddon (c) pvbrowser 2008</title>
+  <link rel="stylesheet" type="text/css" href="format.css">
+  <meta name="GENERATOR" content="generator by R. Lehrig">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+</head>
+<body>
+pvbrowser addon
+<hr>
+<a href="en_p7.html">Back</a>
+<a href="en_index.html">Home</a>
+<a href="en_p9.html">Forward</a>
+<hr>
+<!-- begin content -->
+<h2>ethernetip_client</h2>
+<p>
+config.ini
+</p>
+<div style='clear:left; background:#DEDEDE;'><pre>
+# ini file for ethernetip_client
+#
+# PLC_TYPE := PLC5 | SLC500 | LGX
+# CHANNEL  := Channel_A | Channel_B
+# CYCLE&#060;N&#062; := &#060;count&#062;,&#060;name&#062;
+# CYCLETIME in milliseconds
+# SHARED_MEMORY_SIZE must be equal to SHARED_MEMORY_SIZE of pvserver
+# MAX_NAME_LENGTH is maximum length of variable name in shared memory 
+#
+
+[GLOBAL]
+USE_CONNECT_OVER_CNET=1
+TNS=1234
+DEBUG=1
+CYCLETIME=1000
+IP=192.168.1.115
+
+[ConnectPLCOverCNET]
+PLC_TYPE=SLC500
+CONNECTION_ID=0x12345678
+CONNECTION_SERIAL_NUMBER=0x6789
+REQUEST_PACKET_INTERVAL=5000
+PATH=1,0
+
+[ConnectPLCOverDHP]
+PLC_TYPE=PLC5
+TARGET_TO_ORIGINATOR_ID=0x12345678
+CONNECTION_SERIAL_NUMBER=0x6789
+CHANNEL=Channel_B
+PATH=1,1,2,2,1,3
+
+[RLLIB]
+MAX_NAME_LENGTH=8
+SHARED_MEMORY=/srv/automation/shm/ethernetip1.shm
+SHARED_MEMORY_SIZE=65536
+MAILBOX=/srv/automation/mbx/ethernetip1.mbx
+
+[CYCLES]
+NUM_CYCLES=2
+CYCLE1=8,H7:0
+CYCLE2=8,H7:2
+</pre></div>
+
+<!-- end content -->
+<hr style='clear:left;'>
+<a href="en_p7.html">Back</a>
+<a href="en_index.html">Home</a>
+<a href="en_p9.html">Forward</a>
+</body>
+</html>

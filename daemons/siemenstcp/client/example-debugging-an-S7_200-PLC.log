@@ -1,0 +1,148 @@
+##############################################
+I used this ini file and tested with a S7_200
+##############################################
+
+# ini file for siemenstcp_client
+#
+# DEBUG       := 1 | 0
+# SLAVE<N>    := IP,PLC_TYPE,FETCH_WRITE,FUNCTION,RACK_SLOT
+# PLC_TYPE    := S7_200 | S7_300 | S7_400 | S5
+# FETCH_WRITE := 1 | 0 # default 1
+# FUNCTION    := optional parameter for PLC (1=PG,2=OP,3=Step7Basic)
+# RACK_SLOT   := optional parameter for PLC  Byte(upper_3_bit_is_rack / lower_5_bit_is_slot)
+# CYCLE<N>    := <count>,<name>
+# name        := byte<ORG>(slave,dbnum,adr)   | 
+#                float<ORG>(slave,dbnum,adr)  |
+#                dword<ORG>(slave,dbnum,adr)  |
+#                short<ORG>(slave,dbnum,adr)  |
+#                udword<ORG>(slave,dbnum,adr) |
+#                ushort<ORG>(slave,dbnum,adr)
+# ORG         := ORG_DB | ORG_M | ORG_E | ORG_A | ORG_PEPA | ORG_Z | ORG_T
+# HAVETO_SWAP := 1 | 0 # must be 1 on intel machines
+# CYCLETIME in milliseconds
+# SHARED_MEMORY_SIZE must be equal to SHARED_MEMORY_SIZE of pvserver
+# MAX_NAME_LENGTH is maximum length of variable name in shared memory 
+#
+
+[GLOBAL]
+DEBUG=1
+CYCLETIME=1000
+HAVETO_SWAP=1
+
+[SOCKET]
+NUM_SLAVES=1
+SLAVE1=192.168.1.101,S7_200,0
+#SLAVE2=192.168.1.35,S7_200,0,1,2
+
+[RLLIB]
+MAX_NAME_LENGTH=30
+SHARED_MEMORY=/srv/automation/shm/siemenstcp1.shm
+SHARED_MEMORY_SIZE=65536
+MAILBOX=/srv/automation/mbx/siemenstcp1.mbx
+
+[CYCLES]
+NUM_CYCLES=4
+CYCLE1=10,byteORG_M(1,0,0)
+CYCLE2=4,byteORG_E(1,0,0)
+CYCLE3=4,byteORG_A(1,0,0)
+CYCLE4=4,byteORG_DB(1,1,0)
+#CYCLE2=1,byteORG_M(2,2,3)
+
+######################################
+This is the debugging log
+Everything is OK
+######################################
+./siemenstcp_client starting with debug=1 cycletime=1000 haveto_swap=1
+init slaves ... num_slaves=1
+slave_array[0] = new rlSiemensTCP("192.168.1.101",1,0,-1,-1)
+write connect_block
+read ih ret=4
+read buf length=22
+read buf ret=18
+write connect_block2
+read2 ih ret=4
+read2 buf length=27
+read2 buf ret=23
+connect success
+rlSocket::isConnected()=1
+init cycles ... num_cycles=4
+CYCLE1 added: count=10 var=byteORG_M org=2 dbnum=0 adr=0
+CYCLE2 added: count=4 var=byteORG_E org=3 dbnum=0 adr=0
+CYCLE3 added: count=4 var=byteORG_A org=4 dbnum=0 adr=0
+CYCLE4 added: count=4 var=byteORG_DB org=1 dbnum=1 adr=0
+max_name_length=30
+shared_memory_size=65536
+init success
+openSiemens
+siemensCycle: var=byteORG_M : slave=1 org=2 dbnum=0 start_adr=0 len=10
+fetch:starting org=2 dbnr=0 start_adr=0 len=10
+write_iso() len=27
+02,f0,80,32,01,00,00,00,00,00,0e,00,00,04,01,12,0a,10,02,00,0a,00,00,83,00,00,00,
+mailboxReadThread: starting
+read_iso() len=31
+02,f0,80,32,03,00,00,00,00,00,02,00,0e,00,00,04,01,ff,04,00,50,00,00,00,00,00,00,00,00,00,00,
+fetch:success len_byte=10
+write byte byteORG_M(0,0,0)=0 to shared memory
+write byte byteORG_M(0,0,1)=0 to shared memory
+write byte byteORG_M(0,0,2)=0 to shared memory
+write byte byteORG_M(0,0,3)=0 to shared memory
+write byte byteORG_M(0,0,4)=0 to shared memory
+write byte byteORG_M(0,0,5)=0 to shared memory
+write byte byteORG_M(0,0,6)=0 to shared memory
+write byte byteORG_M(0,0,7)=0 to shared memory
+write byte byteORG_M(0,0,8)=0 to shared memory
+write byte byteORG_M(0,0,9)=0 to shared memory
+siemensCycle: var=byteORG_E : slave=1 org=3 dbnum=0 start_adr=0 len=4
+fetch:starting org=3 dbnr=0 start_adr=0 len=4
+write_iso() len=27
+02,f0,80,32,01,00,00,00,00,00,0e,00,00,04,01,12,0a,10,02,00,04,00,00,81,00,00,00,
+read_iso() len=25
+02,f0,80,32,03,00,00,00,00,00,02,00,08,00,00,04,01,ff,04,00,20,da,00,00,00,
+fetch:success len_byte=4
+write byte byteORG_E(0,0,0)=218 to shared memory
+write byte byteORG_E(0,0,1)=0 to shared memory
+write byte byteORG_E(0,0,2)=0 to shared memory
+write byte byteORG_E(0,0,3)=0 to shared memory
+siemensCycle: var=byteORG_A : slave=1 org=4 dbnum=0 start_adr=0 len=4
+fetch:starting org=4 dbnr=0 start_adr=0 len=4
+write_iso() len=27
+02,f0,80,32,01,00,00,00,00,00,0e,00,00,04,01,12,0a,10,02,00,04,00,00,82,00,00,00,
+read_iso() len=25
+02,f0,80,32,03,00,00,00,00,00,02,00,08,00,00,04,01,ff,04,00,20,02,00,00,00,
+fetch:success len_byte=4
+write byte byteORG_A(0,0,0)=2 to shared memory
+write byte byteORG_A(0,0,1)=0 to shared memory
+write byte byteORG_A(0,0,2)=0 to shared memory
+write byte byteORG_A(0,0,3)=0 to shared memory
+siemensCycle: var=byteORG_DB : slave=1 org=1 dbnum=1 start_adr=0 len=4
+fetch:starting org=1 dbnr=1 start_adr=0 len=4
+write_iso() len=27
+02,f0,80,32,01,00,00,00,00,00,0e,00,00,04,01,12,0a,10,02,00,04,00,01,84,00,00,00,
+read_iso() len=25
+02,f0,80,32,03,00,00,00,00,00,02,00,08,00,00,04,01,ff,04,00,20,43,50,32,34,
+fetch:success len_byte=4
+write byte byteORG_DB(0,1,0)=67 to shared memory
+write byte byteORG_DB(0,1,1)=80 to shared memory
+write byte byteORG_DB(0,1,2)=50 to shared memory
+write byte byteORG_DB(0,1,3)=52 to shared memory
+siemensCycle: var=byteORG_M : slave=1 org=2 dbnum=0 start_adr=0 len=10
+fetch:starting org=2 dbnr=0 start_adr=0 len=10
+write_iso() len=27
+02,f0,80,32,01,00,00,00,00,00,0e,00,00,04,01,12,0a,10,02,00,0a,00,00,83,00,00,00,
+read_iso() len=31
+02,f0,80,32,03,00,00,00,00,00,02,00,0e,00,00,04,01,ff,04,00,50,00,00,00,00,00,00,00,00,00,00,
+fetch:success len_byte=10
+write byte byteORG_M(0,0,0)=0 to shared memory
+write byte byteORG_M(0,0,1)=0 to shared memory
+write byte byteORG_M(0,0,2)=0 to shared memory
+write byte byteORG_M(0,0,3)=0 to shared memory
+write byte byteORG_M(0,0,4)=0 to shared memory
+write byte byteORG_M(0,0,5)=0 to shared memory
+write byte byteORG_M(0,0,6)=0 to shared memory
+write byte byteORG_M(0,0,7)=0 to shared memory
+write byte byteORG_M(0,0,8)=0 to shared memory
+write byte byteORG_M(0,0,9)=0 to shared memory
+siemensCycle: var=byteORG_E : slave=1 org=3 dbnum=0 start_adr=0 len=4
+fetch:starting org=3 dbnr=0 start_adr=0 len=4
+write_iso() len=27
+02,f0,80,32,01,00,00,00,00,

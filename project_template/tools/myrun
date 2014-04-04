@@ -1,0 +1,6 @@
+#!/bin/bash
+export PVS=$(find . -name "*" -type f -perm -u+x)
+export PRJ=$(ls *.pro)
+xterm -e "qmake $PRJ &&
+          make       &&
+          ${PVS} ${1} ${2} ${3} ${4} ${5} ${6} ${7} ${8} ${9} " & 

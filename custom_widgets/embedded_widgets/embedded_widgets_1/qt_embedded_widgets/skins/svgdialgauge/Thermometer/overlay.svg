@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   version="1.0"
+   width="330"
+   height="330"
+   viewBox="0 0 330 330"
+   id="svg2"
+   xml:space="preserve">
+<defs
+   id="defs4"><linearGradient
+   id="linearGradient2407"><stop
+     id="stop2409"
+     style="stop-color:#ffffff;stop-opacity:1"
+     offset="0" /><stop
+     id="stop2411"
+     style="stop-color:#ffffff;stop-opacity:0"
+     offset="1" /></linearGradient>
+<linearGradient
+   x1="94.759033"
+   y1="51.024097"
+   x2="161.68675"
+   y2="166.22749"
+   id="linearGradient2413"
+   xlink:href="#linearGradient2407"
+   gradientUnits="userSpaceOnUse" /></defs>
+<linearGradient
+   x1="-22.896999"
+   y1="128.3965"
+   x2="85.7304"
+   y2="19.7691"
+   id="SVGID_1_"
+   gradientUnits="userSpaceOnUse"
+   gradientTransform="matrix(1,0,0,-1,102.5,208)">
+	<stop
+   id="stop7"
+   style="stop-color:#f2f2f2;stop-opacity:1"
+   offset="0" />
+	<stop
+   id="stop9"
+   style="stop-color:#808080;stop-opacity:1"
+   offset="1" />
+</linearGradient>
+
+<linearGradient
+   x1="-20.580601"
+   y1="126.0815"
+   x2="84.474503"
+   y2="21.0264"
+   id="SVGID_2_"
+   gradientUnits="userSpaceOnUse"
+   gradientTransform="matrix(1,0,0,-1,102.5,208)">
+	<stop
+   id="stop14"
+   style="stop-color:#e6e6e6;stop-opacity:1"
+   offset="0" />
+	<stop
+   id="stop16"
+   style="stop-color:#bfbfbf;stop-opacity:1"
+   offset="1" />
+</linearGradient>
+
+<linearGradient
+   x1="34.768101"
+   y1="70.709999"
+   x2="60.232601"
+   y2="45.2878"
+   id="SVGID_3_"
+   gradientUnits="userSpaceOnUse"
+   gradientTransform="matrix(1,0,0,-1,102.5,208)">
+	<stop
+   id="stop21"
+   style="stop-color:#b3b3b3;stop-opacity:1"
+   offset="0" />
+	<stop
+   id="stop23"
+   style="stop-color:#000000;stop-opacity:1"
+   offset="1" />
+</linearGradient>
+<path
+   d="M 150.002,168.001 C 140.077,168.001 132.002,159.926 132.002,150 C 132.002,140.075 140.078,132 150.002,132 C 159.926,132 168,140.076 168,150 C 168,159.926 159.927,168.001 150.002,168.001 L 150.002,168.001 z"
+   id="path25"
+   style="fill:url(#SVGID_3_)" />
+<circle
+   cx="150.00101"
+   cy="150.00101"
+   r="16"
+   id="circle27"
+   style="fill:#1a1a1a" />
+<path
+   d="M 235.333,65.292 C 240.109,70.086 242.337,82.976 200.337,101.976 C 167.983,116.613 180.636,139.245 147.337,151.976 C 131.068,158.197 101.716,147.465 79.337,156.976 C 39.337,173.976 30.337,165.105 30.337,150.001 C 30.337,83.726 84.061,30.001 150.337,30.001 C 183.547,30.001 213.605,43.492 235.333,65.292 z"
+   id="path29"
+   style="opacity:0.8;fill:url(#linearGradient2413);fill-opacity:1" />
+</svg>

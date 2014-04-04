@@ -1,0 +1,26 @@
+This demo shows howto make a simple EIB/KNX visualization using EIBnet/IP.
+
+The sourcecode of this demo is complete for simple visualizations.
+You only have to adjust some parameters within pvapp.h
+The rest is specified within the graphical designer.
+
+For example you can insert a TabWidget in order to arrange several views.
+On top of the TabWidget you can insert images of the building you want to
+visualize.
+Now you may add Buttons on top of the image or whereever you want.
+The properties "toolTip" and "whatsThis" are used to specify the
+EIBnet/IP access.
+For a Button (On/Off) you simply input the EIBadr into the "toolTip"
+property.
+
+For displaying values you might use Labels or LCDnumbers.
+For this you input the EIBadr into the "toolTip" and set "whatsThis"
+to "s" || "s2" || "s3" || "s4" || "u" || "u2" || "u3" || "u4"
+depending on if you want to output signed or unsigned values.
+The number specifies the size of the value in bytes. 
+
+Thus you don't need to code ANSI-C for simple visualizations.
+But you can extend your visualization if you know a little bit ANSI-C.
+
+How this demo was coded is shown on the following pages.
+

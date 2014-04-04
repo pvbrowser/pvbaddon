@@ -1,0 +1,12 @@
+INPUT(
+./debug\main.o
+./debug\mask9.o
+./debug\mask8.o
+./debug\mask7.o
+./debug\mask6.o
+./debug\mask5.o
+./debug\mask4.o
+./debug\mask3.o
+./debug\mask2.o
+./debug\mask1.o
+);

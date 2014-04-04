@@ -1,0 +1,10 @@
+digraph g{
+  Opened[label="1\nOpened\nE: open door"];
+  Closed[label="2\nClosed\nE: closed door"];
+  node[shape=plaintext];
+
+  Opened -> close_door[arrowhead=none];
+  close_door -> Closed;
+  Opened -> open_door[dir=back];
+  open_door -> Closed[arrowhead=none];
+}

@@ -1,0 +1,4 @@
+#!/bin/bash
+rm -r win/temp/*
+shell/mkbuild.sh
+cp shell/Makefile .

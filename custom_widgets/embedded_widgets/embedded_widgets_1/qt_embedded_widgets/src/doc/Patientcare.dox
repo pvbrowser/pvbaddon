@@ -1,0 +1,33 @@
+/*! \mainpage Patientcare Demo
+
+The Patientcare demo shows the interaction between some of the embedded widgets. A fictional device shows the plot of the heart frequency of a patient. By giving a medication, the user can alter the heart frequency of the patient. A range of valid heart frequency can be given and the application warns when the frequency is out of range.
+
+\image html patientcare.png Screenshot of the patientcare application.
+
+\section widgets Widgets
+
+The following widgets of the library are being used as part of the Patiencare demo: 
+- \ref tech_buttons
+  - \ref tech_qtsvgslideswitch
+- \ref tech_advanced
+  - \ref tech_qt5waybutton
+  - \ref tech_qtmultislider
+  - \ref tech_qtscrolldial
+  - \ref tech_qtbasicgraph
+
+The general concepts of the widget implementations are documented in 
+\ref tech_page and in the API documentation.
+
+\section implementation Implementation of Patientcare example
+
+The patientcare example has been styled by applying <a href="http://doc.trolltech.com/4.4/stylesheet.html">Cascading Style Sheets</a> to <a href="http://doc.trolltech.com/4.4/qgroupbox.html">QGroupBoxes</a> and other widgets.
+
+The data for the QtPlotWidget is provided by a SignalGenerator that populates a <a href="http://doc.trolltech.com/4.4/qstandarditemmodel.html">QStandardItemModel</a>. It generates a heart curve based on the given medication.
+
+The HeartRangeHandler sets a viewport according to the zoom settings given by the \ref tech_qt5waybutton.
+
+The PatientCareController adjusts the colors of the leds based on the fact wether the heart range and medication is in range.
+
+
+
+*/

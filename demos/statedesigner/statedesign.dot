@@ -1,0 +1,9 @@
+digraph state_machine_2 {
+  rankdir=LR;
+  size="8,5"
+  node [shape = doublecircle, id="start" ]; stStart;
+  node [shape = doublecircle, id="finish" ]; stFinish;
+  node [shape = circle, id="process" ]; stProcess;
+  stStart   -> stProcess [ label = "SS(startup)",  id=start2process ];
+  stProcess -> stFinish  [ label = "SS(shutdown)", id=process2finish ];
+}

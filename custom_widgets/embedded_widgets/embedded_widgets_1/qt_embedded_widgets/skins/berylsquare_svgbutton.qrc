@@ -1,0 +1,7 @@
+<!DOCTYPE RCC><RCC version="1.0">
+<qresource>
+    <file>svgbutton/BerylSquare/normal.svg</file>
+    <file>svgbutton/BerylSquare/pressed.svg</file>
+    <file>svgbutton/BerylSquare/hovered.svg</file>
+</qresource>
+</RCC>

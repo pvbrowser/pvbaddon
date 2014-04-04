@@ -1,0 +1,18 @@
+digraph state_machine_klo {
+    
+  rankdir=TD;
+  size="8,5"
+  node [shape = circle, id="PV.Start",  style=filled, fillcolor=grey]; Start;
+  node [shape = circle, id="PV.Spülen", style=filled, fillcolor=grey]; Flushing;
+  node [shape = circle, id="PV.Leer",   style=filled, fillcolor=grey]; Empty;
+  node [shape = circle, id="PV.Füllen", style=filled, fillcolor=grey]; Filling;
+  node [shape = circle, id="PV.Voll",   style=filled, fillcolor=grey]; Full;
+  Start -> Flushing  [ label = "Flush operated",       id="PV.Start2Spülen"  ];
+  Flushing -> Empty   [ label = "Floater on bottom",    id="PV.Spülen2Leer"   ];
+  Empty -> Filling   [ label = "Flush not operated", id="PV.Leer2Füllen"   ];
+  Filling -> Full   [ label = "Floater on top",     id="PV.Füllen2Voll"   ];
+  Full -> Start    [ label = "always",                  id="PV.Voll2Start"    ];
+  Filling -> Flushing [ label = "Flush operated",       id="PV.Füllen2Spülen" ];
+  
+}
+

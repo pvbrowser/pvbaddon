@@ -1,0 +1,7 @@
+<!DOCTYPE RCC><RCC version="1.0">
+<qresource>
+    <file>svgbutton/MetallicBrush/normal.svg</file>
+    <file>svgbutton/MetallicBrush/pressed.svg</file>
+    <file>svgbutton/MetallicBrush/hovered.svg</file>
+</qresource>
+</RCC>

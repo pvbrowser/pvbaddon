@@ -1,0 +1,22 @@
+CREATE libsoap.a
+ADDMOD soap-router.o
+ADDMOD soap-ctx.o
+ADDMOD soap-service.o
+ADDMOD soap-server.o
+ADDMOD soap-fault.o
+ADDMOD soap-client.o
+ADDMOD soap-admin.o
+ADDMOD soap-env.o
+ADDMOD soap-xml.o
+ADDMOD nanohttp-mime.o
+ADDMOD nanohttp-stream.o
+ADDMOD nanohttp-client.o
+ADDMOD nanohttp-base64.o
+ADDMOD nanohttp-logging.o
+ADDMOD nanohttp-response.o
+ADDMOD nanohttp-socket.o
+ADDMOD nanohttp-ssl.o
+ADDMOD nanohttp-request.o
+ADDMOD nanohttp-common.o
+ADDMOD nanohttp-server.o
+SAVE

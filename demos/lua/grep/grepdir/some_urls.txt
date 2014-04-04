@@ -1,0 +1,45 @@
+pv://pvbrowser.org this our demo pvserver
+http://pvbrowser.org
+http://pvbrowser.org/pvbrowser/sf/manual/rllib/html/classes.html
+http://pvbrowser.org/pvbrowser/sf/manual/html/modules.html
+trolltech qtsoftware http://doc.qt.nokia.com
+http://tldp.org/HOWTO/NCURSES-Programming-HOWTO/
+http://en.wikibooks.org/wiki/LaTeX/Packages/Listings
+http://www.weinelt.de/latex/
+http://lefti.amigager.de/latex/
+http://www.cppreference.com/wiki/
+http://de.selfhtml.org/
+http://www.selfphp.de/
+http://dev.mysql.com/doc/refman/5.0/en/c.html
+http://maemo.org/development/
+http://google.de/
+http://maps.google.de/
+http://altavista.de
+http://www.copypastecode.com/
+http://paste.lisp.org/
+http://picpaste.com/
+http://www.opensuse.org/de/
+Scenegraph http://de.wikipedia.org/wiki/Szenengraph
+http://www.searchtools.com/guide/index.html
+Skilifte Sauerland http://www.wintersport-arena.de/de/index.php
+http://www.enforex.com/spanisch/sprache/vokabeln.html
+OPC UA http://www.advosol.us/pc-28-4-ua-demo-server.aspx
+OPC UA http://www.opcconnect.com/uafree.php#freesrv
+OPC UA default: admin/password http://www.inductiveautomation.com/downloads/ignition
+OPC UA http://support.automation.siemens.com/WW/llisapi.dll?func=cslib.csinfo&lang=de&objid=42014088&caller=view
+OPC http://violin.qwer.tk/dusty/thesis/html/index.html
+OPC http://pyopc.sourceforge.net/docs/html/index.html
+https://computing.llnl.gov/linux/slurm/mc_support.html multi core support
+https://computing.llnl.gov/linux/slurm/quickstart.html multi core support
+http://webapp5.rrz.uni-hamburg.de/SuSe-Dokumentation/manual/sles-admin_de/manual/
+http://gimp-savvy.com/BOOK/
+http://tavmjong.free.fr/INKSCAPE/MANUAL/html/
+android qt http://code.google.com/p/android-lighthouse/
+android qt http://developer.android.com/index.html
+http://heavycoder.com/tutorials/lua_embed.php
+lua http://www.debian-administration.org/articles/264
+http://lua-users.org/wiki/SampleCode
+http://www.lua.org/manual/5.1/manual.html
+http://lua.gts-stolberg.de/string.php
+something from the local files pv://pvbrowser.org (demo server) http://pvbrowser.org (web page)
+

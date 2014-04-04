@@ -1,0 +1,15 @@
+[check]
+QMAKE_CACHE_VERSION = 1.03a
+QMAKE_ABSOLUTE_SOURCE_PATH = 
+MOC_DIR = 
+UI_DIR = 
+UI_HEADERS_DIR = 
+UI_SOURCES_DIR = 
+[depend]
+main.cpp = pvapp.h
+pvapp.h = 
+[mocable]
+pvapp.h = *qmake_ignore*
+main.cpp = *qmake_ignore*
+center.cpp = *qmake_ignore*
+login.cpp = *qmake_ignore*

@@ -1,0 +1,8 @@
+<!DOCTYPE RCC><RCC version="1.0">
+<qresource>
+    <file>svgslideswitch/MetallicBrush/background_hover.svg</file>
+    <file>svgslideswitch/MetallicBrush/background.svg</file>
+    <file>svgslideswitch/MetallicBrush/knob_off.svg</file>
+    <file>svgslideswitch/MetallicBrush/knob_on.svg</file>
+</qresource>
+</RCC>

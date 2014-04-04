@@ -1,0 +1,63 @@
+This Embedded Widgets Demo License Agreement ("Agreement") is a legal agreement
+between Nokia Corporation ("Nokia"), with its registered office at
+Keilalahdentie 4, 02150 Espoo, Finland and you ("Licensee") for the widgets for
+touchscreen embedded development ("Embedded Widgets Demo").
+
+1.	OWNERSHIP
+
+The Embedded Widgets Demo is protected by copyright laws and international
+copyright treaties, as well as other intellectual property laws and treaties.
+The Embedded Widgets Demo is licensed, not sold.  
+
+2.	VALIDITY OF THE AGREEMENT
+
+By installing, copying, or otherwise using the Embedded Widgets Demo, Licensee
+agrees to be bound by the terms of this Agreement. If Licensee does not agree to
+the terms of this Agreement, Licensee may not install, copy, or otherwise use
+the Embedded Widgets Demo. Upon Licensee's acceptance of the terms and
+conditions of this Agreement, Nokia grants Licensee the right to use the
+Embedded Widgets Demo in the manner provided below.
+
+3.	LICENSES
+
+Nokia grants to Licensee a non-exclusive, non-transferable, perpetual license to
+use, modify, copy and distribute the Embedded Widgets Demo in conjunction with
+use and distribution of Qt� as licensed to Licensee by Nokia or one of its
+affiliates. 
+
+4.	NO WARRANTY
+
+EXCEPT AS SET FORTH ABOVE, THE EMBEDDED WIDGETS DEMO IS LICENSED TO LICENSEE "AS
+IS". TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, NOKIA ON BEHALF OF
+ITSELF AND ITS SUPPLIERS, DISCLAIMS ALL WARRANTIES AND CONDITIONS, EITHER
+EXPRESS OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, IMPLIED WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, TITLE AND NON-INFRINGEMENT
+WITH REGARD TO THE EMBEDDED WIDGETS DEMO.
+
+5.	LIMITATION OF LIABILITY 
+
+IF, NOKIA'S WARRANTY DISCLAIMER NOTWITHSTANDING, NOKIA IS HELD LIABLE TO
+LICENSEE, WHETHER IN CONTRACT, TORT OR ANY OTHER LEGAL THEORY, BASED ON THE
+EMBEDDED WIDGETS DEMO, NOKIA'S ENTIRE LIABILITY TO LICENSEE AND LICENSEE'S
+EXCLUSIVE REMEDY SHALL BE, AT NOKIA'S OPTION, EITHER (A) RETURN OF THE PRICE
+LICENSEE PAID FOR THE EMBEDDED WIDGETS DEMO, OR (B) REPAIR OR REPLACEMENT OF THE
+EMBEDDED WIDGETS DEMO, PROVIDED LICENSEE RETURNS TO NOKIA ALL COPIES OF THE
+EMBEDDED WIDGETS DEMO AS ORIGINALLY DELIVERED TO LICENSEE. NOKIA SHALL NOT UNDER
+ANY CIRCUMSTANCES BE LIABLE TO LICENSEE BASED ON FAILURE OF THE EMBEDDED WIDGETS
+DEMO IF THE FAILURE RESULTED FROM ACCIDENT, ABUSE OR MISAPPLICATION, NOR SHALL
+NOKIA UNDER ANY CIRCUMSTANCES BE LIABLE FOR SPECIAL DAMAGES, PUNITIVE OR
+EXEMPLARY DAMAGES, DAMAGES FOR LOSS OF PROFITS OR INTERRUPTION OF BUSINESS OR
+FOR LOSS OR CORRUPTION OF DATA. ANY AWARD OF DAMAGES FROM NOKIA TO LICENSEE
+SHALL NOT EXCEED THE TOTAL AMOUNT LICENSEE HAS PAID TO NOKIA IN CONNECTION WITH
+THIS AGREEMENT. 
+
+6.	GOVERNING LAW AND LEGAL VENUE
+
+This Agreement shall be construed and interpreted in accordance with the laws of
+Finland, excluding its choice of law provisions. Any disputes arising out of or
+relating to this Agreement shall be resolved in arbitration under the Rules of
+Arbitration of the Chamber of Commerce of Helsinki, Finland. The arbitration
+tribunal shall consist of one (1), or if either Party so requires, of three (3),
+arbitrators. The award shall be final and binding and enforceable in any court
+of competent jurisdiction. The arbitration shall be held in Helsinki, Finland
+and the process shall be conducted in the English language. 

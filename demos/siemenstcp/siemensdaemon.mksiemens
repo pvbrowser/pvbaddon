@@ -1,0 +1,13 @@
+################################################
+# Project file for generating siemens daemon   #
+# mksiemens name.mksiemens                     #
+################################################
+shared_memory=/srv/automation/shm/siemens.shm
+mailbox=/srv/automation/mbx/siemens.mbx
+# type := S7_200 | S7_300 | S7_400 | S5
+slave=0 adr=192.168.1.101 type=S7_200 fetch_write=0
+idletime=50 milliseconds
+#eventlog host=localhost port=6000
+# ORG := ORG_DB | ORG_M | ORG_E | ORG_A | ORG_PEPA | ORG_Z | ORG_T
+# cycle := slave + org + dbnum + start + len
+cycle1 slave=0 org=ORG_M dbnum=0 start=0 len=32

@@ -1,0 +1,90 @@
+<style type="text/css">
+  body {
+    color: black; background-color: white;
+    font-size: 100.01%;
+    font-family: Arial,Helvetica,sans-serif;
+    margin: 0; padding: 1em;
+    min-width: 41em; /* Mindestbreite verhindert Umbruch und Anzeigefehler in modernen Browsern */
+  }
+
+  div#Titel {
+    margin: 0 0 0.7em; padding: 0; 
+    background-color: #fff;
+    border: 1px ridge silver;
+    text-align: center;
+  }
+
+  div#Titel h1 {
+    font-size: 1.5em;
+    margin: 0.2em 0;
+  }
+
+  ul#Navigation {
+    font-size: 0.83em;
+    float: left; width: 12em;
+    margin: 0 0 1.2em; padding: 0;
+    border: 1px dashed silver;
+  }
+  ul#Navigation li {
+    list-style: none;
+    margin: 0; padding: 0.5em;
+  }
+  ul#Navigation a {
+    display: block;
+    padding: 0.2em;
+    font-weight: bold;
+  }
+  ul#Navigation a:link {
+    color: black; background-color: #eee;
+  }
+  ul#Navigation a:visited {
+    color: #666; background-color: #eee;
+  }
+  ul#Navigation a:hover {
+    color: black; background-color: white;
+  }
+  ul#Navigation a:active {
+    color: white; background-color: gray;
+  }
+
+  div#Info {
+    font-size: 0.9em;
+    float: right; width: 12em;
+    margin: 0 0 1.1em; padding: 0;
+    background-color: #eee; border: 0px dashed silver;
+  }
+  div#Info h2 {
+    font-size: 1.33em;
+    margin: 0.2em 0.5em;
+  }
+  div#Info p {
+    font-size: 1em;
+    margin: 0.5em;
+  }
+
+  div#Inhalt {
+    margin: 0 12em 1em 10em;
+    padding: 0 1em;
+    border: 0px dashed silver;
+  }
+  * html div#Inhalt {
+    height: 1em;  /* Workaround gegen den 3-Pixel-Bug des Internet Explorer bis Version 6 */
+  }
+  div#Inhalt h2 {
+    font-size: 1.2em;
+    margin: 0.2em 0;
+  }
+  div#Inhalt p {
+    font-size: 1em;
+    margin: 1em 0;
+  }
+
+  p#Fusszeile {
+    clear: both;
+    font-size: 0.9em;
+    margin: 0; padding: 0.1em;
+    text-align: center;
+    background-color: #eee; border: 1px solid silver;
+  }
+</style>
+

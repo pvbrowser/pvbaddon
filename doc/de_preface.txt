@@ -1,0 +1,16 @@
+
+h1=Zusatzprogramme für pvbrowser
+
+Diese Software ist als Zusatz für pvbrowser gedacht.
+
+Sie enthält:
+
+pre=begin
+-daemons          - Anbindung von SPS und Feldbussystemen
+-demos            - Programmierung von pvbrowser
+-pcontrol         - ein pvserver für ein zentrales Event Log und zur Kontrolle Ihrer Hintergrundprozesse
+-project_template - Vorlage zur Erstellung eigener pvbrowser Projekte
+-foreign          - Software von anderen Projekten, die hier verwendet wird
+-doc              - diese Dokumentation
+pre=end
+

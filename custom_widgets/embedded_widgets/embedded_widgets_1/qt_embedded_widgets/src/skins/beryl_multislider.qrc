@@ -1,0 +1,15 @@
+<!DOCTYPE RCC><RCC version="1.0">
+<qresource>
+    <file>multislider/Beryl/slider_min_hovered.svg</file>
+    <file>multislider/Beryl/slider_min_pressed.svg</file>
+    <file>multislider/Beryl/slider_min.svg</file>
+    <file>multislider/Beryl/slider_max_hovered.svg</file>
+    <file>multislider/Beryl/slider_max_pressed.svg</file>
+    <file>multislider/Beryl/slider_max.svg</file>
+    <file>multislider/Beryl/valuebar_bottom.svg</file>
+    <file>multislider/Beryl/valuebar_filled.svg</file>
+    <file>multislider/Beryl/valuebar.svg</file>
+    <file>multislider/Beryl/valuebar_top.svg</file>
+    <file>multislider/Beryl/groove.svg</file>
+</qresource>
+</RCC>

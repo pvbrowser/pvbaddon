@@ -1,0 +1,6 @@
+libnanohttp_la-nanohttp-base64.lo: nanohttp-base64.c ../config.h \
+ nanohttp-base64.h
+
+../config.h:
+
+nanohttp-base64.h:

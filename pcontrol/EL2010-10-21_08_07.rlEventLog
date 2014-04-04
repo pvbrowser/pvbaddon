@@ -1,0 +1,58 @@
+ERR 2010-10-21 08:07:07 0426 Alarm 1 /TEST/:alarm.cpp:57
+ERR 2010-10-21 08:07:07 0427 Alarm 2 i=1 /TEST/:alarm.cpp:86
+ERR 2010-10-21 08:07:07 0427 Alarm 3 f=1.234000 /TEST/:alarm.cpp:115
+INF 2010-10-21 08:07:10 0430 Ack alarm: Alarm 1 /TEST/:alarm.cpp:139
+INF 2010-10-21 08:07:12 0432 Ack alarm: Alarm 2 i=%d /TEST/:alarm.cpp:139
+INF 2010-10-21 08:07:14 0433 Ack alarm: Alarm 3 f=%f /TEST/:alarm.cpp:139
+ERR 2010-10-21 08:07:16 0435 Alarm 1 /TEST/:alarm.cpp:57
+ERR 2010-10-21 08:07:16 0436 Alarm 2 i=1 /TEST/:alarm.cpp:86
+ERR 2010-10-21 08:07:16 0436 Alarm 3 f=1.234000 /TEST/:alarm.cpp:115
+INF 2010-10-21 08:07:19 0438 Ack alarm: Alarm 1 /TEST/:alarm.cpp:139
+INF 2010-10-21 08:07:21 0439 Ack alarm: Alarm 2 i=%d /TEST/:alarm.cpp:139
+INF 2010-10-21 08:07:23 0441 Ack alarm: Alarm 3 f=%f /TEST/:alarm.cpp:139
+ERR 2010-10-21 08:07:25 0441 Alarm 1 /TEST/:alarm.cpp:57
+ERR 2010-10-21 08:07:25 0442 Alarm 2 i=1 /TEST/:alarm.cpp:86
+ERR 2010-10-21 08:07:25 0442 Alarm 3 f=1.234000 /TEST/:alarm.cpp:115
+INF 2010-10-21 08:07:28 0443 Ack alarm: Alarm 1 /TEST/:alarm.cpp:139
+INF 2010-10-21 08:07:30 0444 Ack alarm: Alarm 2 i=%d /TEST/:alarm.cpp:139
+INF 2010-10-21 08:07:32 0445 Ack alarm: Alarm 3 f=%f /TEST/:alarm.cpp:139
+ERR 2010-10-21 08:07:34 0446 Alarm 1 /TEST/:alarm.cpp:57
+ERR 2010-10-21 08:07:34 0446 Alarm 2 i=1 /TEST/:alarm.cpp:86
+ERR 2010-10-21 08:07:34 0446 Alarm 3 f=1.234000 /TEST/:alarm.cpp:115
+INF 2010-10-21 08:07:37 0448 Ack alarm: Alarm 1 /TEST/:alarm.cpp:139
+INF 2010-10-21 08:07:39 0449 Ack alarm: Alarm 2 i=%d /TEST/:alarm.cpp:139
+INF 2010-10-21 08:07:41 0451 Ack alarm: Alarm 3 f=%f /TEST/:alarm.cpp:139
+ERR 2010-10-21 08:07:43 0452 Alarm 1 /TEST/:alarm.cpp:57
+ERR 2010-10-21 08:07:43 0452 Alarm 2 i=1 /TEST/:alarm.cpp:86
+ERR 2010-10-21 08:07:43 0452 Alarm 3 f=1.234000 /TEST/:alarm.cpp:115
+INF 2010-10-21 08:07:46 0454 Ack alarm: Alarm 1 /TEST/:alarm.cpp:139
+INF 2010-10-21 08:07:48 0454 Ack alarm: Alarm 2 i=%d /TEST/:alarm.cpp:139
+INF 2010-10-21 08:07:50 0456 Ack alarm: Alarm 3 f=%f /TEST/:alarm.cpp:139
+ERR 2010-10-21 08:07:52 0458 Alarm 1 /TEST/:alarm.cpp:57
+ERR 2010-10-21 08:07:52 0458 Alarm 2 i=1 /TEST/:alarm.cpp:86
+ERR 2010-10-21 08:07:52 0458 Alarm 3 f=1.234000 /TEST/:alarm.cpp:115
+INF 2010-10-21 08:07:55 0459 Ack alarm: Alarm 1 /TEST/:alarm.cpp:139
+INF 2010-10-21 08:07:57 0459 Ack alarm: Alarm 2 i=%d /TEST/:alarm.cpp:139
+INF 2010-10-21 08:07:59 0461 Ack alarm: Alarm 3 f=%f /TEST/:alarm.cpp:139
+ERR 2010-10-21 08:08:01 0463 Alarm 1 /TEST/:alarm.cpp:57
+ERR 2010-10-21 08:08:01 0463 Alarm 2 i=1 /TEST/:alarm.cpp:86
+ERR 2010-10-21 08:08:01 0463 Alarm 3 f=1.234000 /TEST/:alarm.cpp:115
+INF 2010-10-21 08:08:04 0467 Ack alarm: Alarm 1 /TEST/:alarm.cpp:139
+INF 2010-10-21 08:08:06 0469 Ack alarm: Alarm 2 i=%d /TEST/:alarm.cpp:139
+INF 2010-10-21 08:08:08 0471 Ack alarm: Alarm 3 f=%f /TEST/:alarm.cpp:139
+ERR 2010-10-21 08:08:10 0472 Alarm 1 /TEST/:alarm.cpp:57
+ERR 2010-10-21 08:08:10 0472 Alarm 2 i=1 /TEST/:alarm.cpp:86
+ERR 2010-10-21 08:08:10 0472 Alarm 3 f=1.234000 /TEST/:alarm.cpp:115
+INF 2010-10-21 08:08:13 0475 Ack alarm: Alarm 1 /TEST/:alarm.cpp:139
+INF 2010-10-21 08:08:15 0475 Ack alarm: Alarm 2 i=%d /TEST/:alarm.cpp:139
+INF 2010-10-21 08:08:17 0478 Ack alarm: Alarm 3 f=%f /TEST/:alarm.cpp:139
+ERR 2010-10-21 08:08:19 0480 Alarm 1 /TEST/:alarm.cpp:57
+ERR 2010-10-21 08:08:19 0480 Alarm 2 i=1 /TEST/:alarm.cpp:86
+ERR 2010-10-21 08:08:19 0480 Alarm 3 f=1.234000 /TEST/:alarm.cpp:115
+INF 2010-10-21 08:08:22 0483 Ack alarm: Alarm 1 /TEST/:alarm.cpp:139
+INF 2010-10-21 08:08:24 0485 Ack alarm: Alarm 2 i=%d /TEST/:alarm.cpp:139
+INF 2010-10-21 08:08:26 0487 Ack alarm: Alarm 3 f=%f /TEST/:alarm.cpp:139
+ERR 2010-10-21 08:08:28 0487 Alarm 1 /TEST/:alarm.cpp:57
+ERR 2010-10-21 08:08:28 0487 Alarm 2 i=1 /TEST/:alarm.cpp:86
+ERR 2010-10-21 08:08:28 0487 Alarm 3 f=1.234000 /TEST/:alarm.cpp:115
+INF 2010-10-21 08:08:31 0490 Ack alarm: Alarm 1 /TEST/:alarm.cpp:139

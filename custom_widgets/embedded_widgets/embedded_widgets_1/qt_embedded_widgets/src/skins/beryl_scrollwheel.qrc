@@ -1,0 +1,7 @@
+<!DOCTYPE RCC><RCC version="1.0">
+<qresource>
+    <file>scrollwheel/Beryl/wheel_1.svg</file>
+    <file>scrollwheel/Beryl/wheel_2.svg</file>
+    <file>scrollwheel/Beryl/wheel_3.svg</file>
+</qresource>
+</RCC>

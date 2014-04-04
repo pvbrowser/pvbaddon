@@ -1,0 +1,4 @@
+State	PID	Name	Credit	Interval	Priority	StartupCommand	Input	Output	Error	TimeStartStop	InitialCredit
+Inactive	0	puzzle1	-1	0	0	sys$common:[sysexe]decw$puzzle.exe				2002-12-16 12:10:29 0870	-1
+Inactive	0	puzzle2	-1	0	0	sys$common:[sysexe]decw$puzzle.exe				2002-12-16 12:10:44 0860	-1
+Inactive	0	puzzle3	-1	0	0	sys$common:[sysexe]decw$puzzle.exe				2002-12-16 11:57:00 0480	-1

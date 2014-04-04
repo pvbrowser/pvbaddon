@@ -1,0 +1,328 @@
+/*! \page tech_page Technical concept 
+
+Overview
+- \ref tech_skins
+- \ref tech_buildsystem
+- \ref tech_widgets
+  - \ref tech_buttons
+    - \ref tech_qtsvgslideswitch
+    - \ref tech_qtsvgbutton
+    - \ref tech_qtsvgtoggleswitch
+  - \ref tech_gauges
+    - \ref tech_qtsvgdialgauge
+    - \ref tech_qtbasicdialgauge
+  - \ref tech_sliders
+    - \ref tech_qtscrollwheel
+    - \ref tech_qslider
+  - \ref tech_advanced
+    - \ref tech_qt5waybutton
+    - \ref tech_qtmultislider
+    - \ref tech_qtscrolldial
+    - \ref tech_qtbasicgraph
+
+\section tech_skins Skin System
+
+The skin system is designed to support switching the current skin of a
+widget at run-time. The steps required to include a skin into the build
+system are described in the section \ref tech_buildsystem. Every widget
+that is skinnable has a defined set of graphics. For instance, QtSvgButton
+uses the graphics named \e hovered, \e pressed and \e normal.
+
+Each skin has a unique name like e.g. \e Beryl. This skin name must be
+used in the source code to set a skin. The advantage of setting a skin for
+every widget explicitely is to support different skins simultaneously. For
+example, an application can have two instances of a QtSvgButton, one
+displayed in the skin \e Beryl and the other in skin \e BerylSquare. This
+way the skin is easily extensible by just adding new graphics and bundling
+them in one Qt resource file.
+
+A Qt resource file is an archive that includes several files. The files
+then can be accessed in all Qt classes when prefixed with a colon (read more
+about Qt's Resource System for further information). The skin system
+requires that the graphics are available as Scalable Vector Graphics (SVG)
+files.
+
+The widget implementations use QSvgRenderer to load and render SVG files.
+It is worth to note that QSvgRenderer supports all static features of
+SVG tiny 1.2 (see also the Qt SVG module).
+
+The folder structure of a resource file always looks similar to the one
+in QtSvgToggleSwitch, filename beryl_svgtoggleswitch.qrc:
+\code
+<!DOCTYPE RCC><RCC version="1.0">
+<qresource>
+    <file>svgtoggleswitch/Beryl/on.svg</file>
+    <file>svgtoggleswitch/Beryl/off.svg</file>
+</qresource>
+</RCC>
+\endcode
+The general naming spec looks like this:
+\code
+<widget-name>/<skin-name>/<file-name>.svg
+\endcode
+Skins can be created with the following steps
+# create a Qt resource file, e.g. beryl_svgtoggleswitch.qrc with similar content as shown above
+# creating the svg graphic files in the correct folder structure and SVG file name.
+The file names are described in the widget sections below.
+
+\section tech_buildsystem Build System
+
+All skins are available in the folder \e skins. Details about the skin system
+can be found in the section \ref tech_skins.
+
+The widgets themselves are available in the folder \e src. An example
+of how to integrate the widgets can be found in the folder \e examples.
+There are two projects, \e Catalog and \e PatientCare. The widgets are
+included in the qmake files (.pro files) which is shown in this examaple:
+\code
+# include pri file with source code
+include(../../src/5waybutton/5waybutton.pri)
+
+# add resource file with SVG graphics
+RESOURCES += ../../skins/beryl_5waybutton.qrc
+\endcode
+Now the project includes the needed files to use Qt5WayButton in the code:
+\code
+#include <Qt5WayButton>
+
+// later in the code
+Qt5WayButton* button = new Qt5WayButton(this);
+button->setSkin("Beryl");
+\endcode
+
+\section tech_widgets Widgets
+
+The following sections describe the concepts and implementation of buttons,
+gauges, sliders and advanced widgets in detail.
+
+\subsection tech_buttons Buttons
+
+All buttons derive from the abstract base class QAbstractButton. This way
+they share a common Qt style API and behave similar to QPushButton for
+instance. The following sections present each button.
+
+\subsubsection tech_qtsvgslideswitch QtSvgSlideSwitch
+\image html svgslideswitch.png QtSvgSlideSwitch (Beryl skin)
+QtSvgSlideSwitch is a SVG based button. Its appearance can be changed
+with QtSvgSlideSwitch::setSkin(). It reimplements the pure virtual function
+paintEvent() to draw the content depending on the current button state such
+as hovered and checked flags.
+
+The following SVG files are required to create a new skin:
+- background.svg, used as background
+- background_hover.svg, used as background if the mouse hovers over the widget
+- knob_off.svg, used as overlay to visualize the non-checked state
+- knob_on.svg, used as overlay to visualize the checked state
+
+\subsubsection tech_qtsvgbutton QtSvgButton
+\image html svgbutton.png QtSvgButton (Beryl skin)
+QtSvgButton is a SVG based button. Its appearance can be changed
+with QtSvgButton::setSkin(). It reimplements the pure virtual function
+paintEvent() to draw the current state of the button which is one of
+normal, hovered or pressed state.
+
+The following SVG files are required to create a new skin:
+- normal.svg, used for normal appearance
+- hovered.svg, used if the mouse is over the button
+- pressed.svg, used if the mouse is pressed
+
+\subsubsection tech_qtsvgtoggleswitch QtSvgToggleSwitch
+\image html svgtoggleswitch.png QtSvgToggleSwitch (Beryl skin)
+QtSvgToggleSwitch is a SVG based button and very similar to QtSvgButton.
+Its appearance can be changed with QtSvgButton::setSkin(). QtSvgToggleSwitch
+reimplements the pure virtual function paintEvent() to draw the current
+state of the button which is either checked or unchecked.
+
+The following SVG files are required to create a new skin:
+- off.svg, used if the button state is \e off
+- on.svg, used if the button state is \e on.
+
+\subsection tech_gauges Gauges
+
+The gauges are designed as read-only widgets, i.e. they do not support user
+input and only display a value. That's why the base class is QWidget.
+
+\subsubsection tech_qtsvgdialgauge QtSvgDialGauge
+\image html svgdialgauge.png QtSvgDialGauge (Amperemeter skin)
+QtSvgDialGauge is a SVG based widget. It's appearance is basically a static
+image with a movable needle, for instance like a tachometer in cars. As the
+center of the needle varies depending on the skin the widget user first has
+to set the needle center in procentual values (0...1) by calling
+QtSvgDialGauge::setNeedleOrigin().
+
+The needle rotation depends on the current value and on the minimum and
+maximum angles. The angle range has to be set by the widget user, as it
+is different for every skin. The rotation itself is implemented by using
+Qt's transformation system.
+
+The following SVG files are required to create a new skin:
+- background.svg, the background of the gauge, always draw first
+- needle_shadow.svg, the moving needle shadow, drawn as second item
+- needle.svg, the moving needle, the third layer
+- overlay.svg, the overlay with e.g. a reflexion effect
+
+\subsubsection tech_qtbasicdialgauge QtBasicDialGauge
+\image html basicdialgauge.png QtBasicDialGauge (QPainter based)
+QtBasicDialGauge is an example of how to create a widget by using Qt's
+painting engine. It uses QPainter to draw the display without the need for
+SVG graphics. As the widget is very simple it can be visualized by two
+drawing operations:
+# draw the arc
+# draw the needle depending on the value
+
+This widget does not provide the function setSkin() as it does not use
+graphics nor does it provide the capability to change the appearance.
+To support different backgrounds the paintEvent() implementation first
+class QWidget::paintEvent() and then draws its content.
+
+\subsection tech_sliders Sliders
+All sliders in Qt usually derive from QAbstractSlider. This base class
+provides a common API for slider widgets. That is why the following
+widgets either inherid QAbstractSlider or use QSlider directly.
+
+\subsubsection tech_qtscrollwheel QtScrollWheel
+\image html scrollwheel.png QtScrollWheel (Beryl skin)
+QtScrollWheel is a SVG based widget. As such the widget user has to set
+a skin by calling QtScrollWheel::setSkin(). For visualization QtScrollWheel
+reimplements the paintEvent() to display the current state of the wheel.
+The implementation creates a turn effect to give feedback to the user
+when the mouse is being moved.
+
+For this, the following graphics are needed in a skin:
+- wheel_1.svg
+- wheel_2.svg
+- wheel_3.svg
+
+\subsubsection tech_qslider QSlider with Qt Style Sheets
+\image html cssslider.png QSlider (Style Sheet based)
+QSlider is a slider widget provided by Qt itself. This example shows how
+to change the appearance by using Qt's Style Sheet system (CSS).
+
+The following style sheet makes a QSlider appear in the Beryl skin:
+\code
+QSlider::groove:vertical {
+    border: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 #B1B1B1, stop:1 #000000);
+}
+QSlider::handle:vertical {
+    background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #DFDFDF, stop: 0.5 #7E7E7E, stop:1 #BCBCBC);
+    border: 2px solid #709E10;
+    border-radius: 3px;
+    width: 30px;
+    height: 30px;
+}
+QSlider::add-page:vertical {
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:0, stop: 0 #C3E0CC, stop: 0.5 #7FB605, stop:1 #D8F000);
+}
+QSlider::sub-page:vertical {
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:0, stop: 0 #CCD5CC, stop: 0.5 #435A12, stop:1 #5C6700);
+}
+QSlider::handle:pressed {
+    background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #DFDFDF, stop: 0.5 #7E7E7E, stop:1 #BCBCBC);
+    border: 2px solid #D0F201;
+    border-radius: 3px;
+}
+\endcode
+For further details, read the Qt documentation about using Qt Style Sheets.
+
+\subsection tech_advanced Advanced Widgets
+
+\subsubsection tech_qt5waybutton Qt5WayButton
+\image html 5waybutton.png Qt5WayButton (Beryl skin)
+The Qt5WayButton is a custom widget composed of five push buttons. All buttons
+are rendered from SVG files. Internally the buttons are derived from
+QAbstractButton and layouted in a QGridLayout with 2 rows and 2 columns. This
+can be visualized as follows:
+\image html 5waybutton-layout.png Layout of Qt5WayButton: QGridLayout of size 2x2
+Four buttons (left, top, right, bottom) span two cells and the center button
+spans all four cells.
+
+The five buttons create a widget mask from the SVG graphics and set it with
+QWidget::setMask(). This way mouse events (click and move) are only accepted
+when when the mouse is over graphics.
+
+The following SVG files are required to create a new skin:
+- background.svg, background draw as first layer
+- center.svg, center button in normal state
+- center_hover.svg, center button in hovered state
+- center_pressed.svg, center button in pressed state
+- down.svg, button at the bottom in normal state
+- down_hover.svg, button at the bottom in hovered state
+- down_pressed.svg, button at the bottom in pressed state
+- left.svg, left button in normal state
+- left_hover.svg, left button in hovered state
+- left_pressed.svg, left button in pressed state
+- right.svg, right button in normal state
+- right_hover.svg, right button in hovered state
+- right_pressed.svg, right button in pressed state
+- up.svg, upper button in normal state
+- up_hover.svg, upper button in hovered state
+- up_pressed.svg, upper button in pressed state
+
+\subsubsection tech_qtmultislider QtMultiSlider
+\image html multislider.png QtMultiSlider (Beryl skin)
+QtMultiSlider is a SVG based progress bar with range slider.
+Its appearance can be changed with  QtMultiSlider::setSkin().
+The QtMultiSlider is a vertical progress bar with a minimum and maximum value.
+An allowed range can be set with the upper and the lower slider.
+For visualization of the progress bar the QtMultiSlider
+reimplements the paintEvent() to display the current value in the valuebar.
+
+
+If the range exceeds the upper slider the signal \e maximumExceeded() is send.
+If the range exceeds the lower slider the signal \e minimumExceeded() is send.
+
+The following SVG files are required to create a new skin:
+- groove.svg, the groove of the sliders
+- slider_max_hovered.svg, the upper slider in hover state
+- slider_max_pressed.svg, the upper slider in pressed state
+- slider_max_normal.svg, the upper slider in normal state
+- slider_min_hovered.svg, the lower slider in hover state
+- slider_min_pressed.svg, the lower slider in pressed state
+- slider_min_normal.svg, the lower slider in normal state
+- valuebar, the actual value bar not filled
+- valuebar_filled, the actual value bar filled
+- valuebar_top, black rectangle at the top of the valuebar
+- valuebar_bottom, black rectangle at the bottom of the valuebar
+
+\subsubsection tech_qtscrolldial QtScrollDial
+\image html scrolldial.png QtScrollDial (Beryl skin)
+\image html scrolldial-advanced.png QtScrollDial with interaction (Beryl skin)
+QtScrollDial is a SVG based dial. Its appearance can be changed with
+QtScrollDial::setSkin().
+The scrolldial has two different states. The first image shows the current value.
+The second image shows the popup window with which the current value can be
+changed. The new value is accepted when the popup window is closed.
+
+The following SVG files are required to create a new skin:
+ - background.svg,the backround with normal state
+ - background_hover.svg, the background with hover state
+ - closebutton_hovered.svg, the close button with hover state
+ - closebutton_normal.svg, the close button with normal state
+ - closebutton_pressed.svg, the close button with pressed state
+ - label.svg, the label for the top and bottom rectangle
+ - popup_background.svg, the background for the popup
+
+\subsubsection tech_qtbasicgraph QtBasicGraph
+\image html basicgraph.png QtBasicGraph
+QtBasicGraph is a widget that shows a plot. The widget inherits from
+QAbstractItemView.
+For visualization QtBasicGraph reimplements the paintEvent() to display the
+current plot.
+
+A QStandardItemModel with two colums and arbitray rows is used as the data
+source. The first column is the x value and the second column the y value.
+
+The visible data area in the widget can be changed by subclassing QtRangeHandler.
+With a new implementation of the QtRangeHandler it is possible to define the
+visible area depending on the given model.
+
+An example implementation of the QtRangeHandler is the FixedRangeHandler.
+
+Because of the inhertance of QAbstractItemView some functions have to be
+implemented but actually not needed.
+
+These are \n \e visualRect(), \e scrollTo(), \e indexAt(), \e moveCursor(),
+\e horizontalOffset(), \e verticalOffset(), \e isIndexHidden(),
+\e setSelection(), \e visualRegionForSelection(), \e setRangeHandler()
+
+*/

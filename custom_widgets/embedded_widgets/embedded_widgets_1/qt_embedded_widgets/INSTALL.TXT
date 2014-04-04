@@ -1,0 +1,126 @@
+INSTALLATION INSTRUCTIONS
+
+These instructions refer to the package you are installing as
+some-package.tar.gz or some-package.zip. The .zip file is intended for use
+on Windows.
+
+The directory you choose for the installation will be referred to as
+your-install-dir.
+
+
+Unpacking and installation
+--------------------------
+
+1.  Unpack the archive if you have not done so already.
+
+    On Unix and Mac OS X (in a terminal window):
+
+	cd your-install-dir
+	gunzip some-package.tar.gz
+	tar xvf some-package.tar
+
+    This creates the subdirectory some-package containing the files.
+
+    On Windows:
+
+    Either use WinZip to extract the .zip archive or use the infozip tools
+    you can download under
+
+	ftp://ftp.trolltech.com/util/infozip.exe
+
+    If you are using the infozip tools (in a command prompt window):
+
+	cd your-install-dir
+	unzip some-package.zip
+
+2.  Enter the package directory and configure the package:
+
+	cd some-package
+	qmake
+
+    The qmake command will prompt you in some cases for further
+    information. Answer these questions and carefully read the license text
+    before accepting the license conditions. The package can't be used if
+    you don't accept the license conditions.
+
+3.  To build the examples (for Qt Solutions components) or the application
+    (for Qt Solutions tools):
+
+	make
+
+    Or if you are using Microsoft Visual Studio:
+
+	nmake
+
+    The example programs are located in the example or examples
+    subdirectory.
+
+
+Using a component in your project
+---------------------------------
+
+The directory your-install-dir/src includes all the source code for the
+component. To use this component in your project:
+
+1.  Add the following line
+
+	include(your-install-dir/src/some-package.pri)
+
+    to the project's .pro file.
+
+2.  Run qmake on the project's .pro file.
+
+This adds the package's sources and headers to the SOURCES and HEADERS
+qmake variables respectively, and update INCLUDEPATH to contain the
+package's src directory. Additionally, the .pri file may include some
+dependencies needed by the package.
+
+To include a header file from the package in your sources, you can now
+simply use:
+
+    #include <some-package.h>
+
+
+Install documentation
+---------------------
+
+The HTML documentation for the package's classes is located in the
+your-install-dir/doc/html/index.html. You can open this file with any web
+browser.
+
+To install the documentation into Qt Assistant:
+
+1.  The directory your-install-dir/doc/html contains a file with the
+    extension .dcf. The name of this file may vary. In the following
+    description we refer to this file as index.dcf.
+
+2.  Close any running instances of assistant.
+
+3.  Execute the following commands in a shell, command prompt or terminal
+    window:
+
+	cd your-install-dir/some-package/doc/html/
+	assistant -addContentFile index.dcf
+
+The next time you start Qt Assistant, you can access the package's
+documentation.
+
+
+Remove the documentation from assistant
+---------------------------------------
+
+1.  The directory your-install-dir/doc/html contains a file with the
+    extension .dcf. The name of this file may vary. In the following
+    description we refer to this file as index.dcf.
+
+2.  Close any running instances of assistant.
+
+3.  Execute the following commands in a shell, command prompt or terminal
+    window:
+
+	cd your-install-dir/some-package/doc/html/
+	assistant -removeContentFile index.dcf
+
+
+Enjoy! :)
+Qt Solutions Team.

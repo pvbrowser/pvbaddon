@@ -1,0 +1,130 @@
+#####################################################
+Modifications done in order to get TuxEip running on
+- Linux 64 Bit
+- Windows MINGW
+also
+#####################################################
+
+tuxeip-1.0/src/SendData.c:static int pvbdebug = 0; // pvbrowser debug
+tuxeip-1.0/src/SendData.c:    #define MSG_WAITALL 0 //pvbrowser modification NOT defined on Windows
+tuxeip-1.0/src/TuxEip.h:    // pvbrowser removed following line because of MINGW error
+tuxeip-1.0/src/CIP_Types.h:typedef unsigned int LONGWORD; // pvbrowser modification
+tuxeip-1.0/src/CIP_Types.h:typedef int CIP_DINT;	//2147483648..2147483647	typedef enum _Data_Type{UNKNOW,BIT,SINT,TUXINT,DINT,REAL,TIMER,COUNTER} Data_Type; // pvbrowser modification INT already defined in MINGW
+32 bits sign� pvbrowser modification
+tuxeip-1.0/src/CIP_Types.h:// typedef long long int CIP_LINT;	//2^0..2^63 64 bits sign�pvbrowser modification type not needed and makes error on windows
+tuxeip-1.0/src/LGX.c:	case TUXINT:return(LGX_INT);break; // pvbrowser modification
+tuxeip-1.0/src/PLC.c:	case TUXINT:    // pvbrowser modification 
+tuxeip-1.0/src/SendData.h:        int CipSetDebug(int level); // pvbrowser
+tuxeip-1.0/src/SendData.h:#ifndef PVBROWSER
+tuxeip-1.0/src/LGX.h:// pvbrowser modification because of MINGW
+tuxeip-1.0/src/AB.h:typedef enum _Data_Type{UNKNOW,BIT,SINT,TUXINT,DINT,REAL,TIMER,COUNTER} Data_Type; // pvbrowser modification INT already defined in MINGW
+
+#####################################################
+
+CIP_Types.h
+typedef unsigned int LONGWORD; // pvbrowser modificationtypedef enum _Data_Type{UNKNOW,BIT,SINT,TUXINT,DINT,REAL,TIMER,COUNTER} Data_Type; // pvbrowser modification INT already defined in MINGW
+
+//typedef unsigned long LONGWORD;
+
+typedef char CIP_SINT;  //128..127  8 bits sign�
+typedef short CIP_INT;  //32768..32767  16 bits sign�
+typedef int CIP_DINT; //2147483648..2147483647  32 bits sign� pvbrowser modification
+//typedef long CIP_DINT;  //2147483648..2147483647  32 bits sign�
+// typedef long long int CIP_LINT;  //2^0..2^63 64 bits sign�pvbrowser modification type not needed and makes error on windows
+
+#####################################################
+
+LGX.h
+// pvbrowser modification because of MINGW
+void *_GetData(CommonDataService_Reply *reply);
+#define TuxGetData(reply) _GetData(reply)
+//void *_GetData(CommonDataService_Reply *reply);
+//#define GetData(reply) _GetData(reply)
+
+#####################################################
+
+LGX.c
+line 305:  case TUXINT:return(LGX_INT);break; // pvbrowser modification because of MINGW error
+
+#####################################################
+
+PLC.c
+line 579:  case TUXINT:    // pvbrowser modification 
+
+#####################################################
+
+AB.h
+line 34: typedef enum _Data_Type{UNKNOW,BIT,SINT,TUXINT,DINT,REAL,TIMER,COUNTER} Data_Type; // pvbrowser modification INT already defined in MINGW
+
+#####################################################
+
+TuxEip.h
+
+line 33:
+    // pvbrowser removed following line because of MINGW error
+    //#define errno WSAGetLastError
+
+#####################################################
+
+SendData.h
+
+line 35: int CipSetDebug(int level); // pvbrowser
+line 53: #ifndef PVBROWSER
+
+#####################################################
+SendData.c
+line 20: static int pvbdebug = 0; // pvbrowser debug
+line 29: #define MSG_WAITALL 0 //pvbrowser modification NOT defined on Windows
+
+line 40: added this function
+int CipSetDebug(int level)
+{
+  pvbdebug = level;
+  return 0;
+}
+
+line 68: if(pvbdebug) printf("InitWSA\n");
+
+line 136: added this
+  if(pvbdebug)
+  { 
+    int i, len;
+    const unsigned char *data = (const unsigned char *) header;
+    printf("CipSendData\n");
+    len = sizeof(Encap_Header)+header->Length;
+    for(i=0; i<len; i++)
+    {
+      printf("%2X ", data[i]);
+    } 
+    printf("\n");
+  }
+
+line 185: added this
+  if(pvbdebug)
+  {
+    int i, len;
+    const unsigned char *data = (const unsigned char *) header;
+    printf("CipRecvData1\n");
+    len = rcv;
+    for(i=0; i<len; i++)
+    {
+      printf("%2X ", data[i]);
+    }
+    printf("\n");
+  }
+
+line 207: added this
+  rcv += rcv2;
+  if(pvbdebug)
+  {
+     int i, len;
+     const unsigned char *data = (const unsigned char *) header;
+     printf("CipRecvData2\n");
+     len = rcv2;
+     for(i=0; i<len; i++)
+     {
+       printf("%2X ", data[i]);
+     }
+     printf("\n");
+   }
+##############################################

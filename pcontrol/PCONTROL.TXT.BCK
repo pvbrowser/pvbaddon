@@ -1,0 +1,6 @@
+State	PID	Name	Credit	Interval	Priority	StartupCommand	Input	Output	Error	TimeStartStop	InitialCredit
+Active	2094	kcalc1	-1	0	0	kcalc				2002-12-17 12:28:55 0289	-1
+Inactive	0	kcalc2	-1	0	0	kcalc				2002-12-16 16:38:48 0885	-1
+Active	2095	kcalc3	-1	0	0	kcalc				2002-12-17 12:28:55 0290	-1
+Inactive	0	startproc1	3	0	0	startproc /opt/kde3/bin/kcalc				2002-12-17 12:07:56 0527	3
+Active	2096	kcalc4	-1	0	0	kcalc				2002-12-17 12:28:55 0290	-1

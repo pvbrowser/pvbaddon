@@ -1,0 +1,14 @@
+body { background-color:#FFFFCC;
+       color:#E0E0E0;
+       margin-left:100px; }
+* { color:blue; }
+h1 { font-size:300%;
+     color:#FF0000;
+     font-style:italic;
+     border-bottom:solid thin black; }
+p,li,ul  { font-size:110%;
+           line-height:140%;
+           font-family:Helvetica,Arial,sans-serif;
+           letter-spacing:0.1em;
+           word-spacing:0.3em; }
+

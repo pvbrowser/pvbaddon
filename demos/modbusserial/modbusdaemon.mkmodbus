@@ -1,0 +1,20 @@
+############################################
+# Project file for generating modbusdaemon #
+# mkmodbus name.mkmodbus                   #
+############################################
+shared_memory=/srv/automation/shm/modbusxy.shm
+mailbox=/srv/automation/mbx/modbusxy.mbx
+communication=serial
+#tty=/dev/ttyS0
+tty=/dev/ttyUSB0
+#tty=COM1
+baudrate=9600
+rtscts=1
+parity=0 # 0=NONE 1=ODD 2=EVEN
+#communication=socket
+tcpadr=lehrig2
+tcpport=5050
+#eventlog host=localhost port=6000
+# function := 1=ReadCoilStatus | 2=ReadInputStatus | 3=ReadHoldingRegisters | 4=ReadInputRegisters
+#             1 coil per bit   | 1 input per bit   | 2 byte per register    | 2byte per register
+cycle1 slave=1 function=2 start_adr=0 num_register=10

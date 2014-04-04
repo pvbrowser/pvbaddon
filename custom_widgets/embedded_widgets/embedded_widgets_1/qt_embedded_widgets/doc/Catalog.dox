@@ -1,0 +1,40 @@
+/*! \mainpage Catalog demonstration
+
+    \brief This is an example implementation to show the different embedded widgets on appropriate background. Every category of widgets is put on a seperate page of a <a href="http://doc.trolltech.com/4.4/qtabwidget.html">QTabWidget</a>.
+    The general concepts of the widget implementations are documented in 
+\ref tech_page and in the API documentation.
+    \image html catalog.png Screenshot of the catalog demonstration.
+
+    \section Gauges Tab "Gauges"
+    - QtSvgDialGauge with skin "Tachometer"
+    - QtSvgDialGauge with skin "Thermometer"
+    - QtSvgDialGauge with skin "Amperemeter"
+    - QtBasicDialGauge without skin.
+
+    For the gauges, <a href="http://doc.trolltech.com/4.4/qslider.html">Sliders</a> were added to move the needle in the allowed range.
+
+    \section Buttons Tab "Buttons"
+    - QtSvgSlideSwitch with skin "Beryl"
+    - QtSvgButton with skin "Beryl"
+    - QtSvgButton with skin "BerylSquare"
+    - QtSvgToggleSwitch with skin "Beryl"
+    - QtSvgToggleSwitch with skin "BerylSquare"
+    - QtSvgSlideSwitch with skin "MetalicBrush"
+    - QtSvgButton with skin "MetalicBrush"
+
+    \section Advanced_Widgets Tab "Advanced Widgets"
+    - Qt5WayButton with skin "Beryl"
+    - QtScrollDial with skin "Beryl"
+    
+There was also a stock <a href="http://doc.trolltech.com/4.4/qslider.html">QSlider</a> added besides that was styled using  <a href="http://doc.trolltech.com/4.4/stylesheet.html">Cascading Style Sheets</a> to match the Beryl style.
+
+    \section Sliders Tab "Sliders"
+    - QtScrollWheel with skin "Beryl"
+    - QtMultiSlider with skin "Beryl"
+
+    \section Graphs Tab "Graphs"
+    - QtBasicGraph
+    
+
+The data for the QtBasicGraph is provided by either a SineGenerator or HeartRateGenerator, switchable by a <a href="http://doc.trolltech.com/4.4/qcombobox.html">QComboBox</a>.
+*/

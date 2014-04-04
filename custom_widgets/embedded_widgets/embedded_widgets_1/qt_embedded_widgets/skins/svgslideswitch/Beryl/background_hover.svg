@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://web.resource.org/cc/"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   version="1.0"
+   width="80"
+   height="38"
+   viewBox="0 0 80 38"
+   id="svg2422"
+   xml:space="preserve"
+   sodipodi:version="0.32"
+   inkscape:version="0.45.1"
+   sodipodi:docname="background_hover.svg"
+   sodipodi:docbase="/basyskom/users/dhau/projects/embeddedstories/skins/svgslideswitch/Beryl"
+   inkscape:output_extension="org.inkscape.output.svg.inkscape"><metadata
+   id="metadata24"><rdf:RDF><cc:Work
+       rdf:about=""><dc:format>image/svg+xml</dc:format><dc:type
+         rdf:resource="http://purl.org/dc/dcmitype/StillImage" /></cc:Work></rdf:RDF></metadata><sodipodi:namedview
+   inkscape:window-height="931"
+   inkscape:window-width="1214"
+   inkscape:pageshadow="2"
+   inkscape:pageopacity="0.0"
+   guidetolerance="10.0"
+   gridtolerance="10.0"
+   objecttolerance="10.0"
+   borderopacity="1.0"
+   bordercolor="#666666"
+   pagecolor="#ffffff"
+   id="base"
+   inkscape:zoom="8.775"
+   inkscape:cx="40"
+   inkscape:cy="19"
+   inkscape:window-x="0"
+   inkscape:window-y="0"
+   inkscape:current-layer="svg2422" />
+<defs
+   id="defs2424" />
+<linearGradient
+   x1="-62.5005"
+   y1="-114.9985"
+   x2="-62.5005"
+   y2="-77"
+   id="SVGID_1_"
+   gradientUnits="userSpaceOnUse"
+   gradientTransform="matrix(1.0000125,0,0,-1.0000264,102.50128,-77.002026)">
+	<stop
+   id="stop2427"
+   style="stop-color:#b3b3b3;stop-opacity:1"
+   offset="0" />
+	<stop
+   id="stop2429"
+   style="stop-color:#9d9d9d;stop-opacity:1"
+   offset="0.0732" />
+	<stop
+   id="stop2431"
+   style="stop-color:#676767;stop-opacity:1"
+   offset="0.22480001" />
+	<stop
+   id="stop2433"
+   style="stop-color:#101010;stop-opacity:1"
+   offset="0.44010001" />
+	<stop
+   id="stop2435"
+   style="stop-color:#000000;stop-opacity:1"
+   offset="0.47799999" />
+</linearGradient>
+<path
+   d="M 69.000863,38 L 11.001138,38 C 4.9350617,38 0,33.06487 0,27.000711 L 0,11.00029 C 0,4.9361299 4.9350617,-8.0491169e-16 11.001138,-8.0491169e-16 L 69.000863,-8.0491169e-16 C 75.064938,-8.0491169e-16 80,4.9361299 80,11.00029 L 80,27.000711 C 80,33.06487 75.064938,38 69.000863,38 L 69.000863,38 z "
+   id="path2437"
+   style="fill:url(#SVGID_1_)" />
+<linearGradient
+   x1="-62.5005"
+   y1="-112.9995"
+   x2="-62.5005"
+   y2="-78.999001"
+   id="SVGID_2_"
+   gradientUnits="userSpaceOnUse"
+   gradientTransform="matrix(1.0000125,0,0,-1.0000264,102.50128,-77.002026)">
+	<stop
+   id="stop2440"
+   style="stop-color:#e1ff00;stop-opacity:1"
+   offset="0" />
+	<stop
+   id="stop2442"
+   style="stop-color:#dbfb00;stop-opacity:1"
+   offset="0.14390001" />
+	<stop
+   id="stop2444"
+   style="stop-color:#cbee02;stop-opacity:1"
+   offset="0.33360001" />
+	<stop
+   id="stop2446"
+   style="stop-color:#afd904;stop-opacity:1"
+   offset="0.54890001" />
+	<stop
+   id="stop2448"
+   style="stop-color:#89bc07;stop-opacity:1"
+   offset="0.78130001" />
+	<stop
+   id="stop2450"
+   style="stop-color:#5f9c0b;stop-opacity:1"
+   offset="1" />
+</linearGradient>
+<path
+   d="M 69.000863,36.000948 L 11.000137,36.000948 C 6.0360755,36.000948 2.000025,31.963841 2.000025,27.000711 L 2.000025,10.999289 C 2.000025,6.0361588 6.0360755,1.9990526 11.000137,1.9990526 L 69.000863,1.9990526 C 73.964924,1.9990526 78.000975,6.0351588 78.000975,10.999289 L 78.000975,27.000711 C 78.000975,31.963841 73.964924,36.000948 69.000863,36.000948 L 69.000863,36.000948 z "
+   id="path2452"
+   style="fill:url(#SVGID_2_)" />
+<linearGradient
+   x1="-62.5005"
+   y1="-110.9995"
+   x2="-62.5005"
+   y2="-80.999001"
+   id="SVGID_3_"
+   gradientUnits="userSpaceOnUse"
+   gradientTransform="matrix(1.0000125,0,0,-1.0000264,102.50128,-77.002026)">
+	<stop
+   id="stop2455"
+   style="stop-color:#121212;stop-opacity:1"
+   offset="0.27469999" />
+	<stop
+   id="stop2457"
+   style="stop-color:#545454;stop-opacity:1"
+   offset="1" />
+</linearGradient>
+<path
+   d="M 69.000863,34.000894 L 11.000137,34.000894 C 7.1400892,34.000894 4.0000501,30.859812 4.0000501,27.000711 L 4.0000501,10.999289 C 4.0000501,7.1391879 7.1400892,3.9991052 11.000137,3.9991052 L 69.000863,3.9991052 C 72.859911,3.9991052 76.00095,7.1391879 76.00095,10.999289 L 76.00095,27.000711 C 76.00095,30.861813 72.859911,34.000894 69.000863,34.000894 L 69.000863,34.000894 z "
+   id="path2459"
+   style="fill:url(#SVGID_3_)" />
+</svg>

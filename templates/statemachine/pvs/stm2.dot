@@ -1,0 +1,26 @@
+digraph state_machine_2 {
+  
+  subgraph statemachine
+  {
+    rankdir=LR;
+    size="8,5"
+    node [shape = doublecircle, id="PV.start", style=filled, fillcolor=grey]; stStart;
+    node [shape = doublecircle, id="PV.finish", style=filled, fillcolor=grey]; stFinish;
+    node [shape = circle, id="PV.process", style=filled, fillcolor=grey]; stProcess;
+    stStart -> stProcess [ label = "SS(startup)", id="PV.start2process"];
+    stProcess -> stFinish [ label = "SS(shutdown)", id="PV.process2finish"];
+  }
+  
+  subgraph led
+  {
+    rankdir=LR;
+    size="2,5"
+    node [shape = circle, id="PV.led0", style=filled, fillcolor=grey]; led0;
+    node [shape = circle, id="PV.led1", style=filled, fillcolor=grey]; led1;
+    node [shape = circle, id="PV.led2", style=filled, fillcolor=grey]; led2;
+    node [shape = circle, id="PV.led3", style=filled, fillcolor=grey]; led3;
+    node [shape = circle, id="PV.led4", style=filled, fillcolor=grey]; led4;
+    node [shape = circle, id="PV.led5", style=filled, fillcolor=grey]; led5;
+  }
+}
+

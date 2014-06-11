@@ -1,0 +1,151 @@
+IP 192.168.1.32.http > nb4lehrig.site.40183: tcp 1396
+        0x0000:  4500 05a8 1ab1 4000 4006 9720 c0a8 0120  E.....@.@.......
+        0x0010:  c0a8 010e 0050 9cf7 1fc8 1c5a 130f 8173  .....P.....Z...s
+        0x0020:  8018 045a dd4a 0000 0101 080a 000a 0afc  ...Z.J..........
+        0x0030:  007d 7330 7363 6865 6475 6c65 5f66 7269  .}s0schedule_fri
+        0x0040:  5f31 3d30 3b0a 7661 7220 6674 705f 7363  _1=0;.var.ftp_sc
+        0x0050:  6865 6475 6c65 5f66 7269 5f32 3d30 3b0a  hedule_fri_2=0;.
+        0x0060:  7661 7220 6674 705f 7363 6865 6475 6c65  var.ftp_schedule
+        0x0070:  5f73 6174 5f30 3d30 3b0a 7661 7220 6674  _sat_0=0;.var.ft
+        0x0080:  705f 7363 6865 6475 6c65 5f73 6174 5f31  p_schedule_sat_1
+        0x0090:  3d30 3b0a 7661 7220 6674 705f 7363 6865  =0;.var.ftp_sche
+        0x00a0:  6475 6c65 5f73 6174 5f32 3d30 3b0a 7661  dule_sat_2=0;.va
+        0x00b0:  7220 616c 6172 6d5f 6d6f 7469 6f6e 5f61  r.alarm_motion_a
+        0x00c0:  726d 6564 3d30 3b0a 7661 7220 616c 6172  rmed=0;.var.alar
+        0x00d0:  6d5f 6d6f 7469 6f6e 5f73 656e 7369 7469  m_motion_sensiti
+        0x00e0:  7669 7479 3d35 3b0a 7661 7220 616c 6172  vity=5;.var.alar
+        0x00f0:  6d5f 6d6f 7469 6f6e 5f63 6f6d 7065 6e73  m_motion_compens
+        0x0100:  6174 696f 6e3d 303b 0a76 6172 2061 6c61  ation=0;.var.ala
+        0x0110:  726d 5f69 6e70 7574 5f61 726d 6564 3d30  rm_input_armed=0
+        0x0120:  3b0a 7661 7220 616c 6172 6d5f 696f 696e  ;.var.alarm_ioin
+        0x0130:  5f6c 6576 656c 3d30 3b0a 7661 7220 616c  _level=0;.var.al
+        0x0140:  6172 6d5f 736f 756e 6464 6574 6563 745f  arm_sounddetect_
+        0x0150:  6172 6d65 643d 303b 0a76 6172 2061 6c61  armed=0;.var.ala
+        0x0160:  726d 5f73 6f75 6e64 6465 7465 6374 5f73  rm_sounddetect_s
+        0x0170:  656e 7369 7469 7669 7479 3d35 3b0a 7661  ensitivity=5;.va
+        0x0180:  7220 616c 6172 6d5f 696f 6c69 6e6b 6167  r.alarm_iolinkag
+        0x0190:  653d 303b 0a76 6172 2061 6c61 726d 5f70  e=0;.var.alarm_p
+        0x01a0:  7265 7365 743d 303b 0a76 6172 2061 6c61  reset=0;.var.ala
+        0x01b0:  726d 5f69 6f6f 7574 5f6c 6576 656c 3d30  rm_ioout_level=0
+        0x01c0:  3b0a 7661 7220 616c 6172 6d5f 6d61 696c  ;.var.alarm_mail
+        0x01d0:  3d30 3b0a 7661 7220 616c 6172 6d5f 7570  =0;.var.alarm_up
+        0x01e0:  6c6f 6164 5f69 6e74 6572 7661 6c3d 303b  load_interval=0;
+        0x01f0:  0a76 6172 2061 6c61 726d 5f68 7474 703d  .var.alarm_http=
+        0x0200:  313b 0a76 6172 2061 6c61 726d 5f6d 736e  1;.var.alarm_msn
+        0x0210:  3d30 3b0a 7661 7220 616c 6172 6d5f 6874  =0;.var.alarm_ht
+        0x0220:  7470 5f75 726c 3d27 6874 7470 3a2f 2f31  tp_url='http://1
+        0x0230:  3932 2e31 3638 2e31 2e31 3427 3b0a 7661  92.168.1.14';.va
+        0x0240:  7220 616c 6172 6d5f 7363 6865 6475 6c65  r.alarm_schedule
+        0x0250:  5f65 6e61 626c 653d 303b 0a76 6172 2061  _enable=0;.var.a
+        0x0260:  6c61 726d 5f73 6368 6564 756c 655f 7375  larm_schedule_su
+        0x0270:  6e5f 303d 303b 0a76 6172 2061 6c61 726d  n_0=0;.var.alarm
+        0x0280:  5f73 6368 6564 756c 655f 7375 6e5f 313d  _schedule_sun_1=
+        0x0290:  303b 0a76 6172 2061 6c61 726d 5f73 6368  0;.var.alarm_sch
+        0x02a0:  6564 756c 655f 7375 6e5f 323d 303b 0a76  edule_sun_2=0;.v
+        0x02b0:  6172 2061 6c61 726d 5f73 6368 6564 756c  ar.alarm_schedul
+        0x02c0:  655f 6d6f 6e5f 303d 303b 0a76 6172 2061  e_mon_0=0;.var.a
+        0x02d0:  6c61 726d 5f73 6368 6564 756c 655f 6d6f  larm_schedule_mo
+        0x02e0:  6e5f 313d 303b 0a76 6172 2061 6c61 726d  n_1=0;.var.alarm
+        0x02f0:  5f73 6368 6564 756c 655f 6d6f 6e5f 323d  _schedule_mon_2=
+        0x0300:  303b 0a76 6172 2061 6c61 726d 5f73 6368  0;.var.alarm_sch
+        0x0310:  6564 756c 655f 7475 655f 303d 303b 0a76  edule_tue_0=0;.v
+        0x0320:  6172 2061 6c61 726d 5f73 6368 6564 756c  ar.alarm_schedul
+        0x0330:  655f 7475 655f 313d 303b 0a76 6172 2061  e_tue_1=0;.var.a
+        0x0340:  6c61 726d 5f73 6368 6564 756c 655f 7475  larm_schedule_tu
+        0x0350:  655f 323d 303b 0a76 6172 2061 6c61 726d  e_2=0;.var.alarm
+        0x0360:  5f73 6368 6564 756c 655f 7765 645f 303d  _schedule_wed_0=
+        0x0370:  303b 0a76 6172 2061 6c61 726d 5f73 6368  0;.var.alarm_sch
+        0x0380:  6564 756c 655f 7765 645f 313d 303b 0a76  edule_wed_1=0;.v
+        0x0390:  6172 2061 6c61 726d 5f73 6368 6564 756c  ar.alarm_schedul
+        0x03a0:  655f 7765 645f 323d 303b 0a76 6172 2061  e_wed_2=0;.var.a
+        0x03b0:  6c61 726d 5f73 6368 6564 756c 655f 7468  larm_schedule_th
+        0x03c0:  755f 303d 303b 0a76 6172 2061 6c61 726d  u_0=0;.var.alarm
+        0x03d0:  5f73 6368 6564 756c 655f 7468 755f 313d  _schedule_thu_1=
+        0x03e0:  303b 0a76 6172 2061 6c61 726d 5f73 6368  0;.var.alarm_sch
+        0x03f0:  6564 756c 655f 7468 755f 323d 303b 0a76  edule_thu_2=0;.v
+        0x0400:  6172 2061 6c61 726d 5f73 6368 6564 756c  ar.alarm_schedul
+        0x0410:  655f 6672 695f 303d 303b 0a76 6172 2061  e_fri_0=0;.var.a
+        0x0420:  6c61 726d 5f73 6368 6564 756c 655f 6672  larm_schedule_fr
+        0x0430:  695f 313d 303b 0a76 6172 2061 6c61 726d  i_1=0;.var.alarm
+        0x0440:  5f73 6368 6564 756c 655f 6672 695f 323d  _schedule_fri_2=
+        0x0450:  303b 0a76 6172 2061 6c61 726d 5f73 6368  0;.var.alarm_sch
+        0x0460:  6564 756c 655f 7361 745f 303d 303b 0a76  edule_sat_0=0;.v
+        0x0470:  6172 2061 6c61 726d 5f73 6368 6564 756c  ar.alarm_schedul
+        0x0480:  655f 7361 745f 313d 303b 0a76 6172 2061  e_sat_1=0;.var.a
+        0x0490:  6c61 726d 5f73 6368 6564 756c 655f 7361  larm_schedule_sa
+        0x04a0:  745f 323d 303b 0a76 6172 2064 6563 6f64  t_2=0;.var.decod
+        0x04b0:  6572 5f62 6175 643d 3132 3b0a 7661 7220  er_baud=12;.var.
+        0x04c0:  6d73 6e5f 7573 6572 3d27 273b 0a76 6172  msn_user='';.var
+        0x04d0:  206d 736e 5f70 7764 3d27 273b 0a76 6172  .msn_pwd='';.var
+        0x04e0:  206d 736e 5f66 7269 656e 6431 3d27 273b  .msn_friend1='';
+        0x04f0:  0a76 6172 206d 736e 5f66 7269 656e 6432  .var.msn_friend2
+        0x0500:  3d27 273b 0a76 6172 206d 736e 5f66 7269  ='';.var.msn_fri
+        0x0510:  656e 6433 3d27 3027 3b0a 7661 7220 6d73  end3='0';.var.ms
+        0x0520:  6e5f 6672 6965 6e64 343d 2730 273b 0a76  n_friend4='0';.v
+        0x0530:  6172 206d 736e 5f66 7269 656e 6435 3d27  ar.msn_friend5='
+        0x0540:  273b 0a76 6172 206d 736e 5f66 7269 656e  ';.var.msn_frien
+        0x0550:  6436 3d27 273b 0a76 6172 206d 736e 5f66  d6='';.var.msn_f
+        0x0560:  7269 656e 6437 3d27 273b 0a76 6172 206d  riend7='';.var.m
+        0x0570:  736e 5f66 7269 656e 6438 3d27 273b 0a76  sn_friend8='';.v
+        0x0580:  6172 206d 736e 5f66 7269 656e 6439 3d27  ar.msn_friend9='
+        0x0590:  273b 0a76 6172 206d 736e 5f66 7269 656e  ';.var.msn_frien
+        0x05a0:  6431 303d 2727 3b0a                      d10='';.
+
+
+####################################
+
+.}s0schedule_fri_1=0;
+var.ftp_schedule_fri_2=0;
+var.ftp_schedule_sat_0=0;
+var.ftp_schedule_sat_1=0;
+var.ftp_schedule_sat_2=0;
+var.alarm_motion_armed=0;
+var.alarm_motion_sensitivity=5;
+var.alarm_motion_compensation=0;
+var.alarm_input_armed=0;
+var.alarm_ioin_level=0;
+var.alarm_sounddetect_armed=0;
+var.alarm_sounddetect_sensitivity=5;
+var.alarm_iolinkage=0;
+var.alarm_preset=0;
+var.alarm_ioout_level=0;
+var.alarm_mail=0;
+var.alarm_upload_interval=0;
+var.alarm_http=1;
+var.alarm_msn=0;
+var.alarm_http_url='http://192.168.1.14';
+var.alarm_schedule_enable=0;
+var.alarm_schedule_sun_0=0;
+var.alarm_schedule_sun_1=0;
+var.alarm_schedule_sun_2=0;
+var.alarm_schedule_mon_0=0;
+var.alarm_schedule_mon_1=0;
+var.alarm_schedule_mon_2=0;
+var.alarm_schedule_tue_0=0;
+var.alarm_schedule_tue_1=0;
+var.alarm_schedule_tue_2=0;
+var.alarm_schedule_wed_0=0;
+var.alarm_schedule_wed_1=0;
+var.alarm_schedule_wed_2=0;
+var.alarm_schedule_thu_0=0;
+var.alarm_schedule_thu_1=0;
+var.alarm_schedule_thu_2=0;
+var.alarm_schedule_fri_0=0;
+var.alarm_schedule_fri_1=0;
+var.alarm_schedule_fri_2=0;
+var.alarm_schedule_sat_0=0;
+var.alarm_schedule_sat_1=0;
+var.alarm_schedule_sat_2=0;
+var.decoder_baud=12;
+var.msn_user='';
+var.msn_pwd='';
+var.msn_friend1='';
+var.msn_friend2='';
+var.msn_friend3='0';
+var.msn_friend4='0';
+var.msn_friend5='';
+var.msn_friend6='';
+var.msn_friend7='';
+var.msn_friend8='';
+var.msn_friend9='';
+var.msn_friend10='';

@@ -112,7 +112,6 @@ static int slotButtonPressedEvent(PARAM *p, int id, DATA *d)
       fname = d->row.text(d->rowIndex);
       pvDownloadFileAs(p,fname,"webcam.jpg");
       pvSetImage(p,webcam,"webcam.jpg"); // webcam is a pvQImage object that accepts jpeg images       
-      pvPrintf(p,lbCam1,"%s",d->row.text(d->rowIndex));
       pvPrintf(p,lbCam1,"%s (%d of %d snapshots)",d->row.text(d->rowIndex), d->rowIndex, d->maxRowIndex);
       break;
     case pbBack:
@@ -130,7 +129,6 @@ static int slotButtonPressedEvent(PARAM *p, int id, DATA *d)
       fname = d->row.text(d->rowIndex);
       pvDownloadFileAs(p,fname,"webcam.jpg");
       pvSetImage(p,webcam,"webcam.jpg"); // webcam is a pvQImage object that accepts jpeg images       
-      pvPrintf(p,lbCam1,"%s",d->row.text(d->rowIndex));
       pvPrintf(p,lbCam1,"%s (%d of %d snapshots)",d->row.text(d->rowIndex), d->rowIndex, d->maxRowIndex);
       break;
     case pbPause:
@@ -206,7 +204,6 @@ static int slotButtonPressedEvent(PARAM *p, int id, DATA *d)
       fname = d->row.text(d->rowIndex);
       printf("fname=%s\n", fname);
       if(strlen(fname) == 0) break;
-      pvPrintf(p,lbCam1,"%s",d->row.text(d->rowIndex));
       pvDownloadFileAs(p,fname,"webcam.jpg");
       pvSetImage(p,webcam,"webcam.jpg"); // webcam is a pvQImage object that accepts jpeg images       
       pvPrintf(p,lbCam1,"%s (%d of %d snapshots)",d->row.text(d->rowIndex), d->rowIndex, d->maxRowIndex);

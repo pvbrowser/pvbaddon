@@ -7,6 +7,7 @@ shell/make.sh ./demos/svgdemo $1
 shell/make.sh ./demos/svgdemo/fake_model $1
 shell/make.sh ./demos/svgdemo/pvserver $1
 shell/make.sh ./demos/svgdemo/docs/pvsexample $1
+shell/make.sh ./demos/webcam $1
 shell/make.sh ./demos/hilschercif $1
 shell/make.sh ./demos/hellopython $1
 shell/make.sh ./demos/modbus_aqui $1
@@ -38,7 +39,11 @@ shell/make.sh ./daemons/modbus/modbus_tcp_simulation_and_server $1
 shell/make.sh ./daemons/modbus/client $1
 shell/make.sh ./daemons/modbus/pvs $1
 shell/make.sh ./daemons/libnodave $1
+shell/make.sh ./daemons/webcam/client $1
+shell/make.sh ./daemons/webcam/pvs $1
 shell/make.sh ./daemons/siemensppi/client $1
 shell/make.sh ./daemons/siemensppi/pvs $1
 shell/make.sh ./daemons/opcxmlda/client $1
 shell/make.sh ./daemons/opcxmlda/pvs $1
+shell/make.sh ./daemons/textobserver/client $1
+shell/make.sh ./daemons/textobserver/pvs $1

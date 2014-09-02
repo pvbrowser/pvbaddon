@@ -7,6 +7,7 @@ call bat\make_module.bat demos\svgdemo pvs.pro
 call bat\make_module.bat demos\svgdemo\fake_model fake_model.pro
 call bat\make_module.bat demos\svgdemo\pvserver RealTimePVB.pro
 call bat\make_module.bat demos\svgdemo\docs\pvsexample pvsexample.pro
+call bat\make_module.bat demos\webcam pvs.pro
 call bat\make_module.bat demos\hilschercif pvs.pro
 call bat\make_module.bat demos\hellopython pvs.pro
 call bat\make_module.bat demos\modbus_aqui pvs.pro
@@ -38,7 +39,11 @@ call bat\make_module.bat daemons\modbus\modbus_tcp_simulation_and_server mtss.pr
 call bat\make_module.bat daemons\modbus\client modbus_client.pro
 call bat\make_module.bat daemons\modbus\pvs pvs.pro
 call bat\make_module.bat daemons\libnodave ppidaemon.pro
+call bat\make_module.bat daemons\webcam\client webcam_client.pro
+call bat\make_module.bat daemons\webcam\pvs pvs.pro
 call bat\make_module.bat daemons\siemensppi\client siemensppi_client.pro
 call bat\make_module.bat daemons\siemensppi\pvs pvs.pro
 call bat\make_module.bat daemons\opcxmlda\client opcxmlda_client.pro
 call bat\make_module.bat daemons\opcxmlda\pvs pvs.pro
+call bat\make_module.bat daemons\textobserver\client textobserver_client.pro
+call bat\make_module.bat daemons\textobserver\pvs pvs.pro

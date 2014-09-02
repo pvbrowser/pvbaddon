@@ -1,6 +1,6 @@
 ////////////////////////////////////////////////////////////////////////////
 //
-// show_mask1 for ProcessViewServer created: Mi Sep 16 09:47:34 2009
+// show_mask1 for ProcessViewServer created: Di. Aug. 26 09:47:20 2014
 //
 ////////////////////////////////////////////////////////////////////////////
 #include "pvapp.h"
@@ -10,33 +10,18 @@
 // our mask contains the following objects
 enum {
   ID_MAIN_WIDGET = 0,
-  upperWidget,
-  leftWidget,
-  centerWidget,
-  rightWidget,
-  obj1,
-  iCenter,
-  iUp,
-  iDown,
-  iLeft,
-  iRight,
-  sliderZoom,
-  layout1,
-  layout2,
+  textbrowser1,
   ID_END_OF_WIDGETS
 };
 
+// our mask contains the following widget names
+  static const char *widgetName[] = {
+  "ID_MAIN_WIDGET",
+  "textbrowser1",
+  "ID_END_OF_WIDGETS",
+  ""};
+
   static const char *toolTip[] = {
-  "",
-  "",
-  "",
-  "",
-  "",
-  "",
-  "",
-  "",
-  "",
-  "",
   "",
   "",
   ""};
@@ -44,31 +29,11 @@ enum {
   static const char *whatsThis[] = {
   "",
   "",
-  "",
-  "test.svg",
-  "",
-  "",
-  "1center.png",
-  "1uparrow.png",
-  "1downarrow.png",
-  "1leftarrow.png",
-  "1rightarrow.png",
-  "",
   ""};
 
   static const int widgetType[ID_END_OF_WIDGETS+1] = {
   0,
   TQTextBrowser,
-  TQTextBrowser,
-  TQDraw,
-  TQGroupBox,
-  TQLabel,
-  TQImage,
-  TQImage,
-  TQImage,
-  TQImage,
-  TQImage,
-  TQSlider,
   -1 };
 
 static int generated_defineMask(PARAM *p)
@@ -76,87 +41,16 @@ static int generated_defineMask(PARAM *p)
   int w,h,depth;
 
   if(p == NULL) return 1;
+  if(widgetName[0] == NULL) return 1; // suppress unused warning
   w = h = depth = strcmp(toolTip[0],whatsThis[0]);
   if(widgetType[0] == -1) return 1;
   if(w==h) depth=0; // fool the compiler
   pvStartDefinition(p,ID_END_OF_WIDGETS);
 
-  pvQTextBrowser(p,upperWidget,0);
-  pvSetGeometry(p,upperWidget,5,5,945,200);
-  pvSetFont(p,upperWidget,"Sans Serif",10,0,0,0,0);
-  pvSetMinSize(p,upperWidget,0,200);
-  pvSetMaxSize(p,upperWidget,99999,200);
+  pvQTextBrowser(p,textbrowser1,0);
+  pvSetGeometry(p,textbrowser1,5,5,600,500);
+  pvSetFont(p,textbrowser1,"Sans Serif",10,0,0,0,0);
 
-  pvQTextBrowser(p,leftWidget,0);
-  pvSetGeometry(p,leftWidget,5,215,175,445);
-  pvSetFont(p,leftWidget,"Sans Serif",10,0,0,0,0);
-  pvSetMinSize(p,leftWidget,200,100);
-  pvSetMaxSize(p,leftWidget,200,99999);
-
-  pvQDraw(p,centerWidget,0);
-  pvSetGeometry(p,centerWidget,190,215,580,425);
-  pvSetFont(p,centerWidget,"Sans Serif",10,0,0,0,0);
-  pvSetWhatsThis(p,centerWidget,"test.svg");
-  pvSetMinSize(p,centerWidget,300,100);
-  pvSetMaxSize(p,centerWidget,99999,99999);
-
-  pvQGroupBox(p,rightWidget,0,-1,HORIZONTAL,"Tools");
-  pvSetGeometry(p,rightWidget,780,210,170,450);
-  pvSetFont(p,rightWidget,"Sans Serif",10,0,0,0,0);
-  pvSetMinSize(p,rightWidget,200,100);
-  pvSetMaxSize(p,rightWidget,200,99999);
-
-  pvQLabel(p,obj1,rightWidget);
-  pvSetGeometry(p,obj1,10,150,145,35);
-  pvSetText(p,obj1,"Put your tools here");
-  pvSetFont(p,obj1,"Sans Serif",10,0,0,0,0);
-
-  pvDownloadFile(p,"1center.png");
-  pvQImage(p,iCenter,rightWidget,"1center.png",&w,&h,&depth);
-  pvSetGeometry(p,iCenter,35,65,22,22);
-  pvSetFont(p,iCenter,"Sans Serif",10,0,0,0,0);
-  pvSetWhatsThis(p,iCenter,"1center.png");
-
-  pvDownloadFile(p,"1uparrow.png");
-  pvQImage(p,iUp,rightWidget,"1uparrow.png",&w,&h,&depth);
-  pvSetGeometry(p,iUp,35,40,22,22);
-  pvSetFont(p,iUp,"Sans Serif",10,0,0,0,0);
-  pvSetWhatsThis(p,iUp,"1uparrow.png");
-
-  pvDownloadFile(p,"1downarrow.png");
-  pvQImage(p,iDown,rightWidget,"1downarrow.png",&w,&h,&depth);
-  pvSetGeometry(p,iDown,35,90,22,22);
-  pvSetFont(p,iDown,"Sans Serif",10,0,0,0,0);
-  pvSetWhatsThis(p,iDown,"1downarrow.png");
-
-  pvDownloadFile(p,"1leftarrow.png");
-  pvQImage(p,iLeft,rightWidget,"1leftarrow.png",&w,&h,&depth);
-  pvSetGeometry(p,iLeft,10,65,22,22);
-  pvSetFont(p,iLeft,"Sans Serif",10,0,0,0,0);
-  pvSetWhatsThis(p,iLeft,"1leftarrow.png");
-
-  pvDownloadFile(p,"1rightarrow.png");
-  pvQImage(p,iRight,rightWidget,"1rightarrow.png",&w,&h,&depth);
-  pvSetGeometry(p,iRight,60,65,22,22);
-  pvSetFont(p,iRight,"Sans Serif",10,0,0,0,0);
-  pvSetWhatsThis(p,iRight,"1rightarrow.png");
-
-  pvQSlider(p,sliderZoom,rightWidget,10,200,1,10,Vertical);
-  pvSetGeometry(p,sliderZoom,125,30,25,100);
-  pvSetFont(p,sliderZoom,"Sans Serif",10,0,0,0,0);
-
-  pvQLayoutHbox(p,ID_MAIN_WIDGET,-1);
-
-  pvQLayoutVbox(p,layout1,-1);
-
-  pvQLayoutHbox(p,layout2,-1);
-
-  pvAddWidgetOrLayout(p,ID_MAIN_WIDGET,layout1,-1,-1);
-  pvAddWidgetOrLayout(p,layout1,upperWidget,-1,-1);
-  pvAddWidgetOrLayout(p,layout1,layout2,-1,-1);
-  pvAddWidgetOrLayout(p,layout2,leftWidget,-1,-1);
-  pvAddWidgetOrLayout(p,layout2,centerWidget,-1,-1);
-  pvAddWidgetOrLayout(p,layout2,rightWidget,-1,-1);
 
   pvEndDefinition(p);
   return 0;
@@ -204,6 +98,7 @@ int show_mask1(PARAM *p)
   if((ret=slotInit(p,&d)) != 0) return ret;
   readData(&d); // from shared memory, database or something else
   showData(p,&d);
+  pvClearMessageQueue(p);
   while(1)
   {
     pvPollEvent(p,event);

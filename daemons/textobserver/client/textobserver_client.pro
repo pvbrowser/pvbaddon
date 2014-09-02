@@ -8,7 +8,7 @@ CONFIG  -= qt
 
 # Input
 # HEADERS   += 
-SOURCES     += modbus_client.cpp
+SOURCES     += textobserver_client.cpp
 
 !macx {
 unix:LIBS         += -lpthread
@@ -34,5 +34,5 @@ win32:LIBS        += wsock32.lib imm32.lib advapi32.lib
 win32:LIBS        += $(PVBDIR)/win/bin/rllib.lib
 }
 
-TARGET = modbus_client
+TARGET = textobserver_client
 

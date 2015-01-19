@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+ 
+<svg xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ev="http://www.w3.org/2001/xml-events"
+     version="1.1" baseProfile="full"
+     width="800px" height="1200px" viewBox="0 0 800 1200">
+
+<g id="idMain" style="fill-opacity:0.7;">
+  <rect x="0" y="0"   width="700" height="200" fill="#bbbbbb" stroke="black" stroke-width="7px" rx="10" ry="10"/>
+  <text id="idMonth" x="200" y="110" style="font-size:46px;fill:#000000">September 2014</text>
+  <rect x="0" y="200" width="700" height="700" fill="#dddddd"   stroke="black" stroke-width="7px" rx="10" ry="10"/>
+
+<g id="idRectNextPreviousClose" style="font-size:46px;fill:#aaaaaa;stroke:#333333;stroke-width:3px">  
+  <g id="PV.idPREV">
+    <rect id="PV.idPrevRect"  x="20"  y="50" width="100" height="100" rx="50" ry="50" style="opacity:0.0"/>
+    <text id="PV.idPrevText"  x="40"  y="110" style="stroke-width:7px">❰</text>
+  </g>  
+  <g id="PV.idNEXT">
+    <rect id="PV.idNextRect"  x="580" y="50" width="100" height="100" rx="50" ry="50" style="opacity:0.0"/>
+    <text id="PV.idNextText"  x="620" y="110" style="stroke-width:7px">❱</text>
+  </g>  
+  <g id="PV.idCLOSE">
+    <rect id="PV.idCloseRect" x="665" y="0"  width="35"  height="35" style="fill:#000000;opacity:0.0"/>
+    <text id="PV.idCloseText" x="668" y="30" style="font-size:18px;fill:#000000">✖</text>
+  </g>  
+</g>
+  
+<g id="idRectWeekdays" style="fill:#222222;stroke:#333333;stroke-width:3px">    
+  <rect x="0"   y="200" width="100" height="100" rx="5" ry="5"/>
+  <rect x="100" y="200" width="100" height="100" rx="5" ry="5"/>
+  <rect x="200" y="200" width="100" height="100" rx="5" ry="5"/>
+  <rect x="300" y="200" width="100" height="100" rx="5" ry="5"/>
+  <rect x="400" y="200" width="100" height="100" rx="5" ry="5"/>
+  <rect x="500" y="200" width="100" height="100" rx="5" ry="5"/>
+  <rect x="600" y="200" width="100" height="100" rx="5" ry="5"/>
+</g>
+
+<g id="idRectDays" style="font-size:32px;fill:#666666;stroke:#333333;stroke-width:3px">    
+  <g id="PV.TA11">
+    <rect id="PV.ra11" x="0"   y="300" width="100" height="100" rx="5" ry="5"/>
+  </g>
+  <g id="PV.TA12">
+    <rect id="PV.ra12" x="100" y="300" width="100" height="100" rx="5" ry="5"/>
+  </g>
+  <g id="PV.TA13">
+    <rect id="PV.ra13" x="200" y="300" width="100" height="100" rx="5" ry="5"/>
+  </g>
+  <g id="PV.TA14">
+    <rect id="PV.ra14" x="300" y="300" width="100" height="100" rx="5" ry="5"/>
+  </g>
+  <g id="PV.TA15">
+    <rect id="PV.ra15" x="400" y="300" width="100" height="100" rx="5" ry="5"/>
+  </g>
+  <g id="PV.TA16">
+    <rect id="PV.ra16" x="500" y="300" width="100" height="100" rx="5" ry="5"/>
+  </g>
+  <g id="PV.TA17">
+    <rect id="PV.ra17" x="600" y="300" width="100" height="100" rx="5" ry="5"/>
+  </g>
+    
+  <g id="PV.TA21">
+    <rect id="PV.ra21" x="0"   y="400" width="100" height="100" rx="5" ry="5"/>
+  </g>
+  <g id="PV.TA22">
+    <rect id="PV.ra22" x="100" y="400" width="100" height="100" rx="5" ry="5"/>
+  </g>
+  <g id="PV.TA23">
+    <rect id="PV.ra23" x="200" y="400" width="100" height="100" rx="5" ry="5"/>
+  </g>
+  <g id="PV.TA24">
+    <rect id="PV.ra24" x="300" y="400" width="100" height="100" rx="5" ry="5"/>
+  </g>
+  <g id="PV.TA25">
+    <rect id="PV.ra25" x="400" y="400" width="100" height="100" rx="5" ry="5"/>
+  </g>
+  <g id="PV.TA26">
+    <rect id="PV.ra26" x="500" y="400" width="100" height="100" rx="5" ry="5"/>
+  </g>
+  <g id="PV.TA27">
+    <rect id="PV.ra27" x="600" y="400" width="100" height="100" rx="5" ry="5"/>
+  </g>
+    
+  <g id="PV.TA31">
+    <rect id="PV.ra31" x="0"   y="500" width="100" height="100" rx="5" ry="5"/>
+  </g>
+  <g id="PV.TA32">
+    <rect id="PV.ra32" x="100" y="500" width="100" height="100" rx="5" ry="5"/>
+  </g>
+  <g id="PV.TA33">
+    <rect id="PV.ra33" x="200" y="500" width="100" height="100" rx="5" ry="5"/>
+  </g>
+  <g id="PV.TA34">
+    <rect id="PV.ra34" x="300" y="500" width="100" height="100" rx="5" ry="5"/>
+  </g>
+  <g id="PV.TA35">
+    <rect id="PV.ra35" x="400" y="500" width="100" height="100" rx="5" ry="5"/>
+  </g>
+  <g id="PV.TA36">
+    <rect id="PV.ra36" x="500" y="500" width="100" height="100" rx="5" ry="5"/>
+  </g>
+  <g id="PV.TA37">
+    <rect id="PV.ra37" x="600" y="500" width="100" height="100" rx="5" ry="5"/>
+  </g>
+    
+  <g id="PV.TA41">
+    <rect id="PV.ra41" x="0"   y="600" width="100" height="100" rx="5" ry="5"/>
+  </g>
+  <g id="PV.TA42">
+    <rect id="PV.ra42" x="100" y="600" width="100" height="100" rx="5" ry="5"/>
+  </g>
+  <g id="PV.TA43">
+    <rect id="PV.ra43" x="200" y="600" width="100" height="100" rx="5" ry="5"/>
+  </g>
+  <g id="PV.TA44">
+    <rect id="PV.ra44" x="300" y="600" width="100" height="100" rx="5" ry="5"/>
+  </g>
+  <g id="PV.TA45">
+    <rect id="PV.ra45" x="400" y="600" width="100" height="100" rx="5" ry="5"/>
+  </g>
+  <g id="PV.TA46">
+    <rect id="PV.ra46" x="500" y="600" width="100" height="100" rx="5" ry="5"/>
+  </g>
+  <g id="PV.TA47">
+    <rect id="PV.ra47" x="600" y="600" width="100" height="100" rx="5" ry="5"/>
+  </g>
+    
+  <g id="PV.TA51">
+    <rect id="PV.ra51" x="0"   y="700" width="100" height="100" rx="5" ry="5"/>
+  </g>
+  <g id="PV.TA52">
+    <rect id="PV.ra52" x="100" y="700" width="100" height="100" rx="5" ry="5"/>
+  </g>
+  <g id="PV.TA53">
+    <rect id="PV.ra53" x="200" y="700" width="100" height="100" rx="5" ry="5"/>
+  </g>
+  <g id="PV.TA54">
+    <rect id="PV.ra54" x="300" y="700" width="100" height="100" rx="5" ry="5"/>
+  </g>
+  <g id="PV.TA55">
+    <rect id="PV.ra55" x="400" y="700" width="100" height="100" rx="5" ry="5"/>
+  </g>
+  <g id="PV.TA56">
+    <rect id="PV.ra56" x="500" y="700" width="100" height="100" rx="5" ry="5"/>
+  </g>
+  <g id="PV.TA57">
+    <rect id="PV.ra57" x="600" y="700" width="100" height="100" rx="5" ry="5"/>
+  </g>
+    
+  <g id="PV.TA61">
+    <rect id="PV.ra61" x="0"   y="800" width="100" height="100" rx="5" ry="5"/>
+  </g>
+  <g id="PV.TA62">
+    <rect id="PV.ra62" x="100" y="800" width="100" height="100" rx="5" ry="5"/>
+  </g>
+  <g id="PV.TA63">
+    <rect id="PV.ra63" x="200" y="800" width="100" height="100" rx="5" ry="5"/>
+  </g>
+  <g id="PV.TA64">
+    <rect id="PV.ra64" x="300" y="800" width="100" height="100" rx="5" ry="5"/>
+  </g>
+  <g id="PV.TA65">
+    <rect id="PV.ra65" x="400" y="800" width="100" height="100" rx="5" ry="5"/>
+  </g>
+  <g id="PV.TA66">
+    <rect id="PV.ra66" x="500" y="800" width="100" height="100" rx="5" ry="5"/>
+  </g>
+  <g id="PV.TA67">
+    <rect id="PV.ra67" x="600" y="800" width="100" height="100" rx="5" ry="5"/>
+  </g>
+</g>
+
+<g id="idWeekdays" style="font-size:32px;fill:#00ff00">  
+  <text id="PV.ta01" x="30"  y="260">Mo</text>
+  <text id="PV.ta02" x="130" y="260">Di</text>
+  <text id="PV.ta03" x="230" y="260">Mi</text>
+  <text id="PV.ta04" x="330" y="260">Do</text>
+  <text id="PV.ta05" x="430" y="260">Fr</text>
+  <text id="PV.ta06" x="530" y="260">Sa</text>
+  <text id="PV.ta07" x="630" y="260">So</text>
+</g>
+  
+<g id="idDays" style="font-size:32px;fill:#000000">
+  <text id="PV.ta11" x="30"  y="360" style="fill:#000000">11</text>
+  <text id="PV.ta12" x="130" y="360" style="fill:#000000">12</text>
+  <text id="PV.ta13" x="230" y="360" style="fill:#000000">13</text>
+  <text id="PV.ta14" x="330" y="360" style="fill:#000000">14</text>
+  <text id="PV.ta15" x="430" y="360" style="fill:#000000">15</text>
+  <text id="PV.ta16" x="530" y="360" style="fill:#000000">16</text>
+  <text id="PV.ta17" x="630" y="360" style="fill:#000000">17</text>
+
+  <text id="PV.ta21" x="30"  y="460" style="fill:#000000">21</text>
+  <text id="PV.ta22" x="130" y="460" style="fill:#000000">22</text>
+  <text id="PV.ta23" x="230" y="460" style="fill:#000000">23</text>
+  <text id="PV.ta24" x="330" y="460" style="fill:#000000">24</text>
+  <text id="PV.ta25" x="430" y="460" style="fill:#000000">25</text>
+  <text id="PV.ta26" x="530" y="460" style="fill:#000000">26</text>
+  <text id="PV.ta27" x="630" y="460" style="fill:#000000">27</text>
+  
+  <text id="PV.ta31" x="30"  y="560" style="fill:#000000">31</text>
+  <text id="PV.ta32" x="130" y="560" style="fill:#000000">32</text>
+  <text id="PV.ta33" x="230" y="560" style="fill:#000000">33</text>
+  <text id="PV.ta34" x="330" y="560" style="fill:#000000">34</text>
+  <text id="PV.ta35" x="430" y="560" style="fill:#000000">35</text>
+  <text id="PV.ta36" x="530" y="560" style="fill:#000000">36</text>
+  <text id="PV.ta37" x="630" y="560" style="fill:#000000">37</text>
+  
+  <text id="PV.ta41" x="30"  y="660" style="fill:#000000">41</text>
+  <text id="PV.ta42" x="130" y="660" style="fill:#000000">42</text>
+  <text id="PV.ta43" x="230" y="660" style="fill:#000000">43</text>
+  <text id="PV.ta44" x="330" y="660" style="fill:#000000">44</text>
+  <text id="PV.ta45" x="430" y="660" style="fill:#000000">45</text>
+  <text id="PV.ta46" x="530" y="660" style="fill:#000000">46</text>
+  <text id="PV.ta47" x="630" y="660" style="fill:#000000">47</text>
+  
+  <text id="PV.ta51" x="30"  y="760" style="fill:#000000">51</text>
+  <text id="PV.ta52" x="130" y="760" style="fill:#000000">52</text>
+  <text id="PV.ta53" x="230" y="760" style="fill:#000000">53</text>
+  <text id="PV.ta54" x="330" y="760" style="fill:#000000">54</text>
+  <text id="PV.ta55" x="430" y="760" style="fill:#000000">55</text>
+  <text id="PV.ta56" x="530" y="760" style="fill:#000000">56</text>
+  <text id="PV.ta57" x="630" y="760" style="fill:#000000">57</text>
+  
+  <text id="PV.ta61" x="30"  y="860" style="fill:#000000">61</text>
+  <text id="PV.ta62" x="130" y="860" style="fill:#000000">62</text>
+  <text id="PV.ta63" x="230" y="860" style="fill:#000000">63</text>
+  <text id="PV.ta64" x="330" y="860" style="fill:#000000">64</text>
+  <text id="PV.ta65" x="430" y="860" style="fill:#000000">65</text>
+  <text id="PV.ta66" x="530" y="860" style="fill:#000000">66</text>
+  <text id="PV.ta67" x="630" y="860" style="fill:#000000">67</text>
+</g>
+</g>
+</svg>

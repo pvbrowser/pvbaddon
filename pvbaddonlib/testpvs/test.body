@@ -1,0 +1,41 @@
+        <nav>
+            <ul>
+                <li class = "cat1">
+                    <a href="#1">Home</a>
+                </li>
+                <li class = "cat2">
+                    <a href="#2">Über uns</a>
+                    <ul>
+                        <li><a href="#2.1">Wer wir sind</a></li>
+                        <li><a href="#2.2">Was wir machen</a></li>
+                        <li><a href="#2.3">Unsere Ziele</a></li>
+                        <li><a href="#2.4">Unser Team</a></li>
+                    </ul>
+                </li>
+                <li class = "cat3">
+                     <a href="#3">Leistungen</a>
+                     <ul>
+                         <li><a href="#3.1">Webdesign</a></li>
+                         <li><a href="#3.2">Programmierung</a></li>
+                         <li><a href="#3.3">Online Marketing</a></li>
+                         <li><a href="#3.4">Suchmaschinenoptimierung</a></li>
+                     </ul>
+                </li>
+                <li class = "cat4">
+                    <a href="#4">Referenzen</a>
+                    <ul>
+                        <li><a href="#4.1">Webseiten</a></li>
+                        <li><a href="#4.2">Themes & Templates</a></li>
+                        <li><a href="#4.3">Plugins</a></li>
+                    </ul>
+                </li>
+                <li class = "cat5">
+                    <a href="#5">Kontakt</a>
+                    <ul>
+                        <li><a href="#5.1">Deutschland</a></li>
+                        <li><a href="#5.2">Amerika</a></li>
+                        <li><a href="#5.3">Spanien</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>

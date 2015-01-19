@@ -119,10 +119,12 @@ static void *mailboxReadThread(void *arg)
     {
       thread->lock();
       if(use_socket != 1) rlsleep(modbus_idletime); // on tty we have to sleep
-      if(debug) printf("modbus_write: slave=%d function=%d data[0]=%d\n",
-                                      slave,   function,   data[0]);
+      if(debug) printf("modbus_write:           slave=%d function=%d data[]=%d %d %d %d ...\n",
+                                                slave,   function,   data[0], data[1], data[2], data[3]);
       ret = modbus->write( slave, function, (const unsigned char *) data, buflen);
       ret = modbus->response( &slave, &function, (unsigned char *) buf);
+      if(debug) printf("modbus_response: ret=%d slave=%d function=%d data[]=%d %d %d %d ...\n",
+                                         ret,   slave,   function,   data[0], data[1], data[2], data[3]);
       if(use_socket != 1) rlsleep(modbus_idletime); // on tty we have to sleep
       thread->unlock();
       if(ret < 0)

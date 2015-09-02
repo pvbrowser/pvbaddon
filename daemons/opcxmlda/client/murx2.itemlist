@@ -1,0 +1,413 @@
+#./opcxmlda_client http://opcxml.demo-this.com/XmlDaSampleServer/Service.asmx Browse
+#
+#C 
+#C \Static
+#C 
+#C \Static/Analog Types
+#Static/Analog Types/Int
+#Static/Analog Types/Double
+#Static/Analog Types/Int[]
+#Static/Analog Types/Double[]
+#C 
+#C \Static/Limited Access
+#Static/Limited Access/Read Only 1
+#Static/Limited Access/Read Only 2
+#Static/Limited Access/Write Only 1
+#Static/Limited Access/Write Only 2
+#C 
+#C \Static/Simple Types
+#Static/Simple Types/SByte
+#Static/Simple Types/Byte
+#Static/Simple Types/Short
+#Static/Simple Types/UShort
+#Static/Simple Types/Int
+#Static/Simple Types/UInt
+#Static/Simple Types/Long
+#Static/Simple Types/ULong
+#Static/Simple Types/Float
+#Static/Simple Types/Double
+#Static/Simple Types/Decimal
+#Static/Simple Types/DateTime
+#Static/Simple Types/Boolean
+#Static/Simple Types/String
+#C 
+#C \Static/ArrayTypes
+#Static/ArrayTypes/SByte[]
+#Static/ArrayTypes/Byte[]
+#Static/ArrayTypes/Short[]
+#Static/ArrayTypes/UShort[]
+#Static/ArrayTypes/Int[]
+#Static/ArrayTypes/UInt[]
+#Static/ArrayTypes/Long[]
+#Static/ArrayTypes/ULong[]
+#Static/ArrayTypes/Float[]
+#Static/ArrayTypes/Double[]
+#Static/ArrayTypes/Decimal[]
+#Static/ArrayTypes/Boolean[]
+#Static/ArrayTypes/String[]
+#Static/ArrayTypes/DateTime[]
+#Static/ArrayTypes/Object[]
+#C 
+#C \Static/Enumerated Types
+#Static/Enumerated Types/Gems
+#Static/Enumerated Types/Fellowship
+#C 
+#C \Dynamic
+#C 
+#C \Dynamic/Analog Types
+#C 
+#C \Dynamic/Analog Types/Fools
+#Dynamic/Analog Types/Fools/Rosencrantz
+#Dynamic/Analog Types/Fools/Guildenstern
+#Dynamic/Analog Types/Int
+#Dynamic/Analog Types/Double
+#Dynamic/Analog Types/Int[]
+#Dynamic/Analog Types/Double[]
+#C 
+#C \Dynamic/Enumerated Types
+#Dynamic/Enumerated Types/Gems
+#Dynamic/Enumerated Types/Fellowship
+#C 
+#C DA20\DA20
+#C 
+#C DA20\CPX
+#C 
+#C DA20\CPX/OPCBinary
+#C 
+#C DA20\CPX/OPCBinary/OpcDa20Server.binary
+DA20#CPX/OPCBinary/OpcDa20Server.binary/UInt128
+DA20#CPX/OPCBinary/OpcDa20Server.binary/TerminatedArrayValues
+DA20#CPX/OPCBinary/OpcDa20Server.binary/FixedArrayValues
+DA20#CPX/OPCBinary/OpcDa20Server.binary/IntegerValues
+DA20#CPX/OPCBinary/OpcDa20Server.binary/StringValues
+DA20#CPX/OPCBinary/OpcDa20Server.binary/Quadruple
+DA20#CPX/OPCBinary/OpcDa20Server.binary/StructValues
+DA20#CPX/OPCBinary/OpcDa20Server.binary/Int128
+DA20#CPX/OPCBinary/OpcDa20Server.binary/VariableArrayValues
+DA20#CPX/OPCBinary/OpcDa20Server.binary/VeryWideString
+DA20#CPX/OPCBinary/OpcDa20Server.binary/FloatValues
+DA20#CPX/OPCBinary/OpcDa20Server.binary/BitValues
+#C 
+#C DA20\CPX/XMLSchema
+#C 
+#C DA20\CPX/XMLSchema/OpcDa20Server.binary
+DA20#CPX/XMLSchema/OpcDa20Server.binary/UInt128
+DA20#CPX/XMLSchema/OpcDa20Server.binary/TerminatedArrayValues
+DA20#CPX/XMLSchema/OpcDa20Server.binary/FixedArrayValues
+DA20#CPX/XMLSchema/OpcDa20Server.binary/IntegerValues
+DA20#CPX/XMLSchema/OpcDa20Server.binary/StringValues
+DA20#CPX/XMLSchema/OpcDa20Server.binary/Quadruple
+DA20#CPX/XMLSchema/OpcDa20Server.binary/StructValues
+DA20#CPX/XMLSchema/OpcDa20Server.binary/Int128
+DA20#CPX/XMLSchema/OpcDa20Server.binary/VariableArrayValues
+DA20#CPX/XMLSchema/OpcDa20Server.binary/VeryWideString
+DA20#CPX/XMLSchema/OpcDa20Server.binary/FloatValues
+DA20#CPX/XMLSchema/OpcDa20Server.binary/BitValues
+#C 
+#C DA20\Static
+#C 
+#C DA20\Static/Analog Types
+DA20#Static/Analog Types/Int
+DA20#Static/Analog Types/Double
+DA20#Static/Analog Types/Int[]
+DA20#Static/Analog Types/Double[]
+#C 
+#C DA20\Static/Limited Access
+DA20#Static/Limited Access/Read Only 1
+DA20#Static/Limited Access/Read Only 2
+DA20#Static/Limited Access/Write Only 1
+DA20#Static/Limited Access/Write Only 2
+#C 
+#C DA20\Static/Simple Types
+DA20#Static/Simple Types/SByte
+DA20#Static/Simple Types/Byte
+DA20#Static/Simple Types/Short
+DA20#Static/Simple Types/UShort
+DA20#Static/Simple Types/Int
+DA20#Static/Simple Types/UInt
+DA20#Static/Simple Types/Long
+DA20#Static/Simple Types/ULong
+DA20#Static/Simple Types/Float
+DA20#Static/Simple Types/Double
+DA20#Static/Simple Types/Decimal
+DA20#Static/Simple Types/DateTime
+DA20#Static/Simple Types/Boolean
+DA20#Static/Simple Types/String
+#C 
+#C DA20\Static/ArrayTypes
+DA20#Static/ArrayTypes/SByte[]
+DA20#Static/ArrayTypes/Byte[]
+DA20#Static/ArrayTypes/Short[]
+DA20#Static/ArrayTypes/UShort[]
+DA20#Static/ArrayTypes/Int[]
+DA20#Static/ArrayTypes/UInt[]
+DA20#Static/ArrayTypes/Long[]
+DA20#Static/ArrayTypes/ULong[]
+DA20#Static/ArrayTypes/Float[]
+DA20#Static/ArrayTypes/Double[]
+DA20#Static/ArrayTypes/Decimal[]
+DA20#Static/ArrayTypes/Boolean[]
+DA20#Static/ArrayTypes/String[]
+DA20#Static/ArrayTypes/DateTime[]
+DA20#Static/ArrayTypes/Object[]
+#C 
+#C DA20\Static/Enumerated Types
+DA20#Static/Enumerated Types/Gems
+DA20#Static/Enumerated Types/Fellowship
+#C 
+#C DA20\Dynamic
+#C 
+#C DA20\Dynamic/Analog Types
+#C 
+#C DA20\Dynamic/Analog Types/Fools
+DA20#Dynamic/Analog Types/Fools/Rosencrantz
+DA20#Dynamic/Analog Types/Fools/Guildenstern
+DA20#Dynamic/Analog Types/Int
+DA20#Dynamic/Analog Types/Double
+DA20#Dynamic/Analog Types/Int[]
+DA20#Dynamic/Analog Types/Double[]
+#C 
+#C DA20\Dynamic/Enumerated Types
+DA20#Dynamic/Enumerated Types/Gems
+DA20#Dynamic/Enumerated Types/Fellowship
+#C 
+#C DA20\Complex Data
+#C 
+#C DA20\Complex Data/Static
+#C 
+#C DA20\Complex Data/Static/Integers
+#C 
+#C DA20\Complex Data/Static/Integers/CPX
+#C 
+#C DA20\Complex Data/Static/Integers/CPX/XML
+DA20#Complex Data/Static/Integers/CPX/XML/DataFilters
+#C 
+#C DA20\Complex Data/Static/Floats
+#C 
+#C DA20\Complex Data/Static/Floats/CPX
+#C 
+#C DA20\Complex Data/Static/Floats/CPX/XML
+DA20#Complex Data/Static/Floats/CPX/XML/DataFilters
+#C 
+#C DA20\Complex Data/Static/Strings
+#C 
+#C DA20\Complex Data/Static/Strings/CPX
+#C 
+#C DA20\Complex Data/Static/Strings/CPX/XML
+DA20#Complex Data/Static/Strings/CPX/XML/DataFilters
+#C 
+#C DA20\Complex Data/Static/Bits
+#C 
+#C DA20\Complex Data/Static/Bits/CPX
+#C 
+#C DA20\Complex Data/Static/Bits/CPX/XML
+DA20#Complex Data/Static/Bits/CPX/XML/DataFilters
+#C 
+#C DA20\Complex Data/Static/Structs
+#C 
+#C DA20\Complex Data/Static/Structs/CPX
+#C 
+#C DA20\Complex Data/Static/Structs/CPX/XML
+DA20#Complex Data/Static/Structs/CPX/XML/DataFilters
+#C 
+#C DA20\Complex Data/Static/FixedArrays
+#C 
+#C DA20\Complex Data/Static/FixedArrays/CPX
+#C 
+#C DA20\Complex Data/Static/FixedArrays/CPX/XML
+DA20#Complex Data/Static/FixedArrays/CPX/XML/DataFilters
+#C 
+#C DA20\Complex Data/Static/VariableArrays
+#C 
+#C DA20\Complex Data/Static/VariableArrays/CPX
+#C 
+#C DA20\Complex Data/Static/VariableArrays/CPX/XML
+DA20#Complex Data/Static/VariableArrays/CPX/XML/DataFilters
+#C 
+#C DA20\Complex Data/Static/TerminatedArrays
+#C 
+#C DA20\Complex Data/Static/TerminatedArrays/CPX
+#C 
+#C DA20\Complex Data/Static/TerminatedArrays/CPX/XML
+DA20#Complex Data/Static/TerminatedArrays/CPX/XML/DataFilters
+#C 
+#C DA20\Complex Data/Dynamic
+#C 
+#C DA20\Complex Data/Dynamic/FixedArrays
+#C 
+#C DA20\Complex Data/Dynamic/FixedArrays/CPX
+#C 
+#C DA20\Complex Data/Dynamic/FixedArrays/CPX/XML
+DA20#Complex Data/Dynamic/FixedArrays/CPX/XML/DataFilters
+#C 
+#C DA30\DA30
+#C 
+#C DA30\CPX
+#C 
+#C DA30\CPX/OPCBinary
+#C 
+#C DA30\CPX/OPCBinary/OpcDa30Server.binary
+DA30#CPX/OPCBinary/OpcDa30Server.binary/UInt128
+DA30#CPX/OPCBinary/OpcDa30Server.binary/TerminatedArrayValues
+DA30#CPX/OPCBinary/OpcDa30Server.binary/FixedArrayValues
+DA30#CPX/OPCBinary/OpcDa30Server.binary/IntegerValues
+DA30#CPX/OPCBinary/OpcDa30Server.binary/StringValues
+DA30#CPX/OPCBinary/OpcDa30Server.binary/Quadruple
+DA30#CPX/OPCBinary/OpcDa30Server.binary/StructValues
+DA30#CPX/OPCBinary/OpcDa30Server.binary/Int128
+DA30#CPX/OPCBinary/OpcDa30Server.binary/VariableArrayValues
+DA30#CPX/OPCBinary/OpcDa30Server.binary/VeryWideString
+DA30#CPX/OPCBinary/OpcDa30Server.binary/FloatValues
+DA30#CPX/OPCBinary/OpcDa30Server.binary/BitValues
+#C 
+#C DA30\CPX/XMLSchema
+#C 
+#C DA30\CPX/XMLSchema/OpcDa30Server.binary
+DA30#CPX/XMLSchema/OpcDa30Server.binary/UInt128
+DA30#CPX/XMLSchema/OpcDa30Server.binary/TerminatedArrayValues
+DA30#CPX/XMLSchema/OpcDa30Server.binary/FixedArrayValues
+DA30#CPX/XMLSchema/OpcDa30Server.binary/IntegerValues
+DA30#CPX/XMLSchema/OpcDa30Server.binary/StringValues
+DA30#CPX/XMLSchema/OpcDa30Server.binary/Quadruple
+DA30#CPX/XMLSchema/OpcDa30Server.binary/StructValues
+DA30#CPX/XMLSchema/OpcDa30Server.binary/Int128
+DA30#CPX/XMLSchema/OpcDa30Server.binary/VariableArrayValues
+DA30#CPX/XMLSchema/OpcDa30Server.binary/VeryWideString
+DA30#CPX/XMLSchema/OpcDa30Server.binary/FloatValues
+DA30#CPX/XMLSchema/OpcDa30Server.binary/BitValues
+#C 
+#C DA30\Static
+#C 
+#C DA30\Static/Analog Types
+DA30#Static/Analog Types/Int
+DA30#Static/Analog Types/Double
+DA30#Static/Analog Types/Int[]
+DA30#Static/Analog Types/Double[]
+#C 
+#C DA30\Static/Limited Access
+DA30#Static/Limited Access/Read Only 1
+DA30#Static/Limited Access/Read Only 2
+DA30#Static/Limited Access/Write Only 1
+DA30#Static/Limited Access/Write Only 2
+#C 
+#C DA30\Static/Simple Types
+DA30#Static/Simple Types/SByte
+DA30#Static/Simple Types/Byte
+DA30#Static/Simple Types/Short
+DA30#Static/Simple Types/UShort
+DA30#Static/Simple Types/Int
+DA30#Static/Simple Types/UInt
+DA30#Static/Simple Types/Long
+DA30#Static/Simple Types/ULong
+DA30#Static/Simple Types/Float
+DA30#Static/Simple Types/Double
+DA30#Static/Simple Types/Decimal
+DA30#Static/Simple Types/DateTime
+DA30#Static/Simple Types/Boolean
+DA30#Static/Simple Types/String
+#C 
+#C DA30\Static/ArrayTypes
+DA30#Static/ArrayTypes/SByte[]
+DA30#Static/ArrayTypes/Byte[]
+DA30#Static/ArrayTypes/Short[]
+DA30#Static/ArrayTypes/UShort[]
+DA30#Static/ArrayTypes/Int[]
+DA30#Static/ArrayTypes/UInt[]
+DA30#Static/ArrayTypes/Long[]
+DA30#Static/ArrayTypes/ULong[]
+DA30#Static/ArrayTypes/Float[]
+DA30#Static/ArrayTypes/Double[]
+DA30#Static/ArrayTypes/Decimal[]
+DA30#Static/ArrayTypes/Boolean[]
+DA30#Static/ArrayTypes/String[]
+DA30#Static/ArrayTypes/DateTime[]
+DA30#Static/ArrayTypes/Object[]
+#C 
+#C DA30\Static/Enumerated Types
+DA30#Static/Enumerated Types/Gems
+DA30#Static/Enumerated Types/Fellowship
+#C 
+#C DA30\Dynamic
+#C 
+#C DA30\Dynamic/Analog Types
+#C 
+#C DA30\Dynamic/Analog Types/Fools
+DA30#Dynamic/Analog Types/Fools/Rosencrantz
+DA30#Dynamic/Analog Types/Fools/Guildenstern
+DA30#Dynamic/Analog Types/Int
+DA30#Dynamic/Analog Types/Double
+DA30#Dynamic/Analog Types/Int[]
+DA30#Dynamic/Analog Types/Double[]
+#C 
+#C DA30\Dynamic/Enumerated Types
+DA30#Dynamic/Enumerated Types/Gems
+DA30#Dynamic/Enumerated Types/Fellowship
+#C 
+#C DA30\Complex Data
+#C 
+#C DA30\Complex Data/Static
+#C 
+#C DA30\Complex Data/Static/Integers
+#C 
+#C DA30\Complex Data/Static/Integers/CPX
+#C 
+#C DA30\Complex Data/Static/Integers/CPX/XML
+DA30#Complex Data/Static/Integers/CPX/XML/DataFilters
+#C 
+#C DA30\Complex Data/Static/Floats
+#C 
+#C DA30\Complex Data/Static/Floats/CPX
+#C 
+#C DA30\Complex Data/Static/Floats/CPX/XML
+DA30#Complex Data/Static/Floats/CPX/XML/DataFilters
+#C 
+#C DA30\Complex Data/Static/Strings
+#C 
+#C DA30\Complex Data/Static/Strings/CPX
+#C 
+#C DA30\Complex Data/Static/Strings/CPX/XML
+DA30#Complex Data/Static/Strings/CPX/XML/DataFilters
+#C 
+#C DA30\Complex Data/Static/Bits
+#C 
+#C DA30\Complex Data/Static/Bits/CPX
+#C 
+#C DA30\Complex Data/Static/Bits/CPX/XML
+DA30#Complex Data/Static/Bits/CPX/XML/DataFilters
+#C 
+#C DA30\Complex Data/Static/Structs
+#C 
+#C DA30\Complex Data/Static/Structs/CPX
+#C 
+#C DA30\Complex Data/Static/Structs/CPX/XML
+DA30#Complex Data/Static/Structs/CPX/XML/DataFilters
+#C 
+#C DA30\Complex Data/Static/FixedArrays
+#C 
+#C DA30\Complex Data/Static/FixedArrays/CPX
+#C 
+#C DA30\Complex Data/Static/FixedArrays/CPX/XML
+DA30#Complex Data/Static/FixedArrays/CPX/XML/DataFilters
+#C 
+#C DA30\Complex Data/Static/VariableArrays
+#C 
+#C DA30\Complex Data/Static/VariableArrays/CPX
+#C 
+#C DA30\Complex Data/Static/VariableArrays/CPX/XML
+DA30#Complex Data/Static/VariableArrays/CPX/XML/DataFilters
+#C 
+#C DA30\Complex Data/Static/TerminatedArrays
+#C 
+#C DA30\Complex Data/Static/TerminatedArrays/CPX
+#C 
+#C DA30\Complex Data/Static/TerminatedArrays/CPX/XML
+DA30#Complex Data/Static/TerminatedArrays/CPX/XML/DataFilters
+#C 
+#C DA30\Complex Data/Dynamic
+#C 
+#C DA30\Complex Data/Dynamic/FixedArrays
+#C 
+#C DA30\Complex Data/Dynamic/FixedArrays/CPX
+#C 
+#C DA30\Complex Data/Dynamic/FixedArrays/CPX/XML
+DA30#Complex Data/Dynamic/FixedArrays/CPX/XML/DataFilters

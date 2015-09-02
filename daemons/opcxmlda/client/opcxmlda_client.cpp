@@ -12,6 +12,7 @@
 #include "rlthread.h"
 #include "rlmailbox.h"
 #include "rlcutil.h"
+#include "rlstring.h"
 
 #ifdef _WIN32 
 #define xmlFree free
@@ -166,7 +167,8 @@ void *reader_thread(void *arg)
     ctx->env->cur = xmlcur;
 
     /* invoke */
-    err = soap_client_invoke(ctx, &ctx2, url, "");
+    //err = soap_client_invoke(ctx, &ctx2, url, "");
+    err = soap_client_invoke(ctx, &ctx2, url, "http://opcfoundation.org/webservices/XMLDA/1.0/Write");
     if (err != H_OK)
     {
       log_error4("[%d] %s(): %s ", herror_code(err),
@@ -254,7 +256,7 @@ items_found:
             {
               strcpy(itemvalue,buf);
             }
-            if(debug) printf("%s=%s\n",itemname,itemvalue);
+            if(debug) printf("write_to_shm: %s=%s\n",itemname,itemvalue);
             xmlFree((void*) cptr);
           }  
           i++;
@@ -349,28 +351,66 @@ int run(const char *url, int maxItemNameLength)
   shmheader->writeErrorCount   = 0;
   strcpy(shmheader->ident,"opc");
 
-  /* create a SoapCtx object */
-  err = soap_ctx_new_with_method(URN, "Read", &ctx);
-  if(err != H_OK)
+  if(0) // never use the old version (rl sep 1 2015)
   {
-     log_error4("%s():%s [%d]", herror_func(err),
-                herror_message(err), herror_code(err));
-     herror_release(err);
-     return 1;
-  }
+    /* create a SoapCtx object */
+    err = soap_ctx_new_with_method(URN, "Read", &ctx);
+    if(err != H_OK)
+    {
+       log_error4("%s():%s [%d]", herror_func(err),
+                  herror_message(err), herror_code(err));
+       herror_release(err);
+       return 1;
+    }
 
-  /* create the Read ItemList */
-  xmlitem = soap_env_add_item(ctx->env, "xsd:element", "ItemList", "");
-  xmlcur = ctx->env->cur;
-  ctx->env->cur = xmlitem;
-  for(i=0; i<shmheader->numItems; i++)
-  {
-    cptr = (char *) shmadr;
-    cptr += sizeof(SHM_HEADER) + (i*(maxItemNameLength+1 + max_name_length+1));
-    sprintf(buf,"Items ItemName=\"%s\"",cptr);
-    soap_env_add_item(ctx->env, "xsd:string", buf, NULL);
+    /* create the Read ItemList */
+    xmlitem = soap_env_add_item(ctx->env, "xsd:element", "ItemList", "");
+    xmlcur = ctx->env->cur;
+    ctx->env->cur = xmlitem;
+    for(i=0; i<shmheader->numItems; i++)
+    {
+      cptr = (char *) shmadr;
+      cptr += sizeof(SHM_HEADER) + (i*(maxItemNameLength+1 + max_name_length+1));
+      sprintf(buf,"Items ItemName=\"%s\"",cptr);
+      if(debug) printf("soap_env_add_item %s\n", buf);
+      soap_env_add_item(ctx->env, "xsd:string", buf, NULL);
+    }
+    ctx->env->cur = xmlcur;
   }
-  ctx->env->cur = xmlcur;
+  else
+  {
+    rlString rltmp;
+    rlString rlenv;
+    rlenv =
+      "<SOAP-ENV:Envelope xmlns:SOAP-ENC=\"http://schemas.xmlsoap.org/soap/encoding/\" xmlns:SOAP-ENV=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:ZSI=\"http://www.zolera.com/schemas/ZSI/\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"><SOAP-ENV:Header></SOAP-ENV:Header><SOAP-ENV:Body xmlns:ns1=\"http://opcfoundation.org/webservices/XMLDA/1.0/\"><ns1:Read><ns1:Options  ReturnErrorText=\"true\" ReturnItemName=\"true\" ReturnItemPath=\"true\"></ns1:Options><ns1:ItemList>";
+    for(i=0; i<shmheader->numItems; i++)
+    {
+      cptr = (char *) shmadr;
+      cptr += sizeof(SHM_HEADER) + (i*(maxItemNameLength+1 + max_name_length+1));
+      rltmp = cptr;
+      cptr = strchr(rltmp.text(),'#');
+      if(cptr != NULL)
+      {
+        *cptr = '\0';
+        cptr++;
+        sprintf(buf,"<ns1:Items ItemName=\"%s\" ItemPath=\"%s\" MaxAge=\"500\" ></ns1:Items>",cptr,rltmp.text());
+        if(debug) printf("soap_env_add_item %s\n", buf);
+        rlenv += buf;
+      } 
+      else
+      {
+        sprintf(buf,"<ns1:Items ItemName=\"%s\" ItemPath=\"\" MaxAge=\"500\" ></ns1:Items>",rltmp.text());
+        if(debug) printf("soap_env_add_item %s\n", buf);
+        rlenv += buf;
+      }  
+    }
+    rlenv += "</ns1:ItemList></ns1:Read></SOAP-ENV:Body></SOAP-ENV:Envelope>";
+
+    printf("rlenv=\n%s\n", rlenv.text());
+    SoapEnv *env;
+    soap_env_new_from_buffer(rlenv.text(), &env);
+    ctx = soap_ctx_new(env);
+  }
 
   // create reader thread and the watchdog
   rlThread reader,watchdog;
@@ -381,10 +421,12 @@ int run(const char *url, int maxItemNameLength)
   while(1)
   {
     /* invoke */
-    err = soap_client_invoke(ctx, &ctx2, url, "");
+    //err = soap_client_invoke(ctx, &ctx2, url, "");
+    err = soap_client_invoke(ctx, &ctx2, url, "http://opcfoundation.org/webservices/XMLDA/1.0/Read");
     if(err == H_OK)
     {
       /* print the result */
+      if(debug) printf("soap_client_invoke reult:\n");
       if(debug) soap_xml_doc_print(ctx2->env->root->doc);
 
       /* write the result to the shared memory */
@@ -394,7 +436,13 @@ int run(const char *url, int maxItemNameLength)
 
       /* free the objects */
       soap_ctx_free(ctx2);
-    }      
+    }
+    else
+    {
+      printf("ERROR soap_client_invoke url=%s Read\n", url);
+      printf("%s():%s [%d]\n", herror_func(err), herror_message(err), herror_code(err));
+      herror_release(err);
+    }
     watchcnt1++;
     if(watchcnt1 > 256*256) watchcnt1 = 0;
     rlsleep(sleep);
@@ -433,24 +481,30 @@ int getMaxItemNameLength()
 
 int browse_childs(char *url, xmlNodePtr node)
 {
+  rlString name;
   SoapCtx *ctx, *ctx2;
   herror_t err;
-  const char *itemname, *isitem, *haschildren;
+  const char *itempath, *itemname, *isitem, *haschildren;
 
   while(node != NULL)
   {
     if(strcmp((const char *) node->name, "Elements") == 0)
     {
+      itempath    = (const char *) xmlGetProp(node, (xmlChar*) "ItemPath");
       itemname    = (const char *) xmlGetProp(node, (xmlChar*) "ItemName");
       isitem      = (const char *) xmlGetProp(node, (xmlChar*) "IsItem");
       haschildren = (const char *) xmlGetProp(node, (xmlChar*) "HasChildren");
-      if(haschildren != NULL && strcmp(haschildren,"true") == 0)
+      if(debug) printf("DEBUG: itempath=%s itemname=%s isitem=%s haschildren=%s\n", itempath, itemname, isitem, haschildren);
+      //if(haschildren != NULL && strcmp(haschildren,"true") == 0 && isitem != NULL && strcmp(isitem,"true") == 0)
+      //todo: verify with http://opcxml.demo-this.com/XmlDaSampleServer/Service.asmx
+      //if(haschildren != NULL && strcmp(haschildren,"true") == 0)
+      if(itempath == NULL && strcmp(haschildren,"true") == 0)
       {
         if(itemname != NULL)
         {
           /* browse childs */
-          printf("#\n");
-          printf("#%s\n",itemname);
+          printf("#S \n");
+          printf("#S %s\n",itemname);
 
           /* create a SoapCtx object */
           err = soap_ctx_new_with_method(URN, "Browse", &ctx);
@@ -466,7 +520,8 @@ int browse_childs(char *url, xmlNodePtr node)
           soap_env_add_item(ctx->env, "xsd:string", "ItemName", itemname);
 
           /* invoke */
-          err = soap_client_invoke(ctx, &ctx2, url, "");
+          //err = soap_client_invoke(ctx, &ctx2, url, "");
+          err = soap_client_invoke(ctx, &ctx2, url, "http://opcfoundation.org/webservices/XMLDA/1.0/Browse");
           if (err != H_OK)
           {
             log_error4("[%d] %s(): %s ", herror_code(err),
@@ -477,7 +532,7 @@ int browse_childs(char *url, xmlNodePtr node)
           }
 
           /* print the result */
-          //soap_xml_doc_print(ctx2->env->root->doc);
+          if(debug) soap_xml_doc_print(ctx2->env->root->doc);
 
           /* browse the childs */
           browse_childs(url, ctx2->env->cur->children);
@@ -487,9 +542,51 @@ int browse_childs(char *url, xmlNodePtr node)
           soap_ctx_free(ctx);
         }  
       }
+      //todo: verify with http://opcxml.demo-this.com/XmlDaSampleServer/Service.asmx
+      //else if(haschildren != NULL && strcmp(haschildren,"true") == 0 && isitem != NULL && strcmp(isitem,"false") == 0)
+      else if(haschildren != NULL && strcmp(haschildren,"true") == 0)
+      {
+        if(itemname != NULL)
+        {
+          /* browse childs */
+          printf("#C \n");
+          printf("#C %s\\%s\n",itempath,itemname);
+          //if(strlen(itempath) == 0) name.printf("Complex Data/%s",itemname);
+          //else                      name.printf("Complex Data/%s/%s",itempath,itemname);
+
+          /* create a SoapCtx object */
+          rlString rltext;
+          rltext.printf("<SOAP-ENV:Envelope xmlns:SOAP-ENC=\"http://schemas.xmlsoap.org/soap/encoding/\" xmlns:SOAP-ENV=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:ZSI=\"http://www.zolera.com/schemas/ZSI/\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"><SOAP-ENV:Header></SOAP-ENV:Header><SOAP-ENV:Body xmlns:ns1=\"http://opcfoundation.org/webservices/XMLDA/1.0/\"><ns1:Browse ItemName=\"%s\" ItemPath=\"%s\" ReturnErrorText=\"true\"></ns1:Browse></SOAP-ENV:Body></SOAP-ENV:Envelope>", itemname, itempath);
+          SoapEnv *env;
+          soap_env_new_from_buffer(rltext.text(), &env);
+          ctx = soap_ctx_new(env);
+
+          /* invoke */
+          err = soap_client_invoke(ctx, &ctx2, url, "http://opcfoundation.org/webservices/XMLDA/1.0/Browse");
+          if (err != H_OK)
+          {
+            log_error4("[%d] %s(): %s ", herror_code(err),
+                       herror_func(err), herror_message(err));
+            herror_release(err);
+            soap_ctx_free(ctx);
+            return -1;
+          }
+          
+          /* print the result */
+          if(debug) soap_xml_doc_print(ctx2->env->root->doc);
+
+          /* browse the childs */
+          browse_childs(url, ctx2->env->cur->children);
+
+          /* free the objects */
+          soap_ctx_free(ctx2);
+          soap_ctx_free(ctx);
+        }  
+      }    
       else if(haschildren != NULL && strcmp(haschildren,"false") == 0 && isitem != NULL && strcmp(isitem,"true") == 0)
       {
-        printf("%s\n", itemname);
+        if(itempath == NULL) printf("%s\n", itemname);
+        else                 printf("%s#%s\n", itempath, itemname);
       }
     }  
     node = node->next;
@@ -590,7 +687,7 @@ int main(int argc, char *argv[])
 
     /* invoke */
     printf("soap_client_invoke(\"%s\")\n", url);
-    err = soap_client_invoke(ctx, &ctx2, url, "");
+    err = soap_client_invoke(ctx, &ctx2, url, "http://opcfoundation.org/webservices/XMLDA/1.0/GetStatus");
     if (err != H_OK)
     {
       printf("err != H_OK\n");
@@ -631,7 +728,8 @@ int main(int argc, char *argv[])
     }
 
     /* invoke */
-    err = soap_client_invoke(ctx, &ctx2, url, "");
+    //err = soap_client_invoke(ctx, &ctx2, url, "");
+    err = soap_client_invoke(ctx, &ctx2, url, "http://opcfoundation.org/webservices/XMLDA/1.0/Browse");
     if (err != H_OK)
     {
       log_error4("[%d] %s(): %s ", herror_code(err),
@@ -640,6 +738,9 @@ int main(int argc, char *argv[])
       soap_ctx_free(ctx);
       return 1;
     }
+
+    /* print the result */
+    if(debug) soap_xml_doc_print(ctx2->env->root->doc);
 
     /* browse the childs */
     browse_childs(url, ctx2->env->cur->children);

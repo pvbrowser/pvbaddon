@@ -1,4 +1,4 @@
-#./opcxmlda_client http://172.16.96.128/opcxmlda/isopc.simopcserver.3 Browse
+#./opcxmlda_client http://192.168.208.128/opcxmlda/isopc.simopcserver.3 Browse
 #
 #
 #Level1

@@ -1,0 +1,26 @@
+#./opcxmlda_client http://opcxml.demo-this.com/XmlDaSampleServer/Service.asmx Browse
+#
+#DA30\DA30
+#
+#DA30\CPX
+#
+#DA30\CPX/OPCBinary
+#
+#DA30\CPX/XMLSchema/OpcDa30Server.binary
+DA20#Dynamic/Analog Types/Int
+DA30#CPX/XMLSchema/OpcDa30Server.binary/UInt128
+DA30#CPX/XMLSchema/OpcDa30Server.binary/TerminatedArrayValues
+#CPX/XMLSchema/OpcDa30Server.binary/FixedArrayValues
+#CPX/XMLSchema/OpcDa30Server.binary/IntegerValues
+#CPX/XMLSchema/OpcDa30Server.binary/StringValues
+#CPX/XMLSchema/OpcDa30Server.binary/Quadruple
+#CPX/XMLSchema/OpcDa30Server.binary/StructValues
+#CPX/XMLSchema/OpcDa30Server.binary/Int128
+#CPX/XMLSchema/OpcDa30Server.binary/VariableArrayValues
+#CPX/XMLSchema/OpcDa30Server.binary/VeryWideString
+#CPX/XMLSchema/OpcDa30Server.binary/FloatValues
+#DA30/CPX/XMLSchema/OpcDa30Server.binary/BitValues
+#
+#DA20
+#DA30\Static
+#

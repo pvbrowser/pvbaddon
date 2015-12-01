@@ -1,0 +1,293 @@
+/usr/bin/qmake -o Makefile opcua_client.pro
+gcc -c -pipe -std=c99 -O2 -Wall -W -DQT_WEBKIT -I/usr/share/qt4/mkspecs/default -I. -I/usr/include/libxml2 -I../../../foreign/csoap/libsoap-1.1.0 -I../../../foreign/csoap/libsoap-1.1.0/libcsoap -I../../../foreign/csoap/libsoap-1.1.0/nanohttp -I/opt/pvb/rllib/lib -o open62541.o open62541.c
+open62541.c: In function ‘UA_Boolean_deleteMembers’:
+open62541.c:1935:37: warning: unused parameter ‘p’ [-Wunused-parameter]
+     void TYPE##_deleteMembers(TYPE *p) {    \
+                                     ^
+open62541.c:1918:5: note: in expansion of macro ‘UA_TYPE_DELETEMEMBERS_NOACTION’
+     UA_TYPE_DELETEMEMBERS_NOACTION(TYPE) \
+     ^
+open62541.c:1955:1: note: in expansion of macro ‘UA_TYPE_DEFAULT’
+ UA_TYPE_DEFAULT(UA_Boolean)
+ ^
+open62541.c: In function ‘UA_SByte_deleteMembers’:
+open62541.c:1935:37: warning: unused parameter ‘p’ [-Wunused-parameter]
+     void TYPE##_deleteMembers(TYPE *p) {    \
+                                     ^
+open62541.c:1918:5: note: in expansion of macro ‘UA_TYPE_DELETEMEMBERS_NOACTION’
+     UA_TYPE_DELETEMEMBERS_NOACTION(TYPE) \
+     ^
+open62541.c:1958:1: note: in expansion of macro ‘UA_TYPE_DEFAULT’
+ UA_TYPE_DEFAULT(UA_SByte)
+ ^
+open62541.c: In function ‘UA_Byte_deleteMembers’:
+open62541.c:1935:37: warning: unused parameter ‘p’ [-Wunused-parameter]
+     void TYPE##_deleteMembers(TYPE *p) {    \
+                                     ^
+open62541.c:1918:5: note: in expansion of macro ‘UA_TYPE_DELETEMEMBERS_NOACTION’
+     UA_TYPE_DELETEMEMBERS_NOACTION(TYPE) \
+     ^
+open62541.c:1961:1: note: in expansion of macro ‘UA_TYPE_DEFAULT’
+ UA_TYPE_DEFAULT(UA_Byte)
+ ^
+open62541.c: In function ‘UA_Int16_deleteMembers’:
+open62541.c:1935:37: warning: unused parameter ‘p’ [-Wunused-parameter]
+     void TYPE##_deleteMembers(TYPE *p) {    \
+                                     ^
+open62541.c:1918:5: note: in expansion of macro ‘UA_TYPE_DELETEMEMBERS_NOACTION’
+     UA_TYPE_DELETEMEMBERS_NOACTION(TYPE) \
+     ^
+open62541.c:1964:1: note: in expansion of macro ‘UA_TYPE_DEFAULT’
+ UA_TYPE_DEFAULT(UA_Int16)
+ ^
+open62541.c: In function ‘UA_UInt16_deleteMembers’:
+open62541.c:1935:37: warning: unused parameter ‘p’ [-Wunused-parameter]
+     void TYPE##_deleteMembers(TYPE *p) {    \
+                                     ^
+open62541.c:1918:5: note: in expansion of macro ‘UA_TYPE_DELETEMEMBERS_NOACTION’
+     UA_TYPE_DELETEMEMBERS_NOACTION(TYPE) \
+     ^
+open62541.c:1967:1: note: in expansion of macro ‘UA_TYPE_DEFAULT’
+ UA_TYPE_DEFAULT(UA_UInt16)
+ ^
+open62541.c: In function ‘UA_Int32_deleteMembers’:
+open62541.c:1935:37: warning: unused parameter ‘p’ [-Wunused-parameter]
+     void TYPE##_deleteMembers(TYPE *p) {    \
+                                     ^
+open62541.c:1918:5: note: in expansion of macro ‘UA_TYPE_DELETEMEMBERS_NOACTION’
+     UA_TYPE_DELETEMEMBERS_NOACTION(TYPE) \
+     ^
+open62541.c:1970:1: note: in expansion of macro ‘UA_TYPE_DEFAULT’
+ UA_TYPE_DEFAULT(UA_Int32)
+ ^
+open62541.c: In function ‘UA_UInt32_deleteMembers’:
+open62541.c:1935:37: warning: unused parameter ‘p’ [-Wunused-parameter]
+     void TYPE##_deleteMembers(TYPE *p) {    \
+                                     ^
+open62541.c:1918:5: note: in expansion of macro ‘UA_TYPE_DELETEMEMBERS_NOACTION’
+     UA_TYPE_DELETEMEMBERS_NOACTION(TYPE) \
+     ^
+open62541.c:1973:1: note: in expansion of macro ‘UA_TYPE_DEFAULT’
+ UA_TYPE_DEFAULT(UA_UInt32)
+ ^
+open62541.c: In function ‘UA_Int64_deleteMembers’:
+open62541.c:1935:37: warning: unused parameter ‘p’ [-Wunused-parameter]
+     void TYPE##_deleteMembers(TYPE *p) {    \
+                                     ^
+open62541.c:1918:5: note: in expansion of macro ‘UA_TYPE_DELETEMEMBERS_NOACTION’
+     UA_TYPE_DELETEMEMBERS_NOACTION(TYPE) \
+     ^
+open62541.c:1976:1: note: in expansion of macro ‘UA_TYPE_DEFAULT’
+ UA_TYPE_DEFAULT(UA_Int64)
+ ^
+open62541.c: In function ‘UA_UInt64_deleteMembers’:
+open62541.c:1935:37: warning: unused parameter ‘p’ [-Wunused-parameter]
+     void TYPE##_deleteMembers(TYPE *p) {    \
+                                     ^
+open62541.c:1918:5: note: in expansion of macro ‘UA_TYPE_DELETEMEMBERS_NOACTION’
+     UA_TYPE_DELETEMEMBERS_NOACTION(TYPE) \
+     ^
+open62541.c:1979:1: note: in expansion of macro ‘UA_TYPE_DEFAULT’
+ UA_TYPE_DEFAULT(UA_UInt64)
+ ^
+open62541.c: In function ‘UA_Float_deleteMembers’:
+open62541.c:1935:37: warning: unused parameter ‘p’ [-Wunused-parameter]
+     void TYPE##_deleteMembers(TYPE *p) {    \
+                                     ^
+open62541.c:1918:5: note: in expansion of macro ‘UA_TYPE_DELETEMEMBERS_NOACTION’
+     UA_TYPE_DELETEMEMBERS_NOACTION(TYPE) \
+     ^
+open62541.c:1982:1: note: in expansion of macro ‘UA_TYPE_DEFAULT’
+ UA_TYPE_DEFAULT(UA_Float)
+ ^
+open62541.c: In function ‘UA_Double_deleteMembers’:
+open62541.c:1935:37: warning: unused parameter ‘p’ [-Wunused-parameter]
+     void TYPE##_deleteMembers(TYPE *p) {    \
+                                     ^
+open62541.c:1918:5: note: in expansion of macro ‘UA_TYPE_DELETEMEMBERS_NOACTION’
+     UA_TYPE_DELETEMEMBERS_NOACTION(TYPE) \
+     ^
+open62541.c:1985:1: note: in expansion of macro ‘UA_TYPE_DEFAULT’
+ UA_TYPE_DEFAULT(UA_Double)
+ ^
+open62541.c: In function ‘UA_Guid_deleteMembers’:
+open62541.c:1935:37: warning: unused parameter ‘p’ [-Wunused-parameter]
+     void TYPE##_deleteMembers(TYPE *p) {    \
+                                     ^
+open62541.c:2145:1: note: in expansion of macro ‘UA_TYPE_DELETEMEMBERS_NOACTION’
+ UA_TYPE_DELETEMEMBERS_NOACTION(UA_Guid)
+ ^
+open62541.c: In function ‘UA_Boolean_calcSizeBinary’:
+open62541.c:3172:46: warning: unused parameter ‘p’ [-Wunused-parameter]
+     size_t TYPE##_calcSizeBinary(TYPE const *p) { return sizeof(TYPE); }
+                                              ^
+open62541.c:3186:1: note: in expansion of macro ‘UA_TYPE_CALCSIZEBINARY_MEMSIZE’
+ UA_TYPE_CALCSIZEBINARY_MEMSIZE(UA_Boolean)
+ ^
+open62541.c: In function ‘UA_Byte_calcSizeBinary’:
+open62541.c:3172:46: warning: unused parameter ‘p’ [-Wunused-parameter]
+     size_t TYPE##_calcSizeBinary(TYPE const *p) { return sizeof(TYPE); }
+                                              ^
+open62541.c:3207:1: note: in expansion of macro ‘UA_TYPE_CALCSIZEBINARY_MEMSIZE’
+ UA_TYPE_CALCSIZEBINARY_MEMSIZE(UA_Byte)
+ ^
+open62541.c: In function ‘UA_UInt16_calcSizeBinary’:
+open62541.c:3172:46: warning: unused parameter ‘p’ [-Wunused-parameter]
+     size_t TYPE##_calcSizeBinary(TYPE const *p) { return sizeof(TYPE); }
+                                              ^
+open62541.c:3228:1: note: in expansion of macro ‘UA_TYPE_CALCSIZEBINARY_MEMSIZE’
+ UA_TYPE_CALCSIZEBINARY_MEMSIZE(UA_UInt16)
+ ^
+open62541.c: In function ‘UA_UInt32_calcSizeBinary’:
+open62541.c:3172:46: warning: unused parameter ‘p’ [-Wunused-parameter]
+     size_t TYPE##_calcSizeBinary(TYPE const *p) { return sizeof(TYPE); }
+                                              ^
+open62541.c:3258:1: note: in expansion of macro ‘UA_TYPE_CALCSIZEBINARY_MEMSIZE’
+ UA_TYPE_CALCSIZEBINARY_MEMSIZE(UA_UInt32)
+ ^
+open62541.c: In function ‘UA_UInt64_calcSizeBinary’:
+open62541.c:3172:46: warning: unused parameter ‘p’ [-Wunused-parameter]
+     size_t TYPE##_calcSizeBinary(TYPE const *p) { return sizeof(TYPE); }
+                                              ^
+open62541.c:3288:1: note: in expansion of macro ‘UA_TYPE_CALCSIZEBINARY_MEMSIZE’
+ UA_TYPE_CALCSIZEBINARY_MEMSIZE(UA_UInt64)
+ ^
+open62541.c: In function ‘UA_Guid_calcSizeBinary’:
+open62541.c:3410:46: warning: unused parameter ‘p’ [-Wunused-parameter]
+ size_t UA_Guid_calcSizeBinary(UA_Guid const *p) {
+                                              ^
+open62541.c: In function ‘UA_Server_cleanup’:
+open62541.c:5711:56: warning: unused parameter ‘nothing’ [-Wunused-parameter]
+ static void UA_Server_cleanup(UA_Server *server, void *nothing) {
+                                                        ^
+open62541.c: In function ‘releaseStatus’:
+open62541.c:5760:33: warning: unused parameter ‘handle’ [-Wunused-parameter]
+ static void releaseStatus(void *handle, UA_DataValue *value) {
+                                 ^
+open62541.c: In function ‘releaseNamespaces’:
+open62541.c:5789:37: warning: unused parameter ‘handle’ [-Wunused-parameter]
+ static void releaseNamespaces(void *handle, UA_DataValue *value) {
+                                     ^
+open62541.c:5789:59: warning: unused parameter ‘value’ [-Wunused-parameter]
+ static void releaseNamespaces(void *handle, UA_DataValue *value) {
+                                                           ^
+open62541.c: In function ‘readCurrentTime’:
+open62541.c:5792:44: warning: unused parameter ‘handle’ [-Wunused-parameter]
+ static UA_StatusCode readCurrentTime(void *handle, UA_Boolean sourceTimeStamp,
+                                            ^
+open62541.c: In function ‘releaseCurrentTime’:
+open62541.c:5813:38: warning: unused parameter ‘handle’ [-Wunused-parameter]
+ static void releaseCurrentTime(void *handle, UA_DataValue *value) {
+                                      ^
+open62541.c: In function ‘createVariableTypeNode’:
+open62541.c:5844:35: warning: unused parameter ‘server’ [-Wunused-parameter]
+ createVariableTypeNode(UA_Server *server, char* name, UA_UInt32 variabletypeid,
+                                   ^
+open62541.c:5845:33: warning: unused parameter ‘parent’ [-Wunused-parameter]
+                        UA_Int32 parent, UA_Boolean abstract) {
+                                 ^
+open62541.c: In function ‘addOneWayReferenceWithSession’:
+open62541.c:6712:62: warning: unused parameter ‘session’ [-Wunused-parameter]
+ addOneWayReferenceWithSession(UA_Server *server, UA_Session *session, const UA_AddReferencesItem *item) {
+                                                              ^
+open62541.c: In function ‘UA_Server_addNodeWithSession’:
+open62541.c:6887:61: warning: unused parameter ‘session’ [-Wunused-parameter]
+ UA_Server_addNodeWithSession(UA_Server *server, UA_Session *session, UA_Node *node,
+                                                             ^
+open62541.c: In function ‘UA_Server_run_startup’:
+open62541.c:8160:66: warning: unused parameter ‘nThreads’ [-Wunused-parameter]
+ UA_StatusCode UA_Server_run_startup(UA_Server *server, UA_UInt16 nThreads, UA_Boolean *running){
+                                                                  ^
+open62541.c:8160:88: warning: unused parameter ‘running’ [-Wunused-parameter]
+ UA_StatusCode UA_Server_run_startup(UA_Server *server, UA_UInt16 nThreads, UA_Boolean *running){
+                                                                                        ^
+open62541.c: In function ‘UA_Server_run_shutdown’:
+open62541.c:8226:49: warning: unused parameter ‘server’ [-Wunused-parameter]
+ UA_StatusCode UA_Server_run_shutdown(UA_Server *server, UA_UInt16 nThreads){
+                                                 ^
+open62541.c:8226:67: warning: unused parameter ‘nThreads’ [-Wunused-parameter]
+ UA_StatusCode UA_Server_run_shutdown(UA_Server *server, UA_UInt16 nThreads){
+                                                                   ^
+open62541.c: In function ‘UA_SessionManager_createSession’:
+open62541.c:8449:100: warning: unused parameter ‘channel’ [-Wunused-parameter]
+ UA_StatusCode UA_SessionManager_createSession(UA_SessionManager *sessionManager, UA_SecureChannel *channel,
+                                                                                                    ^
+open62541.c: In function ‘Service_FindServers’:
+open62541.c:8490:74: warning: unused parameter ‘request’ [-Wunused-parameter]
+ void Service_FindServers(UA_Server *server, const UA_FindServersRequest *request, UA_FindServersResponse *response) {
+                                                                          ^
+open62541.c: In function ‘Service_Read’:
+open62541.c:9029:50: warning: unused parameter ‘session’ [-Wunused-parameter]
+ void Service_Read(UA_Server *server, UA_Session *session, const UA_ReadRequest *request,
+                                                  ^
+open62541.c: In function ‘Service_AddReferences’:
+open62541.c:9582:59: warning: unused parameter ‘session’ [-Wunused-parameter]
+ void Service_AddReferences(UA_Server *server, UA_Session *session, const UA_AddReferencesRequest *request,
+                                                           ^
+open62541.c: In function ‘Service_DeleteNodes’:
+open62541.c:9628:37: warning: unused parameter ‘server’ [-Wunused-parameter]
+ void Service_DeleteNodes(UA_Server *server, UA_Session *session, const UA_DeleteNodesRequest *request,
+                                     ^
+open62541.c:9628:57: warning: unused parameter ‘session’ [-Wunused-parameter]
+ void Service_DeleteNodes(UA_Server *server, UA_Session *session, const UA_DeleteNodesRequest *request,
+                                                         ^
+open62541.c:9628:95: warning: unused parameter ‘request’ [-Wunused-parameter]
+ void Service_DeleteNodes(UA_Server *server, UA_Session *session, const UA_DeleteNodesRequest *request,
+                                                                                               ^
+open62541.c:9629:50: warning: unused parameter ‘response’ [-Wunused-parameter]
+                          UA_DeleteNodesResponse *response) {
+                                                  ^
+open62541.c: In function ‘Service_DeleteReferences’:
+open62541.c:9633:42: warning: unused parameter ‘server’ [-Wunused-parameter]
+ void Service_DeleteReferences(UA_Server *server, UA_Session *session, const UA_DeleteReferencesRequest *request,
+                                          ^
+open62541.c:9633:62: warning: unused parameter ‘session’ [-Wunused-parameter]
+ void Service_DeleteReferences(UA_Server *server, UA_Session *session, const UA_DeleteReferencesRequest *request,
+                                                              ^
+open62541.c:9633:105: warning: unused parameter ‘request’ [-Wunused-parameter]
+ void Service_DeleteReferences(UA_Server *server, UA_Session *session, const UA_DeleteReferencesRequest *request,
+                                                                                                         ^
+open62541.c:9634:60: warning: unused parameter ‘response’ [-Wunused-parameter]
+                               UA_DeleteReferencesResponse *response) {
+                                                            ^
+open62541.c: In function ‘fillrefdescr’:
+open62541.c:9639:49: warning: unused parameter ‘ns’ [-Wunused-parameter]
+ static UA_StatusCode fillrefdescr(UA_NodeStore *ns, const UA_Node *curr, UA_ReferenceNode *ref,
+                                                 ^
+open62541.c: In function ‘Service_RegisterNodes’:
+open62541.c:10194:39: warning: unused parameter ‘server’ [-Wunused-parameter]
+ void Service_RegisterNodes(UA_Server *server, UA_Session *session, const UA_RegisterNodesRequest *request,
+                                       ^
+open62541.c:10194:59: warning: unused parameter ‘session’ [-Wunused-parameter]
+ void Service_RegisterNodes(UA_Server *server, UA_Session *session, const UA_RegisterNodesRequest *request,
+                                                           ^
+open62541.c: In function ‘Service_UnregisterNodes’:
+open62541.c:10209:41: warning: unused parameter ‘server’ [-Wunused-parameter]
+ void Service_UnregisterNodes(UA_Server *server, UA_Session *session, const UA_UnregisterNodesRequest *request,
+                                         ^
+open62541.c:10209:61: warning: unused parameter ‘session’ [-Wunused-parameter]
+ void Service_UnregisterNodes(UA_Server *server, UA_Session *session, const UA_UnregisterNodesRequest *request,
+                                                             ^
+open62541.c: In function ‘GetMallocedBuffer’:
+open62541.c:10930:55: warning: unused parameter ‘connection’ [-Wunused-parameter]
+ static UA_StatusCode GetMallocedBuffer(UA_Connection *connection, UA_ByteString *buf, size_t minSize) {
+                                                       ^
+open62541.c: In function ‘ReleaseMallocedBuffer’:
+open62541.c:10934:50: warning: unused parameter ‘connection’ [-Wunused-parameter]
+ static void ReleaseMallocedBuffer(UA_Connection *connection, UA_ByteString *buf) {
+                                                  ^
+open62541.c: In function ‘freeConnections’:
+open62541.c:11112:40: warning: unused parameter ‘server’ [-Wunused-parameter]
+ static void freeConnections(UA_Server *server, struct DeleteList *d) {
+                                        ^
+open62541.c: At top level:
+open62541.c:5614:13: warning: ‘UA_ExternalNamespace_init’ defined but not used [-Wunused-function]
+ static void UA_ExternalNamespace_init(UA_ExternalNamespace *ens) {
+             ^
+open62541.c:5619:13: warning: ‘UA_ExternalNamespace_deleteMembers’ defined but not used [-Wunused-function]
+ static void UA_ExternalNamespace_deleteMembers(UA_ExternalNamespace *ens) {
+             ^
+open62541.c:9459:22: warning: ‘parseViewNode’ defined but not used [-Wunused-function]
+ static UA_StatusCode parseViewNode(UA_ExtensionObject *attributes, UA_Node **new_node) {
+                      ^
+g++ -static-libgcc -Wl,-O1 -o opcua_client opcua_client.o open62541.o     -lpthread ../../../foreign/csoap/libsoap-1.1.0/libsoap.a /usr/lib64/libxml2.so.2 /usr/lib/librllib.so 

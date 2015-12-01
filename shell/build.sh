@@ -16,6 +16,7 @@ shell/make.sh ./demos/pvgrep $1
 shell/make.sh ./demos/restroom $1
 shell/make.sh ./demos/modbus_example $1
 shell/make.sh ./pcontrol $1
+shell/make.sh ./pvbaddonlib/testpvs $1
 shell/make.sh ./custom_widgets/embedded_widgets/embedded_widgets_1 $1
 shell/make.sh ./custom_widgets/embedded_widgets/pvsEmbeddedWidgetsSample $1
 shell/make.sh ./project_template/pvserver/pvs1 $1
@@ -47,3 +48,7 @@ shell/make.sh ./daemons/opcxmlda/client $1
 shell/make.sh ./daemons/opcxmlda/pvs $1
 shell/make.sh ./daemons/textobserver/client $1
 shell/make.sh ./daemons/textobserver/pvs $1
+shell/make.sh ./daemons/rlshmcat $1
+shell/make.sh ./daemons/opcua/client $1
+shell/make.sh ./daemons/opcua/server $1
+shell/make.sh ./daemons/opcua/pvs $1

@@ -36,7 +36,17 @@ static int slotInit(PARAM *p, DATA *d)
   d->webcam.filename.printf("%swebcam.jpg", p->file_prefix);
   //d->webcam.setUrl("http://192.168.1.200/cgi-bin/Stream?Video Authorization: Basic YWRtaW46cGFzc3dvcmQ=?webcamPWD=RootCookie00000");
   //d->webcam.setUrl("http://192.168.1.32:80/snapshot.cgi?user=admin&pwd=");
-  d->webcam.setUrl("http://192.168.1.32:80/videostream.cgi?user=admin&pwd=");
+  //d->webcam.setUrl("http://192.168.1.32:80/videostream.cgi?user=admin&pwd=");
+  //d->webcam.setUrl("http://192.168.1.35:80/axis-cgi/mjpg/video.cgi?resolution=640x480&fps=4&appid=RJTVzm+L1ES3jJFtcmOdd3vf1EXzzItyp16em1slvQnPv+N988/ZrTp5SK/OuXuM");
+  rlString url("http://192.168.1.135/axis-cgi/mjpg/video.cgi?resolution=640x480&fps=4&appid=MmcgW/ouE1CsSllRDzKdjRfYJIkk5zfeprKFjy8uCaHHeN9823waCoCYBOoxKGiq");
+  url += " HTTP/1.1";                                         url += rlCRLF;
+  url += "Authorization: Basic Z2d5cGVuMDAwMTphb29icnd0bGl2"; url += rlCRLF;
+  //url += "User-Agent: doorbird_app [2.70,Android 5.1.1]";   url += rlCRLF;
+  url += "Host: 192.168.1.135";                               url += rlCRLF;
+  url += "Connection: Keep-Alive";                            url += rlCRLF;
+  url += "Accept-Encoding: gzip";
+  d->webcam.setUrl(url.text());
+
   return 0;
 }
 

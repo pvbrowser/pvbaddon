@@ -16,6 +16,7 @@ call bat\make_module.bat demos\pvgrep pvgrep.pro
 call bat\make_module.bat demos\restroom pvs.pro
 call bat\make_module.bat demos\modbus_example pvs.pro
 call bat\make_module.bat pcontrol pvs.pro
+call bat\make_module.bat pvbaddonlib\testpvs pvs.pro
 call bat\make_module.bat custom_widgets\embedded_widgets\embedded_widgets_1 embedded_widgets.pro
 call bat\make_module.bat custom_widgets\embedded_widgets\pvsEmbeddedWidgetsSample pvsEmbeddedWidgetsSample.pro
 call bat\make_module.bat project_template\pvserver\pvs1 pvs.pro
@@ -47,3 +48,7 @@ call bat\make_module.bat daemons\opcxmlda\client opcxmlda_client.pro
 call bat\make_module.bat daemons\opcxmlda\pvs pvs.pro
 call bat\make_module.bat daemons\textobserver\client textobserver_client.pro
 call bat\make_module.bat daemons\textobserver\pvs pvs.pro
+call bat\make_module.bat daemons\rlshmcat rlshmcat.pro
+call bat\make_module.bat daemons\opcua\client opcua_client.pro
+call bat\make_module.bat daemons\opcua\server pvs.pro
+call bat\make_module.bat daemons\opcua\pvs pvs.pro

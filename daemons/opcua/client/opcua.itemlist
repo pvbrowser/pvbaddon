@@ -1,0 +1,13 @@
+####################################################
+#./opcua_client opc.tcp://localhost:16664 Browse
+#
+# Itemlist := NAMESPACE#NODEID#BROWSE NAME#DISPLAY NAME
+# Lines starting with # are treated as comment lines
+####################################################
+0#61#FolderType#FolderType
+0#2253#Server#Server
+1#95#current time#current time
+1#96#cpu temperature#cpu temperature
+1#97#status LED#status LED
+1#the.answer#the answer#the answer
+1#50000#Demo#Demo

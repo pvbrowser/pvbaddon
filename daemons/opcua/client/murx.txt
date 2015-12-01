@@ -1,0 +1,546 @@
+open62541.c: In function 'hash_array':
+open62541.c:1859:5: error: 'for' loop initial declarations are only allowed in C99 or C11 mode
+     for(int32_t i = 0;i < nblocks;i++) {
+     ^
+open62541.c:1859:5: note: use option -std=c99, -std=gnu99, -std=c11 or -std=gnu11 to compile your code
+open62541.c: In function 'hash':
+open62541.c:1896:9: warning: this decimal constant is unsigned only in ISO C90
+         return (n->identifier.numeric + n->namespaceIndex) * 2654435761;   // mod(2^32) is implicit
+         ^
+open62541.c: In function 'UA_Boolean_deleteMembers':
+open62541.c:1935:37: warning: unused parameter 'p' [-Wunused-parameter]
+     void TYPE##_deleteMembers(TYPE *p) {    \
+                                     ^
+open62541.c:1918:5: note: in expansion of macro 'UA_TYPE_DELETEMEMBERS_NOACTION'
+     UA_TYPE_DELETEMEMBERS_NOACTION(TYPE) \
+     ^
+open62541.c:1955:1: note: in expansion of macro 'UA_TYPE_DEFAULT'
+ UA_TYPE_DEFAULT(UA_Boolean)
+ ^
+open62541.c: In function 'UA_SByte_deleteMembers':
+open62541.c:1935:37: warning: unused parameter 'p' [-Wunused-parameter]
+     void TYPE##_deleteMembers(TYPE *p) {    \
+                                     ^
+open62541.c:1918:5: note: in expansion of macro 'UA_TYPE_DELETEMEMBERS_NOACTION'
+     UA_TYPE_DELETEMEMBERS_NOACTION(TYPE) \
+     ^
+open62541.c:1958:1: note: in expansion of macro 'UA_TYPE_DEFAULT'
+ UA_TYPE_DEFAULT(UA_SByte)
+ ^
+open62541.c: In function 'UA_Byte_deleteMembers':
+open62541.c:1935:37: warning: unused parameter 'p' [-Wunused-parameter]
+     void TYPE##_deleteMembers(TYPE *p) {    \
+                                     ^
+open62541.c:1918:5: note: in expansion of macro 'UA_TYPE_DELETEMEMBERS_NOACTION'
+     UA_TYPE_DELETEMEMBERS_NOACTION(TYPE) \
+     ^
+open62541.c:1961:1: note: in expansion of macro 'UA_TYPE_DEFAULT'
+ UA_TYPE_DEFAULT(UA_Byte)
+ ^
+open62541.c: In function 'UA_Int16_deleteMembers':
+open62541.c:1935:37: warning: unused parameter 'p' [-Wunused-parameter]
+     void TYPE##_deleteMembers(TYPE *p) {    \
+                                     ^
+open62541.c:1918:5: note: in expansion of macro 'UA_TYPE_DELETEMEMBERS_NOACTION'
+     UA_TYPE_DELETEMEMBERS_NOACTION(TYPE) \
+     ^
+open62541.c:1964:1: note: in expansion of macro 'UA_TYPE_DEFAULT'
+ UA_TYPE_DEFAULT(UA_Int16)
+ ^
+open62541.c: In function 'UA_UInt16_deleteMembers':
+open62541.c:1935:37: warning: unused parameter 'p' [-Wunused-parameter]
+     void TYPE##_deleteMembers(TYPE *p) {    \
+                                     ^
+open62541.c:1918:5: note: in expansion of macro 'UA_TYPE_DELETEMEMBERS_NOACTION'
+     UA_TYPE_DELETEMEMBERS_NOACTION(TYPE) \
+     ^
+open62541.c:1967:1: note: in expansion of macro 'UA_TYPE_DEFAULT'
+ UA_TYPE_DEFAULT(UA_UInt16)
+ ^
+open62541.c: In function 'UA_Int32_deleteMembers':
+open62541.c:1935:37: warning: unused parameter 'p' [-Wunused-parameter]
+     void TYPE##_deleteMembers(TYPE *p) {    \
+                                     ^
+open62541.c:1918:5: note: in expansion of macro 'UA_TYPE_DELETEMEMBERS_NOACTION'
+     UA_TYPE_DELETEMEMBERS_NOACTION(TYPE) \
+     ^
+open62541.c:1970:1: note: in expansion of macro 'UA_TYPE_DEFAULT'
+ UA_TYPE_DEFAULT(UA_Int32)
+ ^
+open62541.c: In function 'UA_UInt32_deleteMembers':
+open62541.c:1935:37: warning: unused parameter 'p' [-Wunused-parameter]
+     void TYPE##_deleteMembers(TYPE *p) {    \
+                                     ^
+open62541.c:1918:5: note: in expansion of macro 'UA_TYPE_DELETEMEMBERS_NOACTION'
+     UA_TYPE_DELETEMEMBERS_NOACTION(TYPE) \
+     ^
+open62541.c:1973:1: note: in expansion of macro 'UA_TYPE_DEFAULT'
+ UA_TYPE_DEFAULT(UA_UInt32)
+ ^
+open62541.c: In function 'UA_Int64_deleteMembers':
+open62541.c:1935:37: warning: unused parameter 'p' [-Wunused-parameter]
+     void TYPE##_deleteMembers(TYPE *p) {    \
+                                     ^
+open62541.c:1918:5: note: in expansion of macro 'UA_TYPE_DELETEMEMBERS_NOACTION'
+     UA_TYPE_DELETEMEMBERS_NOACTION(TYPE) \
+     ^
+open62541.c:1976:1: note: in expansion of macro 'UA_TYPE_DEFAULT'
+ UA_TYPE_DEFAULT(UA_Int64)
+ ^
+open62541.c: In function 'UA_UInt64_deleteMembers':
+open62541.c:1935:37: warning: unused parameter 'p' [-Wunused-parameter]
+     void TYPE##_deleteMembers(TYPE *p) {    \
+                                     ^
+open62541.c:1918:5: note: in expansion of macro 'UA_TYPE_DELETEMEMBERS_NOACTION'
+     UA_TYPE_DELETEMEMBERS_NOACTION(TYPE) \
+     ^
+open62541.c:1979:1: note: in expansion of macro 'UA_TYPE_DEFAULT'
+ UA_TYPE_DEFAULT(UA_UInt64)
+ ^
+open62541.c: In function 'UA_Float_deleteMembers':
+open62541.c:1935:37: warning: unused parameter 'p' [-Wunused-parameter]
+     void TYPE##_deleteMembers(TYPE *p) {    \
+                                     ^
+open62541.c:1918:5: note: in expansion of macro 'UA_TYPE_DELETEMEMBERS_NOACTION'
+     UA_TYPE_DELETEMEMBERS_NOACTION(TYPE) \
+     ^
+open62541.c:1982:1: note: in expansion of macro 'UA_TYPE_DEFAULT'
+ UA_TYPE_DEFAULT(UA_Float)
+ ^
+open62541.c: In function 'UA_Double_deleteMembers':
+open62541.c:1935:37: warning: unused parameter 'p' [-Wunused-parameter]
+     void TYPE##_deleteMembers(TYPE *p) {    \
+                                     ^
+open62541.c:1918:5: note: in expansion of macro 'UA_TYPE_DELETEMEMBERS_NOACTION'
+     UA_TYPE_DELETEMEMBERS_NOACTION(TYPE) \
+     ^
+open62541.c:1985:1: note: in expansion of macro 'UA_TYPE_DEFAULT'
+ UA_TYPE_DEFAULT(UA_Double)
+ ^
+open62541.c: In function 'gettimeofday':
+open62541.c:2089:55: warning: unused parameter 'tzp' [-Wunused-parameter]
+ int gettimeofday(struct timeval *tp, struct timezone *tzp) {
+                                                       ^
+open62541.c: In function 'UA_Guid_deleteMembers':
+open62541.c:1935:37: warning: unused parameter 'p' [-Wunused-parameter]
+     void TYPE##_deleteMembers(TYPE *p) {    \
+                                     ^
+open62541.c:2145:1: note: in expansion of macro 'UA_TYPE_DELETEMEMBERS_NOACTION'
+ UA_TYPE_DELETEMEMBERS_NOACTION(UA_Guid)
+ ^
+open62541.c: In function 'UA_Guid_random':
+open62541.c:2154:35: warning: unused parameter 'seed' [-Wunused-parameter]
+ UA_Guid UA_Guid_random(UA_UInt32 *seed) {
+                                   ^
+open62541.c: In function 'testRangeWithVariant':
+open62541.c:2579:9: error: 'for' loop initial declarations are only allowed in C99 or C11 mode
+         for(UA_Int32 i = 0; i < dims_count; i++)
+         ^
+open62541.c:2589:5: error: 'for' loop initial declarations are only allowed in C99 or C11 mode
+     for(UA_Int32 i = 0; i < dims_count; i++) {
+     ^
+open62541.c:2603:5: error: 'for' loop initial declarations are only allowed in C99 or C11 mode
+     for(UA_Int32 k = dims_count - 1; k >= 0; k--) {
+     ^
+open62541.c: In function 'UA_Variant_copyRange':
+open62541.c:2637:9: error: 'for' loop initial declarations are only allowed in C99 or C11 mode
+         for(size_t i = 0; i < block_count; i++) {
+         ^
+open62541.c:2643:9: error: 'for' loop initial declarations are only allowed in C99 or C11 mode
+         for(size_t i = 0; i < block_count; i++) {
+         ^
+open62541.c:2644:13: error: 'for' loop initial declarations are only allowed in C99 or C11 mode
+             for(size_t j = 0; j < block_size && retval == UA_STATUSCODE_GOOD; j++) {
+             ^
+open62541.c:2665:9: error: 'for' loop initial declarations are only allowed in C99 or C11 mode
+         for(UA_Int32 k = 0; k < src->arrayDimensionsSize; k++)
+         ^
+open62541.c: In function 'UA_Variant_setRange':
+open62541.c:2687:5: error: 'for' loop initial declarations are only allowed in C99 or C11 mode
+     for(size_t i = 0; i < block_count; i++) {
+     ^
+open62541.c:2689:13: error: 'for' loop initial declarations are only allowed in C99 or C11 mode
+             for(size_t j = 0; j < block_size; j++) {
+             ^
+open62541.c: In function 'UA_Variant_setRangeCopy':
+open62541.c:2716:9: error: 'for' loop initial declarations are only allowed in C99 or C11 mode
+         for(size_t i = 0; i < block_count; i++) {
+         ^
+open62541.c:2722:9: error: 'for' loop initial declarations are only allowed in C99 or C11 mode
+         for(size_t i = 0; i < block_count; i++) {
+         ^
+open62541.c:2723:13: error: 'for' loop initial declarations are only allowed in C99 or C11 mode
+             for(size_t j = 0; j < block_size; j++) {
+             ^
+open62541.c: In function 'UA_init':
+open62541.c:2830:5: error: 'for' loop initial declarations are only allowed in C99 or C11 mode
+     for(size_t i=0;i<membersSize; i++) {
+     ^
+open62541.c: In function 'UA_copy':
+open62541.c:2923:5: error: 'for' loop initial declarations are only allowed in C99 or C11 mode
+     for(size_t i=0;i<membersSize; i++) {
+     ^
+open62541.c: In function 'UA_deleteMembers':
+open62541.c:3029:5: error: 'for' loop initial declarations are only allowed in C99 or C11 mode
+     for(size_t i=0;i<membersSize; i++) {
+     ^
+open62541.c: In function 'UA_Array_new':
+open62541.c:3123:5: error: 'for' loop initial declarations are only allowed in C99 or C11 mode
+     for(int i = 0; i<noElements; i++) {
+     ^
+open62541.c: In function 'UA_Array_copy':
+open62541.c:3147:5: error: 'for' loop initial declarations are only allowed in C99 or C11 mode
+     for(int i = 0; i < noElements; i++) {
+     ^
+open62541.c: In function 'UA_Array_delete':
+open62541.c:3162:9: error: 'for' loop initial declarations are only allowed in C99 or C11 mode
+         for(UA_Int32 i = 0; i<noElements; i++) {
+         ^
+open62541.c: In function 'UA_Boolean_calcSizeBinary':
+open62541.c:3172:46: warning: unused parameter 'p' [-Wunused-parameter]
+     size_t TYPE##_calcSizeBinary(TYPE const *p) { return sizeof(TYPE); }
+                                              ^
+open62541.c:3186:1: note: in expansion of macro 'UA_TYPE_CALCSIZEBINARY_MEMSIZE'
+ UA_TYPE_CALCSIZEBINARY_MEMSIZE(UA_Boolean)
+ ^
+open62541.c: In function 'UA_Byte_calcSizeBinary':
+open62541.c:3172:46: warning: unused parameter 'p' [-Wunused-parameter]
+     size_t TYPE##_calcSizeBinary(TYPE const *p) { return sizeof(TYPE); }
+                                              ^
+open62541.c:3207:1: note: in expansion of macro 'UA_TYPE_CALCSIZEBINARY_MEMSIZE'
+ UA_TYPE_CALCSIZEBINARY_MEMSIZE(UA_Byte)
+ ^
+open62541.c: In function 'UA_UInt16_calcSizeBinary':
+open62541.c:3172:46: warning: unused parameter 'p' [-Wunused-parameter]
+     size_t TYPE##_calcSizeBinary(TYPE const *p) { return sizeof(TYPE); }
+                                              ^
+open62541.c:3228:1: note: in expansion of macro 'UA_TYPE_CALCSIZEBINARY_MEMSIZE'
+ UA_TYPE_CALCSIZEBINARY_MEMSIZE(UA_UInt16)
+ ^
+open62541.c: In function 'UA_UInt32_calcSizeBinary':
+open62541.c:3172:46: warning: unused parameter 'p' [-Wunused-parameter]
+     size_t TYPE##_calcSizeBinary(TYPE const *p) { return sizeof(TYPE); }
+                                              ^
+open62541.c:3258:1: note: in expansion of macro 'UA_TYPE_CALCSIZEBINARY_MEMSIZE'
+ UA_TYPE_CALCSIZEBINARY_MEMSIZE(UA_UInt32)
+ ^
+open62541.c: In function 'UA_UInt64_calcSizeBinary':
+open62541.c:3172:46: warning: unused parameter 'p' [-Wunused-parameter]
+     size_t TYPE##_calcSizeBinary(TYPE const *p) { return sizeof(TYPE); }
+                                              ^
+open62541.c:3288:1: note: in expansion of macro 'UA_TYPE_CALCSIZEBINARY_MEMSIZE'
+ UA_TYPE_CALCSIZEBINARY_MEMSIZE(UA_UInt64)
+ ^
+open62541.c: In function 'UA_Guid_calcSizeBinary':
+open62541.c:3410:46: warning: unused parameter 'p' [-Wunused-parameter]
+ size_t UA_Guid_calcSizeBinary(UA_Guid const *p) {
+                                              ^
+open62541.c: In function 'UA_Guid_encodeBinary':
+open62541.c:3418:5: error: 'for' loop initial declarations are only allowed in C99 or C11 mode
+     for(UA_Int32 i = 0;i < 8;i++)
+     ^
+open62541.c: In function 'UA_Guid_decodeBinary':
+open62541.c:3428:5: error: 'for' loop initial declarations are only allowed in C99 or C11 mode
+     for(size_t i = 0;i < 8;i++)
+     ^
+open62541.c: In function 'UA_Variant_encodeBinary':
+open62541.c:3897:5: error: 'for' loop initial declarations are only allowed in C99 or C11 mode
+     for(UA_Int32 i=0;i<numToEncode;i++) {
+     ^
+open62541.c: In function 'UA_calcSizeBinary':
+open62541.c:4071:5: error: 'for' loop initial declarations are only allowed in C99 or C11 mode
+     for(size_t i = 0; i < membersSize; i++) {
+     ^
+open62541.c: In function 'UA_encodeBinary':
+open62541.c:4154:5: error: 'for' loop initial declarations are only allowed in C99 or C11 mode
+     for(size_t i = 0; i < membersSize && retval == UA_STATUSCODE_GOOD; i++) {
+     ^
+open62541.c: In function 'UA_decodeBinary':
+open62541.c:4238:5: error: 'for' loop initial declarations are only allowed in C99 or C11 mode
+     for(size_t i = 0; i < membersSize && retval == UA_STATUSCODE_GOOD; i++) {
+     ^
+open62541.c: In function 'UA_Array_calcSizeBinary':
+open62541.c:4338:5: error: 'for' loop initial declarations are only allowed in C99 or C11 mode
+     for(int i=0;i<noElements;i++) {
+     ^
+open62541.c: In function 'UA_Array_encodeBinary':
+open62541.c:4352:5: error: 'for' loop initial declarations are only allowed in C99 or C11 mode
+     for(int i=0;i<noElements && retval == UA_STATUSCODE_GOOD;i++) {
+     ^
+open62541.c: At top level:
+open62541.c:5547:5: warning: this decimal constant is unsigned only in ISO C90
+     .maxRequestMessageSize = UA_UINT32_MAX, .maxResponseMessageSize = UA_UINT32_MAX,
+     ^
+open62541.c:5547:5: warning: this decimal constant is unsigned only in ISO C90
+open62541.c:5561:5: warning: this decimal constant is unsigned only in ISO C90
+     .maxRequestMessageSize = UA_UINT32_MAX, .maxResponseMessageSize = UA_UINT32_MAX,
+     ^
+open62541.c:5561:5: warning: this decimal constant is unsigned only in ISO C90
+open62541.c: In function 'UA_Server_addNetworkLayer':
+open62541.c:5656:9: error: 'for' loop initial declarations are only allowed in C99 or C11 mode
+         for(UA_Int32 i = 0; i < server->endpointDescriptionsSize; i++)
+         ^
+open62541.c: In function 'UA_Server_setServerCertificate':
+open62541.c:5663:5: error: 'for' loop initial declarations are only allowed in C99 or C11 mode
+     for(UA_Int32 i = 0; i < server->endpointDescriptionsSize; i++)
+     ^
+open62541.c: In function 'UA_Server_delete':
+open62541.c:5698:5: error: 'for' loop initial declarations are only allowed in C99 or C11 mode
+     for(size_t i = 0; i < server->networkLayersSize; i++) {
+     ^
+open62541.c: In function 'UA_Server_cleanup':
+open62541.c:5711:56: warning: unused parameter 'nothing' [-Wunused-parameter]
+ static void UA_Server_cleanup(UA_Server *server, void *nothing) {
+                                                        ^
+open62541.c: In function 'releaseStatus':
+open62541.c:5760:33: warning: unused parameter 'handle' [-Wunused-parameter]
+ static void releaseStatus(void *handle, UA_DataValue *value) {
+                                 ^
+open62541.c: In function 'releaseNamespaces':
+open62541.c:5789:37: warning: unused parameter 'handle' [-Wunused-parameter]
+ static void releaseNamespaces(void *handle, UA_DataValue *value) {
+                                     ^
+open62541.c:5789:59: warning: unused parameter 'value' [-Wunused-parameter]
+ static void releaseNamespaces(void *handle, UA_DataValue *value) {
+                                                           ^
+open62541.c: In function 'readCurrentTime':
+open62541.c:5792:44: warning: unused parameter 'handle' [-Wunused-parameter]
+ static UA_StatusCode readCurrentTime(void *handle, UA_Boolean sourceTimeStamp,
+                                            ^
+open62541.c: In function 'releaseCurrentTime':
+open62541.c:5813:38: warning: unused parameter 'handle' [-Wunused-parameter]
+ static void releaseCurrentTime(void *handle, UA_DataValue *value) {
+                                      ^
+open62541.c: In function 'createVariableTypeNode':
+open62541.c:5844:35: warning: unused parameter 'server' [-Wunused-parameter]
+ createVariableTypeNode(UA_Server *server, char* name, UA_UInt32 variabletypeid,
+                                   ^
+open62541.c:5845:33: warning: unused parameter 'parent' [-Wunused-parameter]
+                        UA_Int32 parent, UA_Boolean abstract) {
+                                 ^
+open62541.c: In function 'addOneWayReferenceWithSession':
+open62541.c:6712:62: warning: unused parameter 'session' [-Wunused-parameter]
+ addOneWayReferenceWithSession(UA_Server *server, UA_Session *session, const UA_AddReferencesItem *item) {
+                                                              ^
+open62541.c: In function 'UA_Server_addNodeWithSession':
+open62541.c:6887:61: warning: unused parameter 'session' [-Wunused-parameter]
+ UA_Server_addNodeWithSession(UA_Server *server, UA_Session *session, UA_Node *node,
+                                                             ^
+open62541.c: In function 'processWork':
+open62541.c:7740:5: error: 'for' loop initial declarations are only allowed in C99 or C11 mode
+     for(size_t i = 0; i < workSize; i++) {
+     ^
+open62541.c: In function 'UA_Server_run_startup':
+open62541.c:8182:1: error: 'for' loop initial declarations are only allowed in C99 or C11 mode
+ for(size_t i = 0; i <server->networkLayersSize; i++)
+ ^
+open62541.c:8160:66: warning: unused parameter 'nThreads' [-Wunused-parameter]
+ UA_StatusCode UA_Server_run_startup(UA_Server *server, UA_UInt16 nThreads, UA_Boolean *running){
+                                                                  ^
+open62541.c:8160:88: warning: unused parameter 'running' [-Wunused-parameter]
+ UA_StatusCode UA_Server_run_startup(UA_Server *server, UA_UInt16 nThreads, UA_Boolean *running){
+                                                                                        ^
+open62541.c: In function 'UA_Server_run_getAndProcessWork':
+open62541.c:8193:5: error: 'for' loop initial declarations are only allowed in C99 or C11 mode
+     for(size_t i = 0; i < server->networkLayersSize; i++) {
+     ^
+open62541.c: In function 'UA_Server_run_shutdown':
+open62541.c:8226:49: warning: unused parameter 'server' [-Wunused-parameter]
+ UA_StatusCode UA_Server_run_shutdown(UA_Server *server, UA_UInt16 nThreads){
+                                                 ^
+open62541.c:8226:67: warning: unused parameter 'nThreads' [-Wunused-parameter]
+ UA_StatusCode UA_Server_run_shutdown(UA_Server *server, UA_UInt16 nThreads){
+                                                                   ^
+open62541.c: In function 'UA_SessionManager_createSession':
+open62541.c:8449:100: warning: unused parameter 'channel' [-Wunused-parameter]
+ UA_StatusCode UA_SessionManager_createSession(UA_SessionManager *sessionManager, UA_SecureChannel *channel,
+                                                                                                    ^
+open62541.c: In function 'Service_FindServers':
+open62541.c:8490:74: warning: unused parameter 'request' [-Wunused-parameter]
+ void Service_FindServers(UA_Server *server, const UA_FindServersRequest *request, UA_FindServersResponse *response) {
+                                                                          ^
+open62541.c: In function 'Service_GetEndpoints':
+open62541.c:8508:5: error: 'for' loop initial declarations are only allowed in C99 or C11 mode
+     for(UA_Int32 j = 0; j < server->endpointDescriptionsSize; j++) {
+     ^
+open62541.c:8515:9: error: 'for' loop initial declarations are only allowed in C99 or C11 mode
+         for(UA_Int32 i = 0; i < request->profileUrisSize; i++) {
+         ^
+open62541.c:8537:18: error: redefinition of 'j'
+     for(UA_Int32 j = 0; j < server->endpointDescriptionsSize && retval == UA_STATUSCODE_GOOD; j++) {
+                  ^
+open62541.c:8508:18: note: previous definition of 'j' was here
+     for(UA_Int32 j = 0; j < server->endpointDescriptionsSize; j++) {
+                  ^
+open62541.c:8537:5: error: 'for' loop initial declarations are only allowed in C99 or C11 mode
+     for(UA_Int32 j = 0; j < server->endpointDescriptionsSize && retval == UA_STATUSCODE_GOOD; j++) {
+     ^
+open62541.c: In function 'Service_Read':
+open62541.c:9078:5: error: 'for' loop initial declarations are only allowed in C99 or C11 mode
+     for(size_t i = 0;i < size;i++) {
+     ^
+open62541.c:9029:50: warning: unused parameter 'session' [-Wunused-parameter]
+ void Service_Read(UA_Server *server, UA_Session *session, const UA_ReadRequest *request,
+                                                  ^
+open62541.c: In function 'Service_Write':
+open62541.c:9302:5: error: 'for' loop initial declarations are only allowed in C99 or C11 mode
+     for(UA_Int32 i = 0;i < request->nodesToWriteSize;i++) {
+     ^
+open62541.c: In function 'Service_AddNodes':
+open62541.c:9574:5: error: 'for' loop initial declarations are only allowed in C99 or C11 mode
+     for(size_t i = 0;i < size;i++) {
+     ^
+open62541.c: In function 'Service_AddReferences':
+open62541.c:9620:2: error: 'for' loop initial declarations are only allowed in C99 or C11 mode
+  for(UA_Int32 i = 0; i < response->resultsSize; i++) {
+  ^
+open62541.c:9582:59: warning: unused parameter 'session' [-Wunused-parameter]
+ void Service_AddReferences(UA_Server *server, UA_Session *session, const UA_AddReferencesRequest *request,
+                                                           ^
+open62541.c: In function 'Service_DeleteNodes':
+open62541.c:9628:37: warning: unused parameter 'server' [-Wunused-parameter]
+ void Service_DeleteNodes(UA_Server *server, UA_Session *session, const UA_DeleteNodesRequest *request,
+                                     ^
+open62541.c:9628:57: warning: unused parameter 'session' [-Wunused-parameter]
+ void Service_DeleteNodes(UA_Server *server, UA_Session *session, const UA_DeleteNodesRequest *request,
+                                                         ^
+open62541.c:9628:95: warning: unused parameter 'request' [-Wunused-parameter]
+ void Service_DeleteNodes(UA_Server *server, UA_Session *session, const UA_DeleteNodesRequest *request,
+                                                                                               ^
+open62541.c:9629:50: warning: unused parameter 'response' [-Wunused-parameter]
+                          UA_DeleteNodesResponse *response) {
+                                                  ^
+open62541.c: In function 'Service_DeleteReferences':
+open62541.c:9633:42: warning: unused parameter 'server' [-Wunused-parameter]
+ void Service_DeleteReferences(UA_Server *server, UA_Session *session, const UA_DeleteReferencesRequest *request,
+                                          ^
+open62541.c:9633:62: warning: unused parameter 'session' [-Wunused-parameter]
+ void Service_DeleteReferences(UA_Server *server, UA_Session *session, const UA_DeleteReferencesRequest *request,
+                                                              ^
+open62541.c:9633:105: warning: unused parameter 'request' [-Wunused-parameter]
+ void Service_DeleteReferences(UA_Server *server, UA_Session *session, const UA_DeleteReferencesRequest *request,
+                                                                                                         ^
+open62541.c:9634:60: warning: unused parameter 'response' [-Wunused-parameter]
+                               UA_DeleteReferencesResponse *response) {
+                                                            ^
+open62541.c: In function 'fillrefdescr':
+open62541.c:9661:13: error: 'for' loop initial declarations are only allowed in C99 or C11 mode
+             for(UA_Int32 i = 0; i < curr->referencesSize; i++) {
+             ^
+open62541.c:9639:49: warning: unused parameter 'ns' [-Wunused-parameter]
+ static UA_StatusCode fillrefdescr(UA_NodeStore *ns, const UA_Node *curr, UA_ReferenceNode *ref,
+                                                 ^
+open62541.c: In function 'relevant_node':
+open62541.c:9688:9: error: 'for' loop initial declarations are only allowed in C99 or C11 mode
+         for(size_t i = 0; i < relevant_count; i++) {
+         ^
+open62541.c: In function 'findsubtypes':
+open62541.c:9737:9: error: 'for' loop initial declarations are only allowed in C99 or C11 mode
+         for(UA_Int32 i = 0; i < node->referencesSize; i++) {
+         ^
+open62541.c: In function 'Service_Browse':
+open62541.c:9974:5: error: 'for' loop initial declarations are only allowed in C99 or C11 mode
+     for(size_t i = 0; i < size; i++) {
+     ^
+open62541.c: In function 'Service_BrowseNext':
+open62541.c:9998:8: error: 'for' loop initial declarations are only allowed in C99 or C11 mode
+        for(size_t i = 0; i < size; i++) {
+        ^
+open62541.c:10017:8: error: 'for' loop initial declarations are only allowed in C99 or C11 mode
+        for(size_t i = 0; i < size; i++) {
+        ^
+open62541.c: In function 'walkBrowsePath':
+open62541.c:10058:5: error: 'for' loop initial declarations are only allowed in C99 or C11 mode
+     for(UA_Int32 i = 0; i < node->referencesSize && retval == UA_STATUSCODE_GOOD; i++) {
+     ^
+open62541.c:10060:9: error: 'for' loop initial declarations are only allowed in C99 or C11 mode
+         for(size_t j = 0; j < reftypes_count && !match; j++) {
+         ^
+open62541.c:10105:13: warning: this decimal constant is unsigned only in ISO C90
+             res[*target_count].remainingPathIndex = UA_UINT32_MAX;
+             ^
+open62541.c: In function 'Service_TranslateBrowsePathsToNodeIds':
+open62541.c:10186:5: error: 'for' loop initial declarations are only allowed in C99 or C11 mode
+     for(size_t i = 0; i < size; i++) {
+     ^
+open62541.c: In function 'Service_RegisterNodes':
+open62541.c:10194:39: warning: unused parameter 'server' [-Wunused-parameter]
+ void Service_RegisterNodes(UA_Server *server, UA_Session *session, const UA_RegisterNodesRequest *request,
+                                       ^
+open62541.c:10194:59: warning: unused parameter 'session' [-Wunused-parameter]
+ void Service_RegisterNodes(UA_Server *server, UA_Session *session, const UA_RegisterNodesRequest *request,
+                                                           ^
+open62541.c: In function 'Service_UnregisterNodes':
+open62541.c:10209:41: warning: unused parameter 'server' [-Wunused-parameter]
+ void Service_UnregisterNodes(UA_Server *server, UA_Session *session, const UA_UnregisterNodesRequest *request,
+                                         ^
+open62541.c:10209:61: warning: unused parameter 'session' [-Wunused-parameter]
+ void Service_UnregisterNodes(UA_Server *server, UA_Session *session, const UA_UnregisterNodesRequest *request,
+                                                             ^
+open62541.c: In function 'EndpointsHandshake':
+open62541.c:10615:5: error: 'for' loop initial declarations are only allowed in C99 or C11 mode
+     for(UA_Int32 i=0; i<response.endpointsSize; ++i){
+     ^
+open62541.c:10622:13: error: 'for' loop initial declarations are only allowed in C99 or C11 mode
+             for(UA_Int32 j=0; j<endpoint->userIdentityTokensSize; ++j){
+             ^
+open62541.c: In function 'GetMallocedBuffer':
+open62541.c:10930:55: warning: unused parameter 'connection' [-Wunused-parameter]
+ static UA_StatusCode GetMallocedBuffer(UA_Connection *connection, UA_ByteString *buf, size_t minSize) {
+                                                       ^
+open62541.c: In function 'ReleaseMallocedBuffer':
+open62541.c:10934:50: warning: unused parameter 'connection' [-Wunused-parameter]
+ static void ReleaseMallocedBuffer(UA_Connection *connection, UA_ByteString *buf) {
+                                                  ^
+open62541.c: In function 'setFDSet':
+open62541.c:11007:5: error: 'for' loop initial declarations are only allowed in C99 or C11 mode
+     for(size_t i = 0; i < layer->mappingsSize; i++) {
+     ^
+open62541.c: In function 'freeConnections':
+open62541.c:11112:40: warning: unused parameter 'server' [-Wunused-parameter]
+ static void freeConnections(UA_Server *server, struct DeleteList *d) {
+                                        ^
+open62541.c: In function 'ServerNetworkLayerTCP_getWork':
+open62541.c:11187:5: error: 'for' loop initial declarations are only allowed in C99 or C11 mode
+     for(size_t i = 0; i < layer->mappingsSize && j < resultsize; i++) {
+     ^
+open62541.c: In function 'ServerNetworkLayerTCP_stop':
+open62541.c:11240:5: error: 'for' loop initial declarations are only allowed in C99 or C11 mode
+     for(size_t i = 0; i < layer->mappingsSize; i++) {
+     ^
+open62541.c: In function 'ServerNetworkLayerTCP_delete':
+open62541.c:11256:5: error: 'for' loop initial declarations are only allowed in C99 or C11 mode
+     for(size_t i = 0; i < layer->mappingsSize; i++)
+     ^
+open62541.c: In function 'ClientNetworkLayerTCP_connect':
+open62541.c:11326:5: error: 'for' loop initial declarations are only allowed in C99 or C11 mode
+     for(int i=10; i < portpos; i++)
+     ^
+open62541.c: At top level:
+open62541.c:11434:5: warning: this decimal constant is unsigned only in ISO C90
+     134217689, 268435399,  536870909,  1073741789, 2147483647,  4294967291
+     ^
+open62541.c: In function 'expand':
+open62541.c:11515:5: error: 'for' loop initial declarations are only allowed in C99 or C11 mode
+     for(UA_Int32 i=0, j=0;i<osize && j<count;i++) {
+     ^
+open62541.c: In function 'UA_NodeStore_delete':
+open62541.c:11629:5: error: 'for' loop initial declarations are only allowed in C99 or C11 mode
+     for(UA_UInt32 i = 0;i < size;i++) {
+     ^
+open62541.c: In function 'UA_NodeStore_iterate':
+open62541.c:11745:5: error: 'for' loop initial declarations are only allowed in C99 or C11 mode
+     for(UA_UInt32 i = 0;i < ns->size;i++) {
+     ^
+open62541.c: At top level:
+open62541.c:5614:13: warning: 'UA_ExternalNamespace_init' defined but not used [-Wunused-function]
+ static void UA_ExternalNamespace_init(UA_ExternalNamespace *ens) {
+             ^
+open62541.c:5619:13: warning: 'UA_ExternalNamespace_deleteMembers' defined but not used [-Wunused-function]
+ static void UA_ExternalNamespace_deleteMembers(UA_ExternalNamespace *ens) {
+             ^
+open62541.c:9459:22: warning: 'parseViewNode' defined but not used [-Wunused-function]
+ static UA_StatusCode parseViewNode(UA_ExtensionObject *attributes, UA_Node **new_node) {
+                      ^
+mingw32-make[1]: *** [release/open62541.o] Error 1
+mingw32-make: *** [release] Error 2

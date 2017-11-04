@@ -1,0 +1,29 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+
+<head>
+  <title>Primer</title>
+  <meta name="GENERATOR" content="generator by R. Lehrig">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+</head>
+<body>
+
+<h1>pvsexample</h1>
+
+<!--a href="page.html">page</a-->
+
+<p>pvsexample shows the principle of pvserver programming. 
+Review it in order to see how simply you can create your own pvserver.</p>
+
+<p>You can provide the user help for your pvserver by writing HTML pages
+and download them when the user connects.
+You can also see this feature within the help of pvdevelop.
+</p>
+
+<h1>pvbrowser primer</h1>
+<h2>Preface</h2>
+<p>
+We present a Open Source process visualization, HMI and SCADA system. From the view of the user it works almost like a web browser. Because pvbrowser uses Qt it runs on many platforms. If you want to create a process visualization using pvbrowser you should be familiar with ANSI-C.
+</p>
+<p>
+Many people think, that process visualizations can be created g

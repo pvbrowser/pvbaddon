@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+  <meta charset="utf-8" />
+  <title>WebSocket Test</title>
+  <script language="javascript" type="text/javascript">
+
+  var debug = true
+  var wsUri = "ws://localhost:5050";
+  var output;
+  var params;
+  var more_params = {};
+  var need_more_params = false;
+  var all = [];
+  var all_visible = [];
+  var id_end_of_widgets = 0;
+
+  function parse(command)
+  {
+    //alert(command)
+    var buf1 = command.split('(');
+    var ret = new Array(buf1[0].trim());
+    if(buf1.length > 1)
+    {
+      var buf2 = buf1[1].split(',');
+      var buf3 = buf2[buf2.length-1].split(')');
+      buf3[0].trim();
+      //writeToScreen("<b>Parsed " + buf1[0]);
+      for(var i=0; i<(buf2.length - 1); i++)
+      {
+        ret.push(buf2[i]);
+        //writeToScreen(buf2[i]);
+      }
+      ret.push(buf3[0]);
+      //writeToScreen(buf3[0] + "<\/b>");
+    }
+    if(debug) console.log("command=");
+    if(debug) console.log(ret);
+    return ret;
+  }
+
+  function init()
+  {
+    more_params[0] = "keine weiteren parameter";
+    output = document.getElementById("output");
+    testWebSocket();
+  }
+
+  function setText(id, text)
+  {
+    if(text.startsWith("<!--"))
+    {
+      all[id] = text;
+      all_visible[id] = true;
+    }
+    else
+    {
+      var frame = document.getElementById("idmainframe");
+      var e = frame.contentDocument.getElementById(id);
+      e.innerHTML = text;
+    }
+    if(id > id_end_of_widgets) id_end_of_widgets = id + 1;
+  }
+
+  function redraw()
+  {
+    var frame = document.getElementById("idmainframe");
+    //frame.contentDocument.open("image/svg+xml","replace");
+    frame.contentDocument.open();
+    for(var id=0; id<id_end_of_widgets; id++)
+    {
+      if(all_visible[id]) frame.contentDocument.write(all[id]);
+    }
+    frame.contentDocument.close();
+  }
+  
+  function hide(id)
+  {
+    if(id >= 0 && id <= id_end_of_widgets) all_visible[id] = false;
+  }
+
+  function show(id)
+  {
+    if(id >= 0 && id <= id_end_of_widgets) all_visible[id] = true;
+    else if(id < 0) redraw();
+  }
+
+  function testfunc()
+  {
+    setText(0,"<!-- test0 --> <p>test0</p>");
+    setText(1,"<!-- test1 --> <p id=\"1\">test1 id=1</p>");
+    setText(2,"<!-- test2 --> <p>test2</p>");
+    setText(3,"<!-- test3 --> <p>test3</p>");
+    hide(2);
+    redraw();
+    setText(1,"hallo welt");
+  }
+
+  function testWebSocket()
+  {
+    websocket = new WebSocket(wsUri);
+    websocket.onopen = function(evt) { onOpen(evt) };
+    websocket.onclose = function(evt) { onClose(evt) };
+    websocket.onmessage = function(evt) { onMessage(evt) };
+    websocket.onerror = function(evt) { onError(evt) };
+  }
+
+  function onOpen(evt)
+  {
+    writeToScreen("CONNECTED");
+    //doSend("WebSocket rocks\n");
+  }
+
+  function onClose(evt)
+  {
+    writeToScreen("DISCONNECTED");
+  }
+
+  function interpretCommand(evt)
+  {
+    writeToScreen("TODO interpret command: evt.data=" + evt.data );
+    for(var i=0; i<params.length; i++) writeToScreen(params[i]);
+    for(var i=0; i<more_params.length; i++) writeToScreen(more_params[i]);
+  }
+
+  function onMessage(evt)
+  {
+    if(evt.data.startsWith("<?xml"))
+    {
+      writeToScreen("Got SVG begin");
+      //myFunction();
+      if(debug) console.log(evt.data);
+      writeToScreen("Got SVG end");
+      var frame = document.getElementById("idmainframe");
+      //frame.contentDocument.open("image/svg+xml","replace");
+      frame.contentDocument.open();
+      frame.contentDocument.write(evt.data);
+      frame.contentDocument.close();
+      return;
+    }
+    writeToScreen('<span style="color: blue;">RESPONSE: ' + evt.data+'</span>');
+    if(debug) console.log("onMessage");
+    if(debug) console.log(typeof evt.data);
+    if(typeof evt.data != "string")
+    {
+      if(debug) console.log(evt);
+      if(debug) console.log(Object(evt.data.size));
+    }
+    else
+    {
+      if(need_more_params == false) params = parse(evt.data);
+      else                     more_params = parse(evt.data);
+      if(params[0] == "setText")
+      {
+        if(need_more_params == false) need_more_params = true;
+        else                          need_more_params = false;
+      }
+      if(need_more_params == false)
+      {
+        interpretCommand(evt);
+      }
+    }
+    //websocket.close();
+    if(debug) console.log("end onMessage");
+  }
+
+  function onError(evt)
+  {
+    writeToScreen('<span style="color: red;">ERROR:</span> ' + evt.data);
+  }
+
+  function doSend(message)
+  {
+    writeToScreen("SENT: " + message);
+    websocket.send(message);
+  }
+
+  function pvSendTextEvent(id,msg)
+  {
+    //doSend("text(0,\"circle set currentRadius*2\")\n");
+    message = "text(" + id + ",\"" + msg + "\")\n";
+    websocket.send(message);
+  }
+
+  function writeToScreen(message)
+  {
+    var pre = document.createElement("p");
+    pre.style.wordWrap = "break-word";
+    pre.innerHTML = message;
+    output.appendChild(pre);
+  }
+
+  function toJpgSrc() //your-binary-data)
+  {
+    var img = document.createElement('img');
+    img.src = 'data:image/jpeg;base64,' + btoa('your-binary-data');
+    //document.body.appendChild(img);
+    return img.src;
+  }
+
+  function myKeypressEventHandler(evt)
+  {
+    if(debug) console.log(evt);
+    //pvSendTextEvent(1,'key-code=' + evt.keyCode);
+    // ShiftButton=4, ControlButton=3, AltButton=2, NormalKey=1 
+    mod = 1;
+    if(evt.shiftKey == true) mod = 4;
+    if(evt.ctrlKey  == true) mod = 3;
+    if(evt.altKey   == true) mod = 2;
+    message = "key(" + mod + "," + evt.keyCode + ",\"test\")\n";
+    websocket.send(message);
+  }
+
+  window.addEventListener("load", init, false);
+  window.addEventListener("keypress", myKeypressEventHandler, false);
+
+  </script>
+
+  <h2 id="heading">WebSocket Template</h2>
+  <iframe id="idmainframe" height="500" width="500" srcdoc="<p>http://google.com</p>">
+  </iframe>
+
+  <script>
+    var val = localStorage.getItem("idmurx1");
+    if(val == null)
+    {
+      document.write("<p>idmurx1 ist nicht definiert</p>");
+    }
+    else
+    {
+      document.write(localStorage.getItem("idmurx1"));
+    }
+    localStorage.setItem("idmurx1","<p>Hallo dies ist idmurx1</p>");
+  </script>
+
+  <button onclick="document.getElementById('testsvgobj').innerHTML='hallo testsvg'; testfunc();">The svg is?</button> <br>
+
+  <a id="testLink" href="#" onclick="pvSendTextEvent(321,'test-link');">TestLink</a> <br>
+
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" 
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="6cm" height="5cm" viewBox="0 0 600 500"
+     xmlns="http://www.w3.org/2000/svg" version="1.1">
+  <desc>Example script01 - invoke an ECMAScript function from an onclick event
+  </desc>
+  <!-- ECMAScript to change the radius with each click -->
+  <script type="application/ecmascript"> <![CDATA[
+    function circle_click(evt) {
+      var circle = evt.target;
+      var currentRadius = circle.getAttribute("r");
+      if (currentRadius == 100)
+      {
+        pvSendTextEvent(0,"circle set currentRadius*2");
+        //doSend("text(0,\"circle set currentRadius*2\")\n");
+        circle.setAttribute("r", currentRadius*2);
+      }
+      else
+      {
+        pvSendTextEvent(0,"circle set currentRadius*0.5");
+        //doSend("text(0,\"circle set currentRadius*0.5\")\n");
+        circle.setAttribute("r", currentRadius*0.5);
+      }
+    }
+  ]]> </script>
+
+  <!-- Outline the drawing area with a blue line -->
+  <rect x="1" y="1" width="598" height="498" fill="none" stroke="blue"/>
+
+  <!-- Act on each click event -->
+  <circle onclick="circle_click(evt)" cx="300" cy="225" r="100"
+          fill="red"/>
+
+  <text x="300" y="480" 
+        font-family="Verdana" font-size="35" text-anchor="middle">
+
+    Click on circle to change its size
+  </text>
+</svg>
+  
+  <p id="demo"></p>
+  <script>
+  function myFunction() 
+  {
+    var x = "", i;
+    for (i=0; i<5; i++) 
+    {
+        x = x + "The number is " + i + "<br>";
+    }
+    document.getElementById("demo").innerHTML = x;
+  }
+  </script>
+  <div id="testsvgobj"></div>
+  <div id="output"></div>
+          

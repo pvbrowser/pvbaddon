@@ -70,8 +70,7 @@ static int slotInit(PARAM *p, DATA *d)
   // set sliderZoom to 100 percent
   pvSetValue(p,sliderZoom,100);
 
-  pvHtmlOrSvgDump(p,upperWidget,"dump.html");
-  pvClientCommand(p,"html","dump.html");
+  //pvSetSource(p,upperWidget,"de_total.html");
   return 0;
 }
 
@@ -121,6 +120,10 @@ static int slotButtonEvent(PARAM *p, int id, DATA *d)
     d->svgAnimator.setMouseXY0(0,0);
     d->svgAnimator.moveMainObject(DELTA,0);
     drawSVG1(p,centerWidget,d);
+  }
+  else if(id == pbPrintHtml)  
+  {
+    pvPrintHtmlOnPrinter(p,upperWidget);
   }
   return 0;
 }

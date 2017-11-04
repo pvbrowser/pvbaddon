@@ -15,6 +15,7 @@ call bat\make_module.bat demos\eibnetip pvs.pro
 call bat\make_module.bat demos\pvgrep pvgrep.pro
 call bat\make_module.bat demos\restroom pvs.pro
 call bat\make_module.bat demos\modbus_example pvs.pro
+call bat\make_module.bat demos\rlsvgdemo pvs.pro
 call bat\make_module.bat pcontrol pvs.pro
 call bat\make_module.bat pvbaddonlib\testpvs pvs.pro
 call bat\make_module.bat custom_widgets\embedded_widgets\embedded_widgets_1 embedded_widgets.pro
@@ -28,8 +29,15 @@ call bat\make_module.bat templates\myeventhandler pvs.pro
 call bat\make_module.bat templates\alarm pvs.pro
 call bat\make_module.bat templates\pvb_com_plugin\server pvs_com_plugin.pro
 call bat\make_module.bat templates\pvb_com_plugin\client pvb_com_plugin.pro
+call bat\make_module.bat templates\pvb_com_plugin\wslay\testclient testclient.pro
+call bat\make_module.bat templates\pvb_com_plugin\wslay\testserver fork-echoserver.pro
+call bat\make_module.bat templates\pvb_com_plugin\wslay\pvs pvs.pro
+call bat\make_module.bat templates\pvb_com_plugin\wslay pvs_com_plugin.pro
 call bat\make_module.bat templates\qtpvbinding pvs.pro
 call bat\make_module.bat templates\weblayout pvs.pro
+call bat\make_module.bat templates\cairo\libpvcairo pvcairo.pro
+call bat\make_module.bat templates\cairo\pvbasic pvs.pro
+call bat\make_module.bat templates\cairo\pvscariodesigner pvs.pro
 call bat\make_module.bat daemons\siemenstcp\client siemenstcp_client.pro
 call bat\make_module.bat daemons\siemenstcp\pvs pvs.pro
 call bat\make_module.bat daemons\ethernetip\client ethernetip_client.pro
@@ -52,3 +60,4 @@ call bat\make_module.bat daemons\rlshmcat rlshmcat.pro
 call bat\make_module.bat daemons\opcua\client opcua_client.pro
 call bat\make_module.bat daemons\opcua\server pvs.pro
 call bat\make_module.bat daemons\opcua\pvs pvs.pro
+call bat\make_module.bat rlproxy pvs.pro

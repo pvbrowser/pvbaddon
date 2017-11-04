@@ -16,4 +16,7 @@ pvs and plc exchange data only via shared memory.
 
 Please start both (plc and pvs) in a separate terminal and then start the pvbrowser client.
 
+###########################################
+Here you find howto do statemachines in Lua.
 
+http://www.lua.org/pil/6.3.html

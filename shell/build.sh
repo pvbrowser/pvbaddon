@@ -15,6 +15,7 @@ shell/make.sh ./demos/eibnetip $1
 shell/make.sh ./demos/pvgrep $1
 shell/make.sh ./demos/restroom $1
 shell/make.sh ./demos/modbus_example $1
+shell/make.sh ./demos/rlsvgdemo $1
 shell/make.sh ./pcontrol $1
 shell/make.sh ./pvbaddonlib/testpvs $1
 shell/make.sh ./custom_widgets/embedded_widgets/embedded_widgets_1 $1
@@ -28,8 +29,15 @@ shell/make.sh ./templates/myeventhandler $1
 shell/make.sh ./templates/alarm $1
 shell/make.sh ./templates/pvb_com_plugin/server $1
 shell/make.sh ./templates/pvb_com_plugin/client $1
+shell/make.sh ./templates/pvb_com_plugin/wslay/testclient $1
+shell/make.sh ./templates/pvb_com_plugin/wslay/testserver $1
+shell/make.sh ./templates/pvb_com_plugin/wslay/pvs $1
+shell/make.sh ./templates/pvb_com_plugin/wslay $1
 shell/make.sh ./templates/qtpvbinding $1
 shell/make.sh ./templates/weblayout $1
+shell/make.sh ./templates/cairo/libpvcairo $1
+shell/make.sh ./templates/cairo/pvbasic $1
+shell/make.sh ./templates/cairo/pvscariodesigner $1
 shell/make.sh ./daemons/siemenstcp/client $1
 shell/make.sh ./daemons/siemenstcp/pvs $1
 shell/make.sh ./daemons/ethernetip/client $1
@@ -52,3 +60,4 @@ shell/make.sh ./daemons/rlshmcat $1
 shell/make.sh ./daemons/opcua/client $1
 shell/make.sh ./daemons/opcua/server $1
 shell/make.sh ./daemons/opcua/pvs $1
+shell/make.sh ./rlproxy $1

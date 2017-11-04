@@ -33,18 +33,19 @@ int pvMain(PARAM *p)
 
 extern "C" int plug_pvAccept(PARAM *p)
 {
-  printf("In plugin pvAccept()\n");
+  printf("In plugin pvAccept() p->s=%d\n", p->s);
   if(p == NULL) return 0;
   return -1;
 }
 
-extern "C" int plug_closesocket(int s)
+extern "C" int plug_closesocket(int s, PARAM *p)
 {
 #ifdef PVWIN32
   closesocket(s);
 #else
   close(s);
 #endif
+  if(p == NULL) return 0;
   return 0;
 }
 

@@ -21,12 +21,34 @@ enum {
   iLeft,
   iRight,
   sliderZoom,
+  pbPrintHtml,
   layout1,
   layout2,
   ID_END_OF_WIDGETS
 };
 
+// our mask contains the following widget names
+  static const char *widgetName[] = {
+  "ID_MAIN_WIDGET",
+  "upperWidget",
+  "leftWidget",
+  "centerWidget",
+  "rightWidget",
+  "obj1",
+  "iCenter",
+  "iUp",
+  "iDown",
+  "iLeft",
+  "iRight",
+  "sliderZoom",
+  "pbPrintHtml",
+  "layout1",
+  "layout2",
+  "ID_END_OF_WIDGETS",
+  ""};
+
   static const char *toolTip[] = {
+  "",
   "",
   "",
   "",
@@ -54,6 +76,7 @@ enum {
   "1leftarrow.png",
   "1rightarrow.png",
   "",
+  "",
   ""};
 
   static const int widgetType[ID_END_OF_WIDGETS+1] = {
@@ -69,6 +92,7 @@ enum {
   TQImage,
   TQImage,
   TQSlider,
+  TQPushButton,
   -1 };
 
 static int generated_defineMask(PARAM *p)
@@ -76,6 +100,7 @@ static int generated_defineMask(PARAM *p)
   int w,h,depth;
 
   if(p == NULL) return 1;
+  if(widgetName[0] == NULL) return 1; // suppress unused warning
   w = h = depth = strcmp(toolTip[0],whatsThis[0]);
   if(widgetType[0] == -1) return 1;
   if(w==h) depth=0; // fool the compiler
@@ -88,7 +113,7 @@ static int generated_defineMask(PARAM *p)
   pvSetMaxSize(p,upperWidget,99999,200);
 
   pvQTextBrowser(p,leftWidget,0);
-  pvSetGeometry(p,leftWidget,5,215,175,445);
+  pvSetGeometry(p,leftWidget,5,215,200,445);
   pvSetFont(p,leftWidget,"Sans Serif",10,0,0,0,0);
   pvSetMinSize(p,leftWidget,200,100);
   pvSetMaxSize(p,leftWidget,200,99999);
@@ -96,54 +121,58 @@ static int generated_defineMask(PARAM *p)
   pvQDraw(p,centerWidget,0);
   pvSetGeometry(p,centerWidget,190,215,580,425);
   pvSetFont(p,centerWidget,"Sans Serif",10,0,0,0,0);
-  pvSetWhatsThis(p,centerWidget,"test.svg");
+  pvSetWhatsThis(p,centerWidget,pvtr("test.svg"));
   pvSetMinSize(p,centerWidget,300,100);
-  pvSetMaxSize(p,centerWidget,99999,99999);
 
-  pvQGroupBox(p,rightWidget,0,-1,HORIZONTAL,"Tools");
-  pvSetGeometry(p,rightWidget,780,210,170,450);
+  pvQGroupBox(p,rightWidget,0,-1,HORIZONTAL,pvtr("Tools"));
+  pvSetGeometry(p,rightWidget,780,210,200,450);
   pvSetFont(p,rightWidget,"Sans Serif",10,0,0,0,0);
   pvSetMinSize(p,rightWidget,200,100);
   pvSetMaxSize(p,rightWidget,200,99999);
 
   pvQLabel(p,obj1,rightWidget);
   pvSetGeometry(p,obj1,10,150,145,35);
-  pvSetText(p,obj1,"Put your tools here");
+  pvSetText(p,obj1,pvtr("Put your tools here"));
   pvSetFont(p,obj1,"Sans Serif",10,0,0,0,0);
 
   pvDownloadFile(p,"1center.png");
   pvQImage(p,iCenter,rightWidget,"1center.png",&w,&h,&depth);
   pvSetGeometry(p,iCenter,35,65,22,22);
   pvSetFont(p,iCenter,"Sans Serif",10,0,0,0,0);
-  pvSetWhatsThis(p,iCenter,"1center.png");
+  pvSetWhatsThis(p,iCenter,pvtr("1center.png"));
 
   pvDownloadFile(p,"1uparrow.png");
   pvQImage(p,iUp,rightWidget,"1uparrow.png",&w,&h,&depth);
   pvSetGeometry(p,iUp,35,40,22,22);
   pvSetFont(p,iUp,"Sans Serif",10,0,0,0,0);
-  pvSetWhatsThis(p,iUp,"1uparrow.png");
+  pvSetWhatsThis(p,iUp,pvtr("1uparrow.png"));
 
   pvDownloadFile(p,"1downarrow.png");
   pvQImage(p,iDown,rightWidget,"1downarrow.png",&w,&h,&depth);
   pvSetGeometry(p,iDown,35,90,22,22);
   pvSetFont(p,iDown,"Sans Serif",10,0,0,0,0);
-  pvSetWhatsThis(p,iDown,"1downarrow.png");
+  pvSetWhatsThis(p,iDown,pvtr("1downarrow.png"));
 
   pvDownloadFile(p,"1leftarrow.png");
   pvQImage(p,iLeft,rightWidget,"1leftarrow.png",&w,&h,&depth);
   pvSetGeometry(p,iLeft,10,65,22,22);
   pvSetFont(p,iLeft,"Sans Serif",10,0,0,0,0);
-  pvSetWhatsThis(p,iLeft,"1leftarrow.png");
+  pvSetWhatsThis(p,iLeft,pvtr("1leftarrow.png"));
 
   pvDownloadFile(p,"1rightarrow.png");
   pvQImage(p,iRight,rightWidget,"1rightarrow.png",&w,&h,&depth);
   pvSetGeometry(p,iRight,60,65,22,22);
   pvSetFont(p,iRight,"Sans Serif",10,0,0,0,0);
-  pvSetWhatsThis(p,iRight,"1rightarrow.png");
+  pvSetWhatsThis(p,iRight,pvtr("1rightarrow.png"));
 
   pvQSlider(p,sliderZoom,rightWidget,10,200,1,10,Vertical);
   pvSetGeometry(p,sliderZoom,125,30,25,100);
   pvSetFont(p,sliderZoom,"Sans Serif",10,0,0,0,0);
+
+  pvQPushButton(p,pbPrintHtml,rightWidget);
+  pvSetGeometry(p,pbPrintHtml,10,210,100,30);
+  pvSetText(p,pbPrintHtml,pvtr("&PrintHtml"));
+  pvSetFont(p,pbPrintHtml,"Sans Serif",10,0,0,0,0);
 
   pvQLayoutHbox(p,ID_MAIN_WIDGET,-1);
 

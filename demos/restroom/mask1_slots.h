@@ -159,9 +159,10 @@ static int slotInit(PARAM *p, DATA *d)
   d->ani_a.setId(svga);
   d->ani_a.setMainObject("main");
   d->ani_a.read("Anlage.svg");
+
   d->ani_a.svgTextPrintf("PV.spuelung2",pvtr("Spülung"));
-  pvSetZoomX(p, svga, -1.0f);
-  pvSetZoomY(p, svga, -1.0f);
+  pvSetZoomX(p, svga, 1.0f);
+  pvSetZoomY(p, svga, 1.0f);
   setSchaukel(d,0);
   setWasserstand(d,100);
   drawSVGa(p,d,svga);
@@ -172,8 +173,8 @@ static int slotInit(PARAM *p, DATA *d)
   d->ani_s.setMainObject("graph1");
   if(p->language != DEFAULT_LANGUAGE) d->ani_s.read("statemachine_en.svg");
   else                                d->ani_s.read("statemachine.svg");
-  pvSetZoomX(p, svgs, -1.0f);
-  pvSetZoomY(p, svgs, -1.0f);
+  pvSetZoomX(p, svgs, 1.0f);
+  pvSetZoomY(p, svgs, 1.0f);
   drawSVGs(p,d,svgs);
 
   pvSetValue(p,slider3,50);
@@ -227,6 +228,7 @@ static int slotInit(PARAM *p, DATA *d)
 static int slotNullEvent(PARAM *p, DATA *d)
 {
   if(p == NULL || d == NULL) return -1;
+//if(1) return 0;
   rlState *s = &d->sm;
   s->nextStep(s);                                      // statemachine step
   s->stepCounter++;

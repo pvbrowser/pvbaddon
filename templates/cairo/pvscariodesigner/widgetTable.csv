@@ -1,0 +1,11 @@
+name	x,y,w,h	text	temp
+Box	470,15,145,60	BoxText	tmurx
+Button	5,95,60,25	Hallo	murx2
+Diagram	110,90,585,355	Welt	t murx3
+Slider	100,15,45,20	qwert	aaa
+Else	265,30,85,25	Else Text
+PNG	95,510,455,235	app.png	t
+
+Test	1,900,100,100	murx
+RadioButton	5,190,95,25	(*) RadioB
+CheckBox	5,395,280,40	[#] CheckMe

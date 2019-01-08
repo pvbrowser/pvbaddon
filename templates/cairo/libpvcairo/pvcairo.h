@@ -26,17 +26,24 @@
 
 #include "processviewserver.h"
 #include "rlsvganimator.h"
+#include "rltime.h"
 #include <string.h>
 #include <cairo-svg.h>
 #include <unistd.h>
+#include <math.h>
+#ifndef M_PI
+#define M_PI 3.141592654
+#endif
 
 class pvCairo
 {
   public:
     enum surfaceToUse {
       SVG_QDraw=1, // default
+      SVG_httpresponse,
       SVG_file,
       PNG_QDraw,
+      PNG_httpresponse,
       PNG_file
     };
     pvCairo();
@@ -45,7 +52,8 @@ class pvCairo
     cairo_t *beginDraw(PARAM *p, int id, double width, double height);
     void endDraw(PARAM *p);    
     cairo_t *cr;
-    int debug; // set 1 to produce cairo_test.svg
+    int sendFileToQDraw(PARAM *p, int id, const char *filename, rlTime *ftime=NULL);
+    int debug;
 
   private:
     cairo_t *beginDrawSVG(PARAM *p, int id, double width, double height);
@@ -56,6 +64,9 @@ class pvCairo
     rlSvgAnimator svgAnimator;
     int m_id, toUseSurface;
     const char *toUseText;
+    int sendSVGFileToQDraw(PARAM *p, int id, const char *filename);
+    int sendPNGFileToQDraw(PARAM *p, int id, const char *filename);
+    int is_idle; // currently is not within drawing process
 };
 
 #endif

@@ -26,3 +26,8 @@ Within mask1_slots.h a basic graphical designer is implemented.
 If you switch to mask2_slots.h the deployed mask is shown.
 A hitTest function is available and you may click on the widgets.
 
+The subdirectory
+### info ###
+shows a suggesition howto show information from the
+/proc filesystem on Linux.
+

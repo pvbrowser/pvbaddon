@@ -17,7 +17,7 @@ typedef struct // (todo: define your data structure here)
 {
   rlSpreadsheetTable widgetTable;
   rlSpreadsheetRow *diagram1, *check1;
-  int width_svg, height_svg, zoom;
+  int width, height, zoom;
 }
 DATA;
 
@@ -47,12 +47,12 @@ static int slotInit(PARAM *p, DATA *d)
 {
   if(p == NULL || d == NULL) return -1;
   //memset(d,0,sizeof(DATA));
-  d->width_svg = 1280;
-  d->height_svg = 1024;
+  d->width = 1280;
+  d->height = 1024;
   d->zoom = 100;
   pvSetBufferTransparency(p,svg1,BUFFER_TRANSPARENCY);
   d->widgetTable.read(mask1WidgetTableCSV);
-  drawMask1Widgets(p,svg1,&d->widgetTable,d->width_svg,d->height_svg);
+  drawMask1Widgets(p,svg1,&d->widgetTable,d->width,d->height);
   findWidgets(d);
   return 0;
 }
@@ -61,7 +61,7 @@ static int slotNullEvent(PARAM *p, DATA *d)
 {
   if(p == NULL || d == NULL) return -1;
   pvCairoWidget cw;
-  drawMask1Widgets(p,svg1,&d->widgetTable,d->width_svg,d->height_svg);
+  drawMask1Widgets(p,svg1,&d->widgetTable,d->width,d->height);
   if(d->diagram1 != NULL)
   {
     int x,y,w,h;
@@ -202,25 +202,34 @@ static int slotMousePressedEvent(PARAM *p, int id, DATA *d, float x, float y)
   if(p == NULL || id == 0 || d == NULL || x < -1000 || y < -1000) return -1;
   if(id == svg1)
   {
-    pvCairoWidget widget;
-    int irow = -1;
-    widget.floatMouseZoom(&x,&y,d->zoom);
-    rlSpreadsheetRow *row = widget.hitTest(x,y,&d->widgetTable,&irow);
-    if(irow > 0) 
+    int where = 0;
+    pvCairoWidget::floatMouseZoom(&x,&y,d->zoom);
+    rlSpreadsheetRow *row = pvCairoWidget::hitTest(x,y,&d->widgetTable,&where);
+    if(row != NULL) 
     {
       pvSetMouseShape(p,PointingHandCursor);
       const char *name = row->text(pvCairoWidget::colName);
       const char *text = row->text(pvCairoWidget::colText);
-      pvStatusMessage(p,255,255,255,"%s %s row=%d button=%d", name, text, irow, p->button);
-      if(strcmp(name,"CheckBox") == 0)
+      pvStatusMessage(p,255,255,255,"%s %s button=%d", name, text, p->button);
+      if     (strcmp(name,"CheckBox") == 0)
       {
-        if(strncmp(text,"[#]",3) == 0) widget.setChecked(row,"[ ]"); 
-        else                           widget.setChecked(row,"[#]");
+        if(pvCairoWidget::isChecked(row)) pvCairoWidget::setChecked(row,0); 
+        else                              pvCairoWidget::setChecked(row,1);
       }
       else if(strcmp(name,"RadioButton") == 0)
       {
-        if(strncmp(text,"(*)",3) == 0) widget.setChecked(row,"( )"); 
-        else                           widget.setChecked(row,"(*)");
+        if(pvCairoWidget::isChecked(row)) pvCairoWidget::setChecked(row,0); 
+        else                              pvCairoWidget::setChecked(row,1);
+      }
+      else if(strcmp(name,"Slider") == 0)
+      {
+        if(where & pvCairoWidget::East) pvCairoWidget::incrementValue(row);
+        else                            pvCairoWidget::decrementValue(row);
+      }
+      else if(strcmp(name,"VSlider") == 0)
+      {
+        if(where & pvCairoWidget::North) pvCairoWidget::incrementValue(row);
+        else                             pvCairoWidget::decrementValue(row);
       }
     }
   }
@@ -230,14 +239,12 @@ static int slotMousePressedEvent(PARAM *p, int id, DATA *d, float x, float y)
 static int slotMouseReleasedEvent(PARAM *p, int id, DATA *d, float x, float y)
 {
   if(p == NULL || id == 0 || d == NULL || x < -1000 || y < -1000) return -1;
-  pvCairoWidget widget;
-  int irow = -1;
-  widget.floatMouseZoom(&x,&y,d->zoom);
-  rlSpreadsheetRow *row = widget.hitTest(x,y,&d->widgetTable,&irow);
-  if(row != NULL && irow > 0)
+  int where = 0;
+  pvCairoWidget::floatMouseZoom(&x,&y,d->zoom);
+  rlSpreadsheetRow *row = pvCairoWidget::hitTest(x,y,&d->widgetTable,&where);
+  if(row != NULL)
   {
     pvSetMouseShape(p,ArrowCursor);
-    pvStatusMessage(p,0,255,0,"");
   }
   return 0;
 }

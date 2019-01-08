@@ -1,0 +1,94 @@
+@page                 {
+                        size: A4;
+                      }
+h1                    { 
+                        page-break-after: avoid; 
+                        clear: both;
+                        text-align: left;
+                      }
+body                  { background-color: White;
+                        color: Black;
+                        font-family: 'Times';
+                        font-size: x-large;
+                        text-align: justify;
+                        width: 260mm;
+                        margin-left: 15mm;
+                        margin-right: 0mm;
+                      }
+p                     {
+                        hyphens: auto;
+                        orphans: 5;
+                        widows: 5;
+                      }  
+.einspaltig           {
+                          -webkit-column-count: 1; /* Chrome, Safari, Opera */
+                          -moz-column-count: 1; /* Firefox */
+                          column-count: 1;
+                      }
+.zweispaltig          {
+                          -webkit-column-count: 2; /* Chrome, Safari, Opera */
+                          -moz-column-count: 2; /* Firefox */
+                          column-count: 2;
+                                  
+                          -webkit-column-gap: 40px; /* Chrome, Safari, Opera */
+                          -moz-column-gap: 40px; /* Firefox */
+                          column-gap: 40px;
+                                              
+                          X-webkit-column-rule: 4px outset #ff00ff; /* Chrome, Safari, Opera */
+                          X-moz-column-rule: 4px outset #ff00ff; /* Firefox */
+                          Xcolumn-rule: 4px outset #ff00ff;
+                      }
+.autor                {
+                        margin-bottom: 5mm;
+                      }
+.abb                  { float: right;
+                        margin: 3mm;
+                      }
+.abb0                 {
+                        margin: -15mm;
+                        margin-top: 0mm;
+                        margin-bottom: 0mm;
+                      }
+.preformat            {
+                        color: blue;
+                        background: white;
+                      }
+pre                   {
+                        font-family: 'courier';
+                        font-size: large;
+                      }
+
+table, th, td         {
+                        border: 0px solid #000;
+                        border-collapse: collapse;
+                        margin-left: 0px;
+                        padding-left:5px;
+                        padding-right:5px;
+                        text-align: left;
+                      }
+
+.page                 {
+                        page-break-before: always;
+                      }
+
+.impressum            {
+                        color: Black;
+                        font-family: 'Times';
+                        font-size: large;
+                          -webkit-column-count: 2; /* Chrome, Safari, Opera */
+                          -moz-column-count: 2; /* Firefox */
+                          column-count: 2;
+                                  
+                          -webkit-column-gap: 40px; /* Chrome, Safari, Opera */
+                          -moz-column-gap: 40px; /* Firefox */
+                          column-gap: 40px;
+                                              
+                          X-webkit-column-rule: 4px outset #ff00ff; /* Chrome, Safari, Opera */
+                          X-moz-column-rule: 4px outset #ff00ff; /* Firefox */
+                          Xcolumn-rule: 4px outset #ff00ff;
+                      }
+@page {
+  @top-center { content: "Hallo Welt" }
+  @bottom-center { content: "Hello World" }
+}
+

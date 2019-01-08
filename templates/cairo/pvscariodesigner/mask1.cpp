@@ -11,16 +11,16 @@
 enum {
   ID_MAIN_WIDGET = 0,
   table1,
-  pbSave,
-  lbAboutTable,
   drawPreview,
+  obj1,
+  pbSave,
+  pbMask2,
+  pbLeft,
   pbUp,
   pbDown,
-  pbLeft,
   pbRight,
   rbMove,
   rbScale,
-  pbMask2,
   tbHelp,
   ID_END_OF_WIDGETS
 };
@@ -29,16 +29,16 @@ enum {
   static const char *widgetName[] = {
   "ID_MAIN_WIDGET",
   "table1",
-  "pbSave",
-  "lbAboutTable",
   "drawPreview",
+  "obj1",
+  "pbSave",
+  "pbMask2",
+  "pbLeft",
   "pbUp",
   "pbDown",
-  "pbLeft",
   "pbRight",
   "rbMove",
   "rbScale",
-  "pbMask2",
   "tbHelp",
   "ID_END_OF_WIDGETS",
   ""};
@@ -78,16 +78,16 @@ enum {
   static const int widgetType[ID_END_OF_WIDGETS+1] = {
   0,
   TQTable,
-  TQPushButton,
-  TQLabel,
   TQDraw,
+  TQGroupBox,
+  TQPushButton,
+  TQPushButton,
   TQPushButton,
   TQPushButton,
   TQPushButton,
   TQPushButton,
   TQRadio,
   TQRadio,
-  TQPushButton,
   TQTextBrowser,
   -1 };
 
@@ -103,60 +103,60 @@ static int generated_defineMask(PARAM *p)
   pvStartDefinition(p,ID_END_OF_WIDGETS);
 
   pvQTable(p,table1,0,4,4);
-  pvSetGeometry(p,table1,5,45,485,605);
+  pvSetGeometry(p,table1,125,0,1140,260);
   pvSetFont(p,table1,"Noto Sans",10,0,0,0,0);
 
-  pvQPushButton(p,pbSave,0);
-  pvSetGeometry(p,pbSave,495,45,100,30);
+  pvQDraw(p,drawPreview,0);
+  pvSetGeometry(p,drawPreview,0,265,1280,1024);
+  pvSetFont(p,drawPreview,"Noto Sans",10,0,0,0,0);
+
+  pvQGroupBox(p,obj1,0,-1,HORIZONTAL,pvtr("Toolbox"));
+  pvSetGeometry(p,obj1,0,0,120,260);
+  pvSetFont(p,obj1,"Noto Sans",10,0,0,0,0);
+
+  pvQPushButton(p,pbSave,obj1);
+  pvSetGeometry(p,pbSave,5,30,100,30);
   pvSetText(p,pbSave,pvtr("&Save Table"));
   pvSetFont(p,pbSave,"Noto Sans",10,0,0,0,0);
 
-  pvQLabel(p,lbAboutTable,0);
-  pvSetGeometry(p,lbAboutTable,5,10,550,30);
-  pvSetText(p,lbAboutTable,pvtr("widgetTable.csv: name := Box|Button|CheckBox|Label|RadioButton|Slider"));
-  pvSetFont(p,lbAboutTable,"Noto Sans",10,1,0,0,0);
-
-  pvQDraw(p,drawPreview,0);
-  pvSetGeometry(p,drawPreview,600,45,1000,1000);
-  pvSetFont(p,drawPreview,"Noto Sans",10,0,0,0,0);
-
-  pvQPushButton(p,pbUp,0);
-  pvSetGeometry(p,pbUp,525,160,35,30);
-  pvSetText(p,pbUp,pvtr("^"));
-  pvSetFont(p,pbUp,"Noto Sans",10,0,0,0,0);
-
-  pvQPushButton(p,pbDown,0);
-  pvSetGeometry(p,pbDown,525,220,35,30);
-  pvSetText(p,pbDown,pvtr("&v"));
-  pvSetFont(p,pbDown,"Noto Sans",10,0,0,0,0);
-
-  pvQPushButton(p,pbLeft,0);
-  pvSetGeometry(p,pbLeft,490,190,35,30);
-  pvSetText(p,pbLeft,pvtr("<"));
-  pvSetFont(p,pbLeft,"Noto Sans",10,0,0,0,0);
-
-  pvQPushButton(p,pbRight,0);
-  pvSetGeometry(p,pbRight,560,190,35,30);
-  pvSetText(p,pbRight,pvtr(">"));
-  pvSetFont(p,pbRight,"Noto Sans",10,0,0,0,0);
-
-  pvQRadioButton(p,rbMove,0);
-  pvSetGeometry(p,rbMove,490,260,110,30);
-  pvSetText(p,rbMove,pvtr("&Move Widget"));
-  pvSetFont(p,rbMove,"Noto Sans",10,0,0,0,0);
-
-  pvQRadioButton(p,rbScale,0);
-  pvSetGeometry(p,rbScale,490,295,110,30);
-  pvSetText(p,rbScale,pvtr("Scale &Widget"));
-  pvSetFont(p,rbScale,"Noto Sans",10,0,0,0,0);
-
-  pvQPushButton(p,pbMask2,0);
-  pvSetGeometry(p,pbMask2,495,80,100,30);
+  pvQPushButton(p,pbMask2,obj1);
+  pvSetGeometry(p,pbMask2,5,65,100,30);
   pvSetText(p,pbMask2,pvtr("Sh&ow Mask2"));
   pvSetFont(p,pbMask2,"Noto Sans",10,0,0,0,0);
 
+  pvQPushButton(p,pbLeft,obj1);
+  pvSetGeometry(p,pbLeft,5,130,35,30);
+  pvSetText(p,pbLeft,pvtr("◄"));
+  pvSetFont(p,pbLeft,"Noto Sans",10,0,0,0,0);
+
+  pvQPushButton(p,pbUp,obj1);
+  pvSetGeometry(p,pbUp,40,100,35,30);
+  pvSetText(p,pbUp,pvtr("▲"));
+  pvSetFont(p,pbUp,"Noto Sans",10,0,0,0,0);
+
+  pvQPushButton(p,pbDown,obj1);
+  pvSetGeometry(p,pbDown,40,160,35,30);
+  pvSetText(p,pbDown,pvtr("▼"));
+  pvSetFont(p,pbDown,"Noto Sans",10,0,0,0,0);
+
+  pvQPushButton(p,pbRight,obj1);
+  pvSetGeometry(p,pbRight,75,130,35,30);
+  pvSetText(p,pbRight,pvtr("►"));
+  pvSetFont(p,pbRight,"Noto Sans",10,0,0,0,0);
+
+  pvQRadioButton(p,rbMove,obj1);
+  pvSetGeometry(p,rbMove,5,195,110,30);
+  pvSetText(p,rbMove,pvtr("&Move Widget"));
+  pvSetFont(p,rbMove,"Noto Sans",10,0,0,0,0);
+
+  pvQRadioButton(p,rbScale,obj1);
+  pvSetGeometry(p,rbScale,5,225,110,30);
+  pvSetText(p,rbScale,pvtr("Scale &Widget"));
+  pvSetChecked(p,rbScale,1);
+  pvSetFont(p,rbScale,"Noto Sans",10,0,0,0,0);
+
   pvQTextBrowser(p,tbHelp,0);
-  pvSetGeometry(p,tbHelp,5,660,485,640);
+  pvSetGeometry(p,tbHelp,1400,0,768,260);
   pvSetFont(p,tbHelp,"Noto Sans",10,0,0,0,0);
 
 

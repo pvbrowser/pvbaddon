@@ -1,0 +1,61 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+
+<head>
+  <title>Achilleis</title>
+  <link rel="stylesheet" type="text/css" href="format.css">
+  <meta name="GENERATOR" content="generator by R. Lehrig">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <!-- meta http-equiv="refresh" content="1" /-->
+</head>
+<body>
+<h1>Demo of a pvserver httpd which generates cairo SVG surfaces (Template)</h1>
+<div class="autor">
+<em>for use within a pvserver</em><br>
+</div>
+
+<p>
+Run the pvserver with: "./pvs -http".
+</p>
+
+<img id="surface1" src="test.svg" alt="SVG surface on pvserver"/>
+
+<p>
+According to my tests
+"firefox http://localhost:5050/testsvg.html" 
+works but
+"opera http://localhost:5050/testsvg.html" 
+and
+"chromium http://localhost:5050/testsvg.html" 
+do not render the SVG.
+They only show the ALT text.
+But you can show the SVG with rightMouseClick on SVG and openInNewTab.
+</p>
+
+<p>
+As indication that this is not my fault
+see Chrome-bug <a href="https://stackoverflow.com/questions/10737166/chrome-not-rendering-svg-referenced-via-img-tag">
+https://stackoverflow.com/questions/10737166/chrome-not-rendering-svg-referenced-via-img-tag</a> 
+.
+</p>
+
+  <!-- -------------------------------------------- -->
+  <script language="javascript" type="text/javascript">
+
+  var gTestCounter = 0;
+
+  function timeout() {
+    var el = document.getElementById('surface1');
+    el.src = 'test.svg?cnt=' + gTestCounter;
+    gTestCounter += 1;
+    if(gTestCounter > 10000) gTestCounter = 0;
+  }
+
+  setInterval(timeout, 1000);
+
+  </script>
+  <!-- -------------------------------------------- -->
+
+
+</body>
+</html>

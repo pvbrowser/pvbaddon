@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Test</title>
+</head>
+<body>
+
+  <h2>What Can JavaScript Do?</h2>
+
+  <p> Pease run "./pvs -http" and open "http://localhost:5050/testjavascript_png.html" with your web browser (firefox/chrome/opera...)</p>
+  <img id="surface1" src="test.png" alt="please start pvserver with: ./pvs -http"/>
+  <p id="demo">JavaScript can change HTML content.</p>
+
+  <button type="button" onclick='document.getElementById("demo").innerHTML = "Hello JavaScript!"'>Click Me!</button>
+  <button type="button" onclick='document.getElementById("surface1").src="test.png?test=1"'>test src</button>
+  <button type="button" onclick='sendState()'>sendState</button>
+
+  <!-- -------------------------------------------- -->
+  <script language="javascript" type="text/javascript">
+
+  var gOnMouse = 0;
+  var gMouseX = 0;
+  var gMouseY = 0;
+  var gMouseButton = 0;
+  var gAlt = 0;
+  var gShift = 0;
+  var gCtrl = 0;
+  var gTestCounter = 0;
+
+  function mouseDown(event) {
+    gOnMouse     = 1;
+    gMouseX      = event.clientX;
+    gMouseY      = event.clientY;
+    gMouseButton = event.button;
+    gAlt         = 0;
+    gShift       = 0;
+    gCtrl        = 0;
+    if(event.altKey)   gAlt   = 1;
+    if(event.shiftKey) gShift = 1;
+    if(event.ctrlKey)  gCtrl  = 1;
+    sendState();
+    // DEBUGGING CODE
+    var el = document.getElementById('surface1');
+    document.getElementById("demo").innerHTML = 
+      "event.clientY=" + event.clientY + " event.pageY=" + event.pageY + " el.offsetTop=" + el.offsetTop + " window.pageYOffset=" + window.pageYOffset;
+  }
+
+  function mouseUp(event) {
+    gOnMouse     = 0;
+    gMouseX      = event.clientX;
+    gMouseY      = event.clientY;
+    gMouseButton = event.button;
+    gAlt         = 0;
+    gShift       = 0;
+    gCtrl        = 0;
+    if(event.altKey)   gAlt  = 1;
+    if(event.shiftKey) gShift = 1;
+    if(event.ctrlKey)  gCtrl = 1;
+    //sendState();
+  }
+
+  function sendState() {
+    var el = document.getElementById('surface1');
+    var myMouseX = gMouseX + window.pageXOffset - el.offsetLeft; 
+    var myMouseY = gMouseY + window.pageYOffset - el.offsetTop; 
+    el.src = 'test.png?onmouse=' + gOnMouse + '&x=' + myMouseX + '&y=' + myMouseY + 
+             '&button=' + gMouseButton + 
+             '&alt=' + gAlt + '&shift=' + gShift + '&ctrl=' + gCtrl;
+  }  
+  
+  function timeout() {
+    //location.reload();
+    var el = document.getElementById('surface1');
+    el.src = 'test.png?cnt=' + gTestCounter;
+    gTestCounter += 1;
+    if(gTestCounter > 10000) gTestCounter = 0;
+  }
+
+  document.addEventListener("mouseup", mouseUp);
+  document.addEventListener("mousedown", mouseDown);
+  setInterval(timeout, 1000);
+  
+  </script>
+  <!-- -------------------------------------------- -->
+
+</body>
+</html>
+

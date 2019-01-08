@@ -33,11 +33,15 @@ call bat\make_module.bat templates/pvb_com_plugin/wslay/testclient testclient.pr
 call bat\make_module.bat templates/pvb_com_plugin/wslay/testserver fork-echoserver.pro
 call bat\make_module.bat templates/pvb_com_plugin/wslay/pvs pvs.pro
 call bat\make_module.bat templates/pvb_com_plugin/wslay pvs_com_plugin.pro
+call bat\make_module.bat templates/pvb_com_plugin/openssl/client pvb_com_plugin.pro
+call bat\make_module.bat templates/pvb_com_plugin/openssl/server pvs_com_plugin.pro
 call bat\make_module.bat templates/qtpvbinding pvs.pro
 call bat\make_module.bat templates/weblayout pvs.pro
 call bat\make_module.bat templates/cairo/libpvcairo pvcairo.pro
 call bat\make_module.bat templates/cairo/pvbasic pvs.pro
 call bat\make_module.bat templates/cairo/pvscariodesigner pvs.pro
+call bat\make_module.bat templates/cairo/pvs pvs.pro
+call bat\make_module.bat templates/cairo/info pvs.pro
 call bat\make_module.bat daemons/siemenstcp/client siemenstcp_client.pro
 call bat\make_module.bat daemons/siemenstcp/pvs pvs.pro
 call bat\make_module.bat daemons/ethernetip/client ethernetip_client.pro

@@ -18,6 +18,8 @@ static int trace=1; // todo: set trace=0 if you do not want printf() within even
 #include "pvcairo.h"
 #include "pvcairowidget.h"
 #include "pvcairovdi.h"
+#include "rlthread.h"
+#include "rlfileload.h"
 // todo: comment me out
 //#include "rlmodbusclient.h"
 //#include "rlsiemenstcpclient.h"
@@ -34,4 +36,7 @@ int show_mask1(PARAM *p);
 #define mask1WidgetTableCSV "widgetTable.csv"
 int drawMask1Widgets(PARAM *p, int id, rlSpreadsheetTable *t, int width_svg, int height_svg);
 
+extern rlThread   tloop;
+extern const int  process_image_size;
+extern double     process_image[];
 #endif

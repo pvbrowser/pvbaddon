@@ -542,7 +542,7 @@ int pvCairoTestDiagram(cairo_t *cr, int xbox, int ybox, int widthbox, int height
   fontsize = 24;
   vdi.setColor(0,0,255);
   vdi.setFont("Times", fontsize, 1, 0);
-  vdi.text(50, 50, "This is a Diagram", ALIGN_LEFT);
+  //vdi.text(50, 50, "This is a Diagram", ALIGN_LEFT);
   fontsize = 12;
   vdi.setFont("Courier",fontsize,1,0);
   return 0;

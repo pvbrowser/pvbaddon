@@ -19,93 +19,95 @@
 extern int surface;
 const static int  debugme = 0;
 
-static int drawWidget(cairo_t *cr, rlSpreadsheetRow *widget)
+static double getMeminfo(const char *name)
+{
+  char line[256];
+  double dval = -1.0;
+  name = strchr(name,'#');
+  if(name == NULL) return dval;
+  name++;
+  int len = strlen(name);
+  printf("getMeminfo: %s",name);
+  FILE *fin = fopen("/proc/meminfo","r");
+  if(fin == NULL) return dval;
+  while(fgets(line,sizeof(line)-1,fin) != NULL)
+  {
+    if(strncmp(line,name,len) == 0)
+    {
+      const char *cptr = strchr(line,':');
+      if(cptr == NULL) break;
+      cptr++;
+      while(*cptr == ' ') cptr++;
+      sscanf(cptr,"%lf",&dval);
+      break;
+    }
+  }
+  fclose(fin);
+  printf("%f\n",dval);
+  return dval;
+}
+
+static double getValueCB(const void *p, const char *text)
+{
+  printf("getValueCB:: text=%s p=%ld\n", text, (long int)p);
+  if(strstr(text,"#cpu_up1") != NULL)
+  {
+    return process_image[0];
+  }
+  else if(strstr(text,"#cpu_up2") != NULL)
+  {
+    return process_image[1];
+  }
+  else
+  {
+    return getMeminfo(text);
+  }
+}
+
+static int isEqual(const char *s1, const char *s2)
+{
+  if(strcmp(s1,s2) == 0) return 1;
+  return 0;
+}
+
+static int drawWidget(cairo_t *cr, pvCairoWidget *cw, rlSpreadsheetRow *widget)
 { // draw one of our custom widgets
   int x,y,w,h;
-  pvCairoWidget cw;
   const char *xywh = widget->text(pvCairoWidget::colXYWH);
-  if(cw.isXYWH(xywh))
+  const char *name = widget->text(pvCairoWidget::colName);
+  if(cw->isXYWH(xywh))
   {
-    cw.getXYWH(xywh,&x,&y,&w,&h);
-    const char *name = widget->text(pvCairoWidget::colName);
-    const char *text = widget->text(pvCairoWidget::colText);
-    const char *temp = widget->text(pvCairoWidget::colTemp);
-    if(strcmp(name,"Box")==0)
+    cw->getXYWH(xywh,&x,&y,&w,&h);
+    if(isEqual(name,"Diagram"))
     {
-      if(debugme) printf("drawBox %s \"%s\" %s\n", xywh, text, temp);
-      cw.drawFilledRect(cr,widget);
-      cw.drawText(cr,widget);
-    }
-    else if(strcmp(name,"Button")==0)
-    {
-      if(debugme) printf("drawButton %s \"%s\" %s\n", xywh, text, temp);
-      cw.drawFilledRect(cr,widget);
-      cw.drawRect(cr,widget);
-      cw.drawText(cr,widget);
-    }
-    else if(strcmp(name,"CheckBox")==0)
-    {
-      if(debugme) printf("drawCheckBox %s \"%s\" %s\n", xywh, text, temp);
-      cw.drawFilledRect(cr,widget);
-      cw.drawText(cr,widget);
-      cw.drawRect(cr,widget);
-    }
-    else if(strcmp(name,"Label")==0)
-    {
-      if(debugme) printf("drawLabel %s \"%s\" %s\n", xywh, text, temp);
-      cw.drawFilledRect(cr,widget);
-      cw.drawText(cr,widget);
-    }
-    else if(strcmp(name,"RadioButton")==0)
-    {
-      if(debugme) printf("drawRadioButton %s \"%s\" %s\n", xywh, text, temp);
-      cw.drawFilledRect(cr,widget);
-      cw.drawText(cr,widget,1,0,0);
-    }
-    else if(strcmp(name,"Slider")==0)
-    {
-      if(debugme) printf("(not implemented yet) drawSlider %s \"%s\" %s\n", xywh, text, temp);
-      cw.drawFilledRect(cr,widget);
-      cw.drawText(cr,widget);
-    }
-    else if(strcmp(name,"Diagram")==0)
-    {
-      if(debugme) printf("(example for a more complex widget) %s \"%s\" %s\n", xywh, text, temp);
-      cw.drawFilledRect(cr,widget);
-      cw.drawText(cr,widget);
+      double aspectSave = cw->cornerAspect;
+      cw->cornerAspect = 30.0;
+      cw->drawButton(cr,widget);
       pvCairoTestDiagram(cr,x,y,w,h);
       cairo_set_font_size (cr, 14);
       cairo_select_font_face (cr, "Arial",
           CAIRO_FONT_SLANT_NORMAL, CAIRO_FONT_WEIGHT_NORMAL);
-    }
-    else if(strcmp(name,"PNG")==0)
-    {
-      if(debugme) printf("(example for a PNG) %s \"%s\" %s\n", xywh, text, temp);
-      cw.drawPNG(cr,widget);
-    }
-    else if(name[0] != '\0')
-    {
-      if(debugme) printf("drawElse %s \"%s\" %s\n", xywh, text, temp);
-      //cw.drawFilledRect(cr,widget);
-      cw.drawText(cr,widget);
+      cw->cornerAspect = aspectSave;
+      return 0;
     }
   }
+  cw->drawWidgetInterpret(cr,widget);
   return 0;
 }
 
-int drawMask1Widgets(PARAM *p, int id, rlSpreadsheetTable *t, int width_svg, int height_svg)
+int drawMask1Widgets(PARAM *p, int id, rlSpreadsheetTable *t, int width, int height)
 { // draw all designed widgets on top of backround
   if(p==NULL || id<0 || t==NULL) return -1;
   pvCairo cairo;
+  pvCairoWidget cw;
+  cw.setGetValueCB(getValueCB, p);
   cairo.setSurfaceToUse((pvCairo::surfaceToUse) surface); // surface was set from p->url within main.cpp
-  //murx++;
   cairo.debug = 1;
   cairo_pattern_t *pattern;
   int x,y;
 
-  cairo_t *cr = cairo.beginDraw(p,id,width_svg,height_svg);
+  cairo_t *cr = cairo.beginDraw(p,id,width,height);
   if(cr == NULL) return -1;
-
   /*
      Draw the background 
      Draw the squares in the background 
@@ -133,7 +135,7 @@ int drawMask1Widgets(PARAM *p, int id, rlSpreadsheetTable *t, int width_svg, int
   rlSpreadsheetRow *row = t->getFirstRow();
   while(row != NULL)
   {
-    drawWidget(cr,row);
+    drawWidget(cr,&cw,row);
     row = row->getNextRow();
   }
 
@@ -146,7 +148,8 @@ int drawMask1Widgets(PARAM *p, int id, rlSpreadsheetTable *t, int width_svg, int
 typedef struct // (todo: define your data structure here)
 {
   rlSpreadsheetTable widgetTable;
-  int lastRow, radio, clean, zoom;
+  rlSpreadsheetRow *row;
+  int lastY, radio, clean, zoom, alt, ctrl;
 }
 DATA;
 
@@ -156,14 +159,44 @@ static int drawMyWidgets(PARAM *p, DATA *d)
   return 0;
 }
 
+static int statusMessage(PARAM *p, DATA *d)
+{ 
+  if(d->row == NULL)
+  {
+    pvStatusMessage(p,0,255,0,"CTRL-MouseClick to select ActiveWidget");
+    return 0;
+  }
+  if(d->radio == rbMove)
+  {
+    pvStatusMessage(p,0,255,0,
+      "ActiveWidget:: id=%s name=%s xywh=%s text=%s values=%s table_row=%d Use F5,F6,F7,F8 to move widget (ALT-W to switch to scale widget)", 
+      d->row->text(pvCairoWidget::colId), 
+      d->row->text(pvCairoWidget::colName), 
+      d->row->text(pvCairoWidget::colXYWH), 
+      d->row->text(pvCairoWidget::colText), 
+      d->row->text(pvCairoWidget::colValues), 
+      d->lastY+1);
+  }
+  if(d->radio == rbScale)
+  {
+    pvStatusMessage(p,0,255,0,
+      "ActiveWidget:: id=%s name=%s xywh=%s text=%s values=%s table_row=%d Use F5,F6,F7,F8 to scale widget (ALT-M to switch to move widget)", 
+      d->row->text(pvCairoWidget::colId), 
+      d->row->text(pvCairoWidget::colName), 
+      d->row->text(pvCairoWidget::colXYWH), 
+      d->row->text(pvCairoWidget::colText), 
+      d->row->text(pvCairoWidget::colValues), 
+      d->lastY+1);
+  }
+  return 0;
+}
+
 int moveWidget(PARAM *p, DATA *d, int id)
 {
+  if(d->row == NULL) return -1;
   const int step = 5;
   int x,y,w,h;
-  int row = d->lastRow;
-  //if(debugme) printf("DEBUG %s\n",d->widgetTable.text(pvCairoWidget::colXYWH,row));
-  sscanf(d->widgetTable.text(pvCairoWidget::colXYWH,row+2),"%d,%d,%d,%d",&x,&y,&w,&h);
-  //if(debugme) printf("moveWidget(%d,%d,%d,%d)\n",x,y,w,h);
+  sscanf(d->row->text(pvCairoWidget::colXYWH),"%d,%d,%d,%d",&x,&y,&w,&h);
   if(d->radio == rbMove)
   {
     if(id == pbUp)    y -= step;
@@ -186,8 +219,8 @@ int moveWidget(PARAM *p, DATA *d, int id)
   if(h < 0) h=0;
   if(w > 2048) w=2048;
   if(h > 2048) h=2048;
-  d->widgetTable.printf(pvCairoWidget::colXYWH,row+2,"%d,%d,%d,%d",x,y,w,h);
-  pvTablePrintf(p,table1,pvCairoWidget::colXYWH-1,row,"%d,%d,%d,%d",x,y,w,h);
+  d->row->printf(pvCairoWidget::colXYWH,"%d,%d,%d,%d",x,y,w,h);
+  pvTablePrintf(p,table1,pvCairoWidget::colXYWH-1,d->lastY,"%d,%d,%d,%d",x,y,w,h);
   drawMyWidgets(p,d);
   return 0;
 }
@@ -195,21 +228,30 @@ int moveWidget(PARAM *p, DATA *d, int id)
 static int slotInit(PARAM *p, DATA *d)
 {
   if(p == NULL || d == NULL) return -1;
+  pvResize(p,0,1280*2,1024*2);
   d->widgetTable.read(mask1WidgetTableCSV);
   //memset(d,0,sizeof(DATA));
+  d->row = NULL;
   d->clean = 1;
-  d->lastRow = 2;
+  d->lastY = 0;
   d->radio = rbMove;
   d->zoom = 100;
+  d->alt = d->ctrl = 0;
   pvSetBufferTransparency(p,drawPreview,BUFFER_TRANSPARENCY);
   pvCSVdump(p,table1,mask1WidgetTableCSV);
   pvSetNumRows(p,table1,100);
   pvSetColumnWidth(p,table1,1,150);
+  pvSetColumnWidth(p,table1,2,150);
+  pvSetColumnWidth(p,table1,3,150);
+  pvSetColumnWidth(p,table1,4,150);
+  for(int row=1; row<=100; row++) pvSetRowHeight(p,table1,row,20);
   drawMyWidgets(p,d);
   pvSetChecked(p,rbMove,1);
 
   pvDownloadFile(p,"pvcairo.html");
   pvSetSource(p,tbHelp,"pvcairo.html");
+  
+  pvStatusMessage(p,0,255,0,"CTRL-Click to select ActiveWidget");
   return 0;
 }
 
@@ -298,11 +340,13 @@ static int slotRadioButtonEvent(PARAM *p, int id, DATA *d, const char *text)
   {
     if(strcmp(text,"(1)") == 0) d->radio = rbMove;
     else                        d->radio = rbScale;
+    statusMessage(p,d);
   }
   else if(id == rbScale)
   {
     if(strcmp(text,"(1)") == 0) d->radio = rbScale;
     else                        d->radio = rbMove;
+    statusMessage(p,d);
   }
   return 0;
 }
@@ -343,10 +387,11 @@ static int slotTableTextEvent(PARAM *p, int id, DATA *d, int x, int y, const cha
   if(id == table1)
   {
     d->clean = 0;
-    d->lastRow = y;
-    printf("Remember %s row=%d\n",text,d->lastRow);
+    d->lastY = y;
+    d->row = pvCairoWidget::irow2widget(&d->widgetTable, d->lastY);
     d->widgetTable.printf(x+1,y+2,"%s",text);
     drawMyWidgets(p,d);
+    statusMessage(p,d);
   }
   return 0;
 }
@@ -356,7 +401,9 @@ static int slotTableClickedEvent(PARAM *p, int id, DATA *d, int x, int y, int bu
   if(p == NULL || id == 0 || d == NULL || x < -1000 || y < -1000 || button < 0) return -1;
   if(id == table1)
   {
-    d->lastRow = y;
+    d->lastY = y;
+    d->row = pvCairoWidget::irow2widget(&d->widgetTable, d->lastY);
+    statusMessage(p,d);
   }
   return 0;
 }
@@ -383,44 +430,105 @@ static int slotRightMouseEvent(PARAM *p, int id, DATA *d, const char *text)
 static int slotKeyboardEvent(PARAM *p, int id, DATA *d, int val, int modifier)
 {
   if(p == NULL || id == 0 || d == NULL || val < -1000 || modifier < -1000) return -1;
+  if(modifier == -1)
+  {
+    d->alt = 0;
+    d->ctrl = 0;
+    statusMessage(p,d);
+  }
+  else if(val == Key_F5)
+  {
+    moveWidget(p,d,pbLeft);
+    d->clean = 0;
+  }
+  else if(val == Key_F6)
+  {
+    moveWidget(p,d,pbUp);
+    d->clean = 0;
+  }
+  else if(val == Key_F7)
+  {
+    moveWidget(p,d,pbDown);
+    d->clean = 0;
+  }
+  else if(val == Key_F8)
+  {
+    moveWidget(p,d,pbRight);
+    d->clean = 0;
+  }
+  else if(modifier == ControlButton)
+  {
+    d->ctrl = 1;
+    return 0;
+  }
+  else if(modifier == AltButton)
+  {
+    d->alt = 1;
+    return 0;
+  }
   return 0;
 }
 
 static int slotMouseMovedEvent(PARAM *p, int id, DATA *d, float x, float y)
 {
   if(p == NULL || id == 0 || d == NULL || x < -1000 || y < -1000) return -1;
-  int irow = -1;
-
-  pvCairoWidget widget;
-  widget.floatMouseZoom(&x,&y,d->zoom);
-  rlSpreadsheetRow *row = widget.hitTest(x,y,&d->widgetTable,&irow);
-  if(debugme) printf("slotMouseMovedEvent: x=%f y=%f row=%ld irow=%d\n", x, y, (long int) row, irow);
-  if(debugme && row!=NULL) printf("name=%s text=%s\n", row->text(pvCairoWidget::colName), row->text(pvCairoWidget::colText));
+  //pvCairoWidget::floatMouseZoom(&x,&y,d->zoom);
+  //rlSpreadsheetRow *row = pvCairoWidget::hitTest(x,y,&d->widgetTable);
   return 0;
 }
 
 static int slotMousePressedEvent(PARAM *p, int id, DATA *d, float x, float y)
 {
   if(p == NULL || id == 0 || d == NULL || x < -1000 || y < -1000) return -1;
-  pvCairoWidget widget;
-  int irow = -1;
-  widget.floatMouseZoom(&x,&y,d->zoom);
-  rlSpreadsheetRow *row = widget.hitTest(x,y,&d->widgetTable,&irow);
-  if(debugme) printf("slotMousePressedEvent: x=%f y=%f row=%ld irow=%d\n", x, y, (long int) row, irow);
-  if(debugme && row!=NULL) printf("name=%s text=%s\n", row->text(pvCairoWidget::colName), row->text(pvCairoWidget::colText));
+  int where = 0;
+  pvCairoWidget::floatMouseZoom(&x,&y,d->zoom);
+  rlSpreadsheetRow *row = pvCairoWidget::hitTest(x,y,&d->widgetTable,&where);
+  if(row!=NULL) 
+  {
+    printf("where=%d\n", where);
+    if(where & pvCairoWidget::North) printf("North\n");
+    if(where & pvCairoWidget::South) printf("South\n");
+    if(where & pvCairoWidget::West)  printf("West\n");
+    if(where & pvCairoWidget::East)  printf("East\n");
+  }
+  if(row!=NULL && d->ctrl==1) 
+  {
+    d->row = row; // select active widget
+    int irow = 1;
+    row = d->widgetTable.getFirstRow();
+    while(row != NULL)
+    {
+      if(row == d->row)
+      {
+        d->lastY = irow-2; break;
+      }
+      irow++;
+      row = row->getNextRow();
+    }
+  }
   return 0;
 }
 
 static int slotMouseReleasedEvent(PARAM *p, int id, DATA *d, float x, float y)
 {
   if(p == NULL || id == 0 || d == NULL || x < -1000 || y < -1000) return -1;
-  pvCairoWidget widget;
-  int irow = -1;
-  widget.floatMouseZoom(&x,&y,d->zoom);
-  rlSpreadsheetRow *row = widget.hitTest(x,y,&d->widgetTable,&irow);
-  if(irow > 0) pvStatusMessage(p,0,255,0,"%s %s row=%d", row->text(pvCairoWidget::colName), row->text(pvCairoWidget::colText), irow);
-  if(debugme) printf("slotMouseReleasedEvent: x=%f y=%f row=%ld irow=%d\n", x, y, (long int) row, irow);
-  if(debugme && row!=NULL) printf("name=%s text=%s\n", row->text(pvCairoWidget::colName), row->text(pvCairoWidget::colText));
+  pvCairoWidget::floatMouseZoom(&x,&y,d->zoom);
+  rlSpreadsheetRow *row = pvCairoWidget::hitTest(x,y,&d->widgetTable);
+  if(row!=NULL && d->ctrl==1) 
+  {
+    d->row = row; // select active widget
+    int irow = 1;
+    row = d->widgetTable.getFirstRow();
+    while(row != NULL)
+    {
+      if(row == d->row)
+      {
+        d->lastY = irow-2; break;
+      }
+      irow++;
+      row = row->getNextRow();
+    }
+  }
   return 0;
 }
 

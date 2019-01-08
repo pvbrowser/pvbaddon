@@ -33,11 +33,15 @@ shell/make.sh ./templates/pvb_com_plugin/wslay/testclient $1
 shell/make.sh ./templates/pvb_com_plugin/wslay/testserver $1
 shell/make.sh ./templates/pvb_com_plugin/wslay/pvs $1
 shell/make.sh ./templates/pvb_com_plugin/wslay $1
+shell/make.sh ./templates/pvb_com_plugin/openssl/client $1
+shell/make.sh ./templates/pvb_com_plugin/openssl/server $1
 shell/make.sh ./templates/qtpvbinding $1
 shell/make.sh ./templates/weblayout $1
 shell/make.sh ./templates/cairo/libpvcairo $1
 shell/make.sh ./templates/cairo/pvbasic $1
 shell/make.sh ./templates/cairo/pvscariodesigner $1
+shell/make.sh ./templates/cairo/pvs $1
+shell/make.sh ./templates/cairo/info $1
 shell/make.sh ./daemons/siemenstcp/client $1
 shell/make.sh ./daemons/siemenstcp/pvs $1
 shell/make.sh ./daemons/ethernetip/client $1

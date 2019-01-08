@@ -14,6 +14,29 @@
 
 int surface = pvCairo::SVG_QDraw; 
 
+const int process_image_size = 256;
+double process_image[process_image_size];
+
+rlThread tloop;
+void *loop(void *arg)
+{
+  char line[256];
+  FILE *fin;
+  while(1)
+  {
+    fin = fopen("/proc/uptime","r");
+    if(fin != NULL)
+    {
+      fgets(line,sizeof(line)-1,fin);
+      sscanf(line,"%lf %lf", &process_image[0], &process_image[1]);
+      printf("cpu_up1=%lf cpu_up2=%lf\n", process_image[0], process_image[1]);
+      fclose(fin);
+    }
+    rlsleep(1000);
+  }
+  return arg;
+}
+
 int pvMain(PARAM *p)
 {
 int ret;
@@ -66,6 +89,7 @@ PARAM p;
 int   s;
 
   pvInit(ac,av,&p);
+  tloop.create(loop,NULL);
   /* here you may interpret ac,av and set p->user to your data */
   while(1)
   {

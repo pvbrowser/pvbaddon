@@ -1,0 +1,14 @@
+name	x,y,w,h	text	temp
+Gauge	470,30,145,60	BoxText	0,30,100,5
+Button	5,95,60,25	Hallo	murx2
+Diagram	210,120,585,355	Welt	t murx3
+Slider	120,15,90,25	%5.1f	0,40,100,5
+Else	265,30,85,25	Else Text
+PNG	95,510,455,235	app.png	t
+
+VSlider	40,290,25,80	%4.1f	0,27,100,5
+	
+setInnerColor	0.9,0.3,0.3,0.5
+Test	1,900,100,100	murx
+RadioButton	5,190,95,25	RadioB	1
+CheckBox	5,395,280,40	CheckMe	1

@@ -4,7 +4,7 @@ cd foreign
 
 # make csoap
 cd csoap/libsoap-1.1.0
-qmake libcsoap.pro.foreign
+qmake-qt5 libcsoap.pro.foreign
 make
 cd libcsoap
 make
@@ -13,7 +13,7 @@ cd ../..
 
 #make tuxeip
 cd tuxeip/tuxeip-1.0/src
-qmake tuxeip.pro.foreign
+qmake-qt5 tuxeip.pro.foreign
 make
 cd ../../..
 

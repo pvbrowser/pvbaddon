@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'mywidget.h'
 **
-** Created by: The Qt Meta Object Compiler version 67 (Qt 5.6.2)
+** Created by: The Qt Meta Object Compiler version 67 (Qt 5.9.4)
 **
 ** WARNING! All changes made in this file will be lost!
 *****************************************************************************/
@@ -12,12 +12,14 @@
 #if !defined(Q_MOC_OUTPUT_REVISION)
 #error "The header file 'mywidget.h' doesn't include <QObject>."
 #elif Q_MOC_OUTPUT_REVISION != 67
-#error "This file was generated using the moc from 5.6.2. It"
+#error "This file was generated using the moc from 5.9.4. It"
 #error "cannot be used with the include files from this version of Qt."
 #error "(The moc has changed too much.)"
 #endif
 
 QT_BEGIN_MOC_NAMESPACE
+QT_WARNING_PUSH
+QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_myButton_t {
     QByteArrayData data[3];
     char stringdata0[22];
@@ -75,7 +77,7 @@ void myButton::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, vo
 
 const QMetaObject myButton::staticMetaObject = {
     { &QPushButton::staticMetaObject, qt_meta_stringdata_myButton.data,
-      qt_meta_data_myButton,  qt_static_metacall, Q_NULLPTR, Q_NULLPTR}
+      qt_meta_data_myButton,  qt_static_metacall, nullptr, nullptr}
 };
 
 
@@ -86,9 +88,9 @@ const QMetaObject *myButton::metaObject() const
 
 void *myButton::qt_metacast(const char *_clname)
 {
-    if (!_clname) return Q_NULLPTR;
+    if (!_clname) return nullptr;
     if (!strcmp(_clname, qt_meta_stringdata_myButton.stringdata0))
-        return static_cast<void*>(const_cast< myButton*>(this));
+        return static_cast<void*>(this);
     return QPushButton::qt_metacast(_clname);
 }
 
@@ -177,7 +179,7 @@ void myQtSvgDialGauge::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int
 
 const QMetaObject myQtSvgDialGauge::staticMetaObject = {
     { &QtSvgDialGauge::staticMetaObject, qt_meta_stringdata_myQtSvgDialGauge.data,
-      qt_meta_data_myQtSvgDialGauge,  qt_static_metacall, Q_NULLPTR, Q_NULLPTR}
+      qt_meta_data_myQtSvgDialGauge,  qt_static_metacall, nullptr, nullptr}
 };
 
 
@@ -188,9 +190,9 @@ const QMetaObject *myQtSvgDialGauge::metaObject() const
 
 void *myQtSvgDialGauge::qt_metacast(const char *_clname)
 {
-    if (!_clname) return Q_NULLPTR;
+    if (!_clname) return nullptr;
     if (!strcmp(_clname, qt_meta_stringdata_myQtSvgDialGauge.stringdata0))
-        return static_cast<void*>(const_cast< myQtSvgDialGauge*>(this));
+        return static_cast<void*>(this);
     return QtSvgDialGauge::qt_metacast(_clname);
 }
 
@@ -293,7 +295,7 @@ void myQt5WayButton::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _
 
 const QMetaObject myQt5WayButton::staticMetaObject = {
     { &Qt5WayButton::staticMetaObject, qt_meta_stringdata_myQt5WayButton.data,
-      qt_meta_data_myQt5WayButton,  qt_static_metacall, Q_NULLPTR, Q_NULLPTR}
+      qt_meta_data_myQt5WayButton,  qt_static_metacall, nullptr, nullptr}
 };
 
 
@@ -304,9 +306,9 @@ const QMetaObject *myQt5WayButton::metaObject() const
 
 void *myQt5WayButton::qt_metacast(const char *_clname)
 {
-    if (!_clname) return Q_NULLPTR;
+    if (!_clname) return nullptr;
     if (!strcmp(_clname, qt_meta_stringdata_myQt5WayButton.stringdata0))
-        return static_cast<void*>(const_cast< myQt5WayButton*>(this));
+        return static_cast<void*>(this);
     return Qt5WayButton::qt_metacast(_clname);
 }
 
@@ -404,7 +406,7 @@ void myQtBasicDialGauge::qt_static_metacall(QObject *_o, QMetaObject::Call _c, i
 
 const QMetaObject myQtBasicDialGauge::staticMetaObject = {
     { &QtBasicDialGauge::staticMetaObject, qt_meta_stringdata_myQtBasicDialGauge.data,
-      qt_meta_data_myQtBasicDialGauge,  qt_static_metacall, Q_NULLPTR, Q_NULLPTR}
+      qt_meta_data_myQtBasicDialGauge,  qt_static_metacall, nullptr, nullptr}
 };
 
 
@@ -415,9 +417,9 @@ const QMetaObject *myQtBasicDialGauge::metaObject() const
 
 void *myQtBasicDialGauge::qt_metacast(const char *_clname)
 {
-    if (!_clname) return Q_NULLPTR;
+    if (!_clname) return nullptr;
     if (!strcmp(_clname, qt_meta_stringdata_myQtBasicDialGauge.stringdata0))
-        return static_cast<void*>(const_cast< myQtBasicDialGauge*>(this));
+        return static_cast<void*>(this);
     return QtBasicDialGauge::qt_metacast(_clname);
 }
 
@@ -532,7 +534,7 @@ void myQtMultiSlider::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int 
 
 const QMetaObject myQtMultiSlider::staticMetaObject = {
     { &QtMultiSlider::staticMetaObject, qt_meta_stringdata_myQtMultiSlider.data,
-      qt_meta_data_myQtMultiSlider,  qt_static_metacall, Q_NULLPTR, Q_NULLPTR}
+      qt_meta_data_myQtMultiSlider,  qt_static_metacall, nullptr, nullptr}
 };
 
 
@@ -543,9 +545,9 @@ const QMetaObject *myQtMultiSlider::metaObject() const
 
 void *myQtMultiSlider::qt_metacast(const char *_clname)
 {
-    if (!_clname) return Q_NULLPTR;
+    if (!_clname) return nullptr;
     if (!strcmp(_clname, qt_meta_stringdata_myQtMultiSlider.stringdata0))
-        return static_cast<void*>(const_cast< myQtMultiSlider*>(this));
+        return static_cast<void*>(this);
     return QtMultiSlider::qt_metacast(_clname);
 }
 
@@ -639,7 +641,7 @@ void myQtScrollDial::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _
 
 const QMetaObject myQtScrollDial::staticMetaObject = {
     { &QtScrollDial::staticMetaObject, qt_meta_stringdata_myQtScrollDial.data,
-      qt_meta_data_myQtScrollDial,  qt_static_metacall, Q_NULLPTR, Q_NULLPTR}
+      qt_meta_data_myQtScrollDial,  qt_static_metacall, nullptr, nullptr}
 };
 
 
@@ -650,9 +652,9 @@ const QMetaObject *myQtScrollDial::metaObject() const
 
 void *myQtScrollDial::qt_metacast(const char *_clname)
 {
-    if (!_clname) return Q_NULLPTR;
+    if (!_clname) return nullptr;
     if (!strcmp(_clname, qt_meta_stringdata_myQtScrollDial.stringdata0))
-        return static_cast<void*>(const_cast< myQtScrollDial*>(this));
+        return static_cast<void*>(this);
     return QtScrollDial::qt_metacast(_clname);
 }
 
@@ -729,7 +731,7 @@ void myQtScrollWheel::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int 
 
 const QMetaObject myQtScrollWheel::staticMetaObject = {
     { &QtScrollWheel::staticMetaObject, qt_meta_stringdata_myQtScrollWheel.data,
-      qt_meta_data_myQtScrollWheel,  qt_static_metacall, Q_NULLPTR, Q_NULLPTR}
+      qt_meta_data_myQtScrollWheel,  qt_static_metacall, nullptr, nullptr}
 };
 
 
@@ -740,9 +742,9 @@ const QMetaObject *myQtScrollWheel::metaObject() const
 
 void *myQtScrollWheel::qt_metacast(const char *_clname)
 {
-    if (!_clname) return Q_NULLPTR;
+    if (!_clname) return nullptr;
     if (!strcmp(_clname, qt_meta_stringdata_myQtScrollWheel.stringdata0))
-        return static_cast<void*>(const_cast< myQtScrollWheel*>(this));
+        return static_cast<void*>(this);
     return QtScrollWheel::qt_metacast(_clname);
 }
 
@@ -819,7 +821,7 @@ void myQtSvgButton::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _i
 
 const QMetaObject myQtSvgButton::staticMetaObject = {
     { &QtSvgButton::staticMetaObject, qt_meta_stringdata_myQtSvgButton.data,
-      qt_meta_data_myQtSvgButton,  qt_static_metacall, Q_NULLPTR, Q_NULLPTR}
+      qt_meta_data_myQtSvgButton,  qt_static_metacall, nullptr, nullptr}
 };
 
 
@@ -830,9 +832,9 @@ const QMetaObject *myQtSvgButton::metaObject() const
 
 void *myQtSvgButton::qt_metacast(const char *_clname)
 {
-    if (!_clname) return Q_NULLPTR;
+    if (!_clname) return nullptr;
     if (!strcmp(_clname, qt_meta_stringdata_myQtSvgButton.stringdata0))
-        return static_cast<void*>(const_cast< myQtSvgButton*>(this));
+        return static_cast<void*>(this);
     return QtSvgButton::qt_metacast(_clname);
 }
 
@@ -909,7 +911,7 @@ void myQtSvgSlideSwitch::qt_static_metacall(QObject *_o, QMetaObject::Call _c, i
 
 const QMetaObject myQtSvgSlideSwitch::staticMetaObject = {
     { &QtSvgSlideSwitch::staticMetaObject, qt_meta_stringdata_myQtSvgSlideSwitch.data,
-      qt_meta_data_myQtSvgSlideSwitch,  qt_static_metacall, Q_NULLPTR, Q_NULLPTR}
+      qt_meta_data_myQtSvgSlideSwitch,  qt_static_metacall, nullptr, nullptr}
 };
 
 
@@ -920,9 +922,9 @@ const QMetaObject *myQtSvgSlideSwitch::metaObject() const
 
 void *myQtSvgSlideSwitch::qt_metacast(const char *_clname)
 {
-    if (!_clname) return Q_NULLPTR;
+    if (!_clname) return nullptr;
     if (!strcmp(_clname, qt_meta_stringdata_myQtSvgSlideSwitch.stringdata0))
-        return static_cast<void*>(const_cast< myQtSvgSlideSwitch*>(this));
+        return static_cast<void*>(this);
     return QtSvgSlideSwitch::qt_metacast(_clname);
 }
 
@@ -999,7 +1001,7 @@ void myQtSvgToggleSwitch::qt_static_metacall(QObject *_o, QMetaObject::Call _c, 
 
 const QMetaObject myQtSvgToggleSwitch::staticMetaObject = {
     { &QtSvgToggleSwitch::staticMetaObject, qt_meta_stringdata_myQtSvgToggleSwitch.data,
-      qt_meta_data_myQtSvgToggleSwitch,  qt_static_metacall, Q_NULLPTR, Q_NULLPTR}
+      qt_meta_data_myQtSvgToggleSwitch,  qt_static_metacall, nullptr, nullptr}
 };
 
 
@@ -1010,9 +1012,9 @@ const QMetaObject *myQtSvgToggleSwitch::metaObject() const
 
 void *myQtSvgToggleSwitch::qt_metacast(const char *_clname)
 {
-    if (!_clname) return Q_NULLPTR;
+    if (!_clname) return nullptr;
     if (!strcmp(_clname, qt_meta_stringdata_myQtSvgToggleSwitch.stringdata0))
-        return static_cast<void*>(const_cast< myQtSvgToggleSwitch*>(this));
+        return static_cast<void*>(this);
     return QtSvgToggleSwitch::qt_metacast(_clname);
 }
 
@@ -1032,4 +1034,5 @@ int myQtSvgToggleSwitch::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     }
     return _id;
 }
+QT_WARNING_POP
 QT_END_MOC_NAMESPACE

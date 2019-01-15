@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'qtmultislider.h'
 **
-** Created by: The Qt Meta Object Compiler version 67 (Qt 5.6.2)
+** Created by: The Qt Meta Object Compiler version 67 (Qt 5.9.4)
 **
 ** WARNING! All changes made in this file will be lost!
 *****************************************************************************/
@@ -12,12 +12,14 @@
 #if !defined(Q_MOC_OUTPUT_REVISION)
 #error "The header file 'qtmultislider.h' doesn't include <QObject>."
 #elif Q_MOC_OUTPUT_REVISION != 67
-#error "This file was generated using the moc from 5.6.2. It"
+#error "This file was generated using the moc from 5.9.4. It"
 #error "cannot be used with the include files from this version of Qt."
 #error "(The moc has changed too much.)"
 #endif
 
 QT_BEGIN_MOC_NAMESPACE
+QT_WARNING_PUSH
+QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_QtMultiSliderHelper_t {
     QByteArrayData data[1];
     char stringdata0[20];
@@ -62,7 +64,7 @@ void QtMultiSliderHelper::qt_static_metacall(QObject *_o, QMetaObject::Call _c, 
 
 const QMetaObject QtMultiSliderHelper::staticMetaObject = {
     { &QAbstractSlider::staticMetaObject, qt_meta_stringdata_QtMultiSliderHelper.data,
-      qt_meta_data_QtMultiSliderHelper,  qt_static_metacall, Q_NULLPTR, Q_NULLPTR}
+      qt_meta_data_QtMultiSliderHelper,  qt_static_metacall, nullptr, nullptr}
 };
 
 
@@ -73,17 +75,15 @@ const QMetaObject *QtMultiSliderHelper::metaObject() const
 
 void *QtMultiSliderHelper::qt_metacast(const char *_clname)
 {
-    if (!_clname) return Q_NULLPTR;
+    if (!_clname) return nullptr;
     if (!strcmp(_clname, qt_meta_stringdata_QtMultiSliderHelper.stringdata0))
-        return static_cast<void*>(const_cast< QtMultiSliderHelper*>(this));
+        return static_cast<void*>(this);
     return QAbstractSlider::qt_metacast(_clname);
 }
 
 int QtMultiSliderHelper::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 {
     _id = QAbstractSlider::qt_metacall(_c, _id, _a);
-    if (_id < 0)
-        return _id;
     return _id;
 }
 struct qt_meta_stringdata_QtMultiSlider_t {
@@ -179,17 +179,16 @@ void QtMultiSlider::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _i
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
         int *result = reinterpret_cast<int *>(_a[0]);
-        void **func = reinterpret_cast<void **>(_a[1]);
         {
             typedef void (QtMultiSlider::*_t)(bool );
-            if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&QtMultiSlider::maximumExceeded)) {
+            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&QtMultiSlider::maximumExceeded)) {
                 *result = 0;
                 return;
             }
         }
         {
             typedef void (QtMultiSlider::*_t)(bool );
-            if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&QtMultiSlider::minimumExceeded)) {
+            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&QtMultiSlider::minimumExceeded)) {
                 *result = 1;
                 return;
             }
@@ -219,7 +218,7 @@ void QtMultiSlider::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _i
 
 const QMetaObject QtMultiSlider::staticMetaObject = {
     { &QProgressBar::staticMetaObject, qt_meta_stringdata_QtMultiSlider.data,
-      qt_meta_data_QtMultiSlider,  qt_static_metacall, Q_NULLPTR, Q_NULLPTR}
+      qt_meta_data_QtMultiSlider,  qt_static_metacall, nullptr, nullptr}
 };
 
 
@@ -230,9 +229,9 @@ const QMetaObject *QtMultiSlider::metaObject() const
 
 void *QtMultiSlider::qt_metacast(const char *_clname)
 {
-    if (!_clname) return Q_NULLPTR;
+    if (!_clname) return nullptr;
     if (!strcmp(_clname, qt_meta_stringdata_QtMultiSlider.stringdata0))
-        return static_cast<void*>(const_cast< QtMultiSlider*>(this));
+        return static_cast<void*>(this);
     return QProgressBar::qt_metacast(_clname);
 }
 
@@ -273,14 +272,15 @@ int QtMultiSlider::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 // SIGNAL 0
 void QtMultiSlider::maximumExceeded(bool _t1)
 {
-    void *_a[] = { Q_NULLPTR, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
+    void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
     QMetaObject::activate(this, &staticMetaObject, 0, _a);
 }
 
 // SIGNAL 1
 void QtMultiSlider::minimumExceeded(bool _t1)
 {
-    void *_a[] = { Q_NULLPTR, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
+    void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
     QMetaObject::activate(this, &staticMetaObject, 1, _a);
 }
+QT_WARNING_POP
 QT_END_MOC_NAMESPACE

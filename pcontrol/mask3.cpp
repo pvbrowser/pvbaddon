@@ -353,7 +353,7 @@ static void do_remove(PARAM *p)
   user = (USER *) p->user;
   removed = 0;
   center.lock();
-  for(irow=FIRST_ROW; spreadsheat.exists(irow,1); irow++)
+  for(irow=FIRST_ROW; spreadsheat.exists(1,irow); irow++)
   {
     rlstrncpy(name,spreadsheat.text(T_name,irow), sizeof(name)-1);
     if(strcmp(name,user->name) == 0)
@@ -396,7 +396,7 @@ static void do_new(PARAM *p)
   if(p == NULL) return;
   user = (USER *) p->user;
   center.lock();
-  for(irow=FIRST_ROW; spreadsheat.exists(irow,1); irow++)
+  for(irow=FIRST_ROW; spreadsheat.exists(1,irow); irow++)
   {
     rlstrncpy(name,spreadsheat.text(T_name,irow), sizeof(name)-1);
     if(name[0] <= ' ') break;
@@ -427,7 +427,7 @@ static void do_save(PARAM *p)
   if(user->edited == 0) return;
   pid = found = 0;
   center.lock();
-  for(irow=FIRST_ROW; spreadsheat.exists(irow,1); irow++)
+  for(irow=FIRST_ROW; spreadsheat.exists(1,irow); irow++)
   {
     if(strcmp(user->name,spreadsheat.text(T_name,irow)) == 0)
     {

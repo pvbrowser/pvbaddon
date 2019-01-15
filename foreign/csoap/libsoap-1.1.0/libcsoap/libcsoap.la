@@ -14,7 +14,7 @@ library_names='libcsoap-1.1.so.1.1.0 libcsoap-1.1.so.1 libcsoap.so'
 old_library='libcsoap.a'
 
 # Libraries that this one depends upon.
-dependency_libs=' /usr/lib/../lib64//libxml2.la -ldl -L/lib64 -llzma -lz -lm'
+dependency_libs=' /usr/lib/../lib64//libxml2.la -ldl -llzma -lz -lm'
 
 # Version information for libcsoap.
 current=2

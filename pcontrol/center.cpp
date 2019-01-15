@@ -109,7 +109,7 @@ static void watchdog()
 {
   now.getLocalTime();
   center.lock();
-  for(int row=FIRST_ROW; spreadsheat.exists(row,1); row++)
+  for(int row=FIRST_ROW; spreadsheat.exists(1,row); row++)
   {
     start_if_missing(row);
   }
@@ -168,7 +168,7 @@ static void construct_processlist()
   rlPcontrol *item;
   char name[100];
 
-  for(int irow=FIRST_ROW; spreadsheat.exists(irow,1); irow++)
+  for(int irow=FIRST_ROW; spreadsheat.exists(1,irow); irow++)
   {
     pid = 0;
 #ifdef __VMS
@@ -207,7 +207,7 @@ static void do_reload(int write_flag)
   }
   spreadsheat.read(SPREADSHEAT_FILE);
   set_header();
-  for(int irow=FIRST_ROW; spreadsheat.exists(irow,1); irow++)
+  for(int irow=FIRST_ROW; spreadsheat.exists(1,irow); irow++)
   {
 
     rlstrncpy(name,spreadsheat.text(T_name,irow),sizeof(name)-1);
@@ -227,7 +227,7 @@ static void do_remove()
 
   interpreter.copyStringParam(candidate_name,0);
   center.lock();
-  for(int irow=FIRST_ROW; spreadsheat.exists(irow,1); irow++)
+  for(int irow=FIRST_ROW; spreadsheat.exists(1,irow); irow++)
   {
     rlstrncpy(name,spreadsheat.text(T_name,irow), sizeof(name)-1);
     if(strcmp(name,candidate_name) == 0)
@@ -264,7 +264,7 @@ static void do_save()
   //printf("%s",interpreter.line);
   interpreter.line[0] = '\0';
   center.lock();
-  for(int irow=FIRST_ROW; spreadsheat.exists(irow,1); irow++)
+  for(int irow=FIRST_ROW; spreadsheat.exists(1,irow); irow++)
   {
     rlstrncpy(name,spreadsheat.text(T_name,irow),sizeof(name)-1);
     if(name[0] > 0)

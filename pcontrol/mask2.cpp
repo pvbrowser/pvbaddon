@@ -153,7 +153,7 @@ static void show_list_view(PARAM *p)
   pvSetSorting(p,ListView1,-1,1);
   center.lock();
   i = 0;
-  for(irow=FIRST_ROW; spreadsheat.exists(irow,1); irow++)
+  for(irow=FIRST_ROW; spreadsheat.exists(1,irow); irow++)
   {
     rlstrncpy(name,spreadsheat.text(T_name,irow),sizeof(name)-1);
     if(name[0] > ' ')
@@ -319,7 +319,7 @@ int show_pcontrol(PARAM *p)
           rlstrncpy(user->state,d.state,sizeof(user->state)-1);
           rlstrncpy(user->name,d.name,sizeof(user->name)-1);
           rlstrncpy(user->startup_command,d.startup_command,sizeof(user->startup_command)-1);
-          for(irow=FIRST_ROW; spreadsheat.exists(irow,1); irow++)
+          for(irow=FIRST_ROW; spreadsheat.exists(1,irow); irow++)
           {
             rlstrncpy(str1,spreadsheat.text(T_name,irow),sizeof(str1)-1);
             if(strcmp(d.name,str1) == 0)

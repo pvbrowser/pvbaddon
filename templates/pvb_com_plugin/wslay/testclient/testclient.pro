@@ -3,7 +3,7 @@
 ######################################################################
 
 TEMPLATE = app
-CONFIG  += warn_on release
+CONFIG  += warn_on release -std=c++1
 CONFIG  -= qt
 win32:CONFIG  += dll
 

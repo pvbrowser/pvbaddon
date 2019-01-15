@@ -7,3 +7,5 @@ find . -name "*.o"               -exec rm "{}" ";"
 find . -name "moc_*"             -exec rm "{}" ";"
 # find . -name "qrc_*"             -exec rm "{}" ";"
 find . -name "ui_*"              -exec rm "{}" ";"
+find . -name ".qmake.stash"      -exec rm "{}" ";"
+

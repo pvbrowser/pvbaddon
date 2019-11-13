@@ -37,6 +37,7 @@ static int                use_socket               = 1;
 static char               buf[1024];
 static int                poll_slave_counter[256];
 static int                n_poll_slave             = 1;    // poll always
+static int                cycletimeout             = 1000; // milliseconds
 
 // values for socket
 static char               ip[80]                   = "192.168.1.115";
@@ -122,7 +123,7 @@ static void *mailboxReadThread(void *arg)
       if(debug) printf("modbus_write:           slave=%d function=%d data[]=%d %d %d %d ...\n",
                                                 slave,   function,   data[0], data[1], data[2], data[3]);
       ret = modbus->write( slave, function, (const unsigned char *) data, buflen);
-      ret = modbus->response( &slave, &function, (unsigned char *) buf);
+      ret = modbus->response( &slave, &function, (unsigned char *) buf, cycletimeout);
       if(debug) printf("modbus_response: ret=%d slave=%d function=%d data[]=%d %d %d %d ...\n",
                                          ret,   slave,   function,   data[0], data[1], data[2], data[3]);
       if(use_socket != 1) rlsleep(modbus_idletime); // on tty we have to sleep
@@ -160,9 +161,13 @@ static int init(int ac, char **av)
   }
 
   // init global variables
-  use_socket  = atoi(ini.text("GLOBAL","USE_SOCKET"));
-  debug       = atoi(ini.text("GLOBAL","DEBUG"));
-  cycletime   = atoi(ini.text("GLOBAL","CYCLETIME"));
+  use_socket   = atoi(ini.text("GLOBAL","USE_SOCKET"));
+  debug        = atoi(ini.text("GLOBAL","DEBUG"));
+  cycletime    = atoi(ini.text("GLOBAL","CYCLETIME"));
+  if(strlen(ini.text("GLOBAL","CYCLETIMEOUT")) > 0)
+  {    
+    cycletimeout = atoi(ini.text("GLOBAL","CYCLETIMEOUT"));
+  }  
   cptr = ini.text("GLOBAL","N_POLL_SLAVE");
   if(isdigit(*cptr))
   {
@@ -188,6 +193,11 @@ static int init(int ac, char **av)
   if(strcmp(text,"38400")  == 0) { baudrate = B38400;  modbus_idletime = (4*1000)/384;  }
   if(strcmp(text,"57600")  == 0) { baudrate = B57600;  modbus_idletime = (4*1000)/576;  }
   if(strcmp(text,"115200") == 0) { baudrate = B115200; modbus_idletime = (4*1000)/1152; }
+  if(strlen(ini.text("GLOBAL","MODBUS_IDLETIME")) > 0)
+  {  
+    int ini_modbus_idletime = atoi(ini.text("GLOBAL","MODBUS_IDLETIME"));
+    if(ini_modbus_idletime > modbus_idletime) modbus_idletime = ini_modbus_idletime;
+  }  
   rtscts      = atoi(ini.text("TTY","RTSCTS"));
   text        =      ini.text("TTY","PARITY");
   if     (strcmp(text,"EVEN") == 0)  parity = rlSerial::EVEN;
@@ -202,6 +212,7 @@ static int init(int ac, char **av)
 
   printf("%s starting with debug=%d cycletime=%d use_socket=%d n_poll_slave=%d\n",
          av[0],            debug,   cycletime,   use_socket, n_poll_slave);
+  printf("  and optional: CYCLETIMEOUT=%d MODBUS_IDLETIME=%d\n", cycletimeout, modbus_idletime);
 
   // init values for rllib...
   num_cycles = atoi(ini.text("CYCLES","NUM_CYCLES"));
@@ -366,7 +377,7 @@ static int modbusCycle(int slave, int function, int start_adr, int num_register,
   if(use_socket != 1) rlsleep(modbus_idletime); // on tty we have to sleep
   thread->lock();
   ret = modbus->request(slave, function, start_adr, num_register);
-  if(ret >= 0) ret = modbus->response( &slave, &function, data);
+  if(ret >= 0) ret = modbus->response( &slave, &function, data, cycletimeout);
   thread->unlock();
   if(ret < 0)
   {

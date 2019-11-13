@@ -555,7 +555,7 @@ static int siemensCycle(int slave, int org, int dbnum, int start_adr, int len, u
     if(cnt >= 256*256) cnt = 0;
     provider->setReadErrorCount(cnt);
   }
-  if(ret <= 0) { printf("siemensCycle: ERROR ret=%d\n",ret); ret = 1; }
+  if(ret <= 0) { printf("siemensCycle: ERROR ret=%d\n",ret); }
   return ret;
 }
 
@@ -586,7 +586,7 @@ static int readSiemens(int i)
                      namelist_count[i] * bytes_per_item,
                      data);
   if(ret <  0) return ret; // USER_ERROR                  
-  if(ret == 1)
+  if(ret == 0)
   {
     printf("PLC slave=%d is temporarily not connected\n", namelist_slave[i]+1);
     return 0;
@@ -595,7 +595,10 @@ static int readSiemens(int i)
   for(i1=0; i1<namelist_count[i]; i1++) // store all values in shared memory
   {
     swap.i = 0;
-    sprintf(name,"%s(%d,%d,%d)", var, namelist_slave[i], namelist_dbnum[i], namelist_start_adr[i] + i1); // print name
+    //sprintf(name,"%s(%d,%d,%d)", var, namelist_slave[i], namelist_dbnum[i], namelist_start_adr[i] + i1); // print name
+    // The user works with slaves in the range of: 1 <= slave <= N 
+    // The content of namelist_slave[] is from 0 to N-1
+    sprintf(name,"%s(%d,%d,%d)", var, namelist_slave[i]+1, namelist_dbnum[i], namelist_start_adr[i] + i1); // print name
     switch(namelist_datatype[i])
     {
       case DATA_BIT:

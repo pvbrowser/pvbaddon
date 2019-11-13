@@ -90,6 +90,7 @@ int   s;
 
   pvInit(ac,av,&p);
   tloop.create(loop,NULL);
+  rlsleep(1000);
   /* here you may interpret ac,av and set p->user to your data */
   while(1)
   {
